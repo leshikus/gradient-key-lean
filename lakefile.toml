@@ -1,5 +1,5 @@
 name = "gradient-key-lean"
-defaultTargets = ["GradientKey", "Section4"]
+defaultTargets = ["GradientKey", "Section4", "Section3"]
 
 [[require]]
 name = "mathlib"
@@ -13,3 +13,8 @@ name = "GradientKey"
 name = "Section4"
 srcDir = "Section4"
 roots = ["GradientKeySection4", "Lemma41", "Truncation", "Hoeffding", "DeletedPath", "Lemma43", "Theorem44", "P1_GreedyPath", "P2_SizeRecurrence", "P3_FiniteFibreCore", "P3_ConditionalFibre", "P5_InsertedRowTail", "P7_TailAggregation", "P8_Theorem44"]
+
+[[lean_lib]]
+name = "Section3"
+srcDir = "Section3"
+roots = ["TreeDepth", "Dense"]
