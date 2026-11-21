@@ -3,6 +3,8 @@
 @prop_dense : ∀ {n m : ℕ} (hn : 0 < n), 2 ^ n ≤ m + n → m ≤ 2 ^ n → 2 ≤ m → tG n m hn = completeCost m
 @prop_near_dense_one : ∀ {n m : ℕ} (hn3 : 3 ≤ n) (hm : m + n + 1 = 2 ^ n),
   tG n m ⋯ - completeCost m = 2 ^ n / (↑m * ↑((2 ^ n).choose (n + 1)))
+@prop_near_dense_two : ∀ {n m : ℕ} (hn4 : 4 ≤ n) (hm : m + n + 2 = 2 ^ n),
+  tG n m ⋯ - completeCost m = ↑(2 ^ (n - 2) * (3 ^ n - 2 * n - 1)) / (↑m * ↑((2 ^ n).choose (n + 2)))
 @prop_small_m : ∀ {n m : ℕ} (hm2 : 2 ≤ m),
   m ≤ 2 ^ n → ∀ (hn : 0 < n), tG n m hn - completeCost m = numer ⋯ n / ↑((2 ^ n).descFactorial m)
 @cor_exp : ∀ {m : ℕ} (hm4 : 4 ≤ m),
@@ -25,6 +27,8 @@
 @numTypes_eq : ∀ {m : ℕ} (hm : 0 < m), numTypes hm = 2 ^ (m - 1)
 'GradientKey.Concrete.prop_dense' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GradientKey.Concrete.prop_near_dense_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_near_dense_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_dense_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GradientKey.Concrete.prop_small_m' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GradientKey.Concrete.cor_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GradientKey.Concrete.excess_small' depends on axioms: [propext, Classical.choice, Quot.sound]

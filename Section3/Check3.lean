@@ -1,12 +1,14 @@
 import Dense
 import NearDense
 import Asymptotic
+import NearDense2
 
 open GradientKey.Concrete
 
 #check @prop_dense_cost
 #check @prop_dense
 #check @prop_near_dense_one
+#check @prop_near_dense_two
 #check @prop_small_m
 #check @cor_exp
 #check @excess_small
@@ -19,6 +21,8 @@ open GradientKey.Concrete
 #check @numTypes_eq
 #print axioms prop_dense
 #print axioms prop_near_dense_one
+#print axioms prop_near_dense_two
+#print axioms prop_dense_cost
 #print axioms prop_small_m
 #print axioms cor_exp
 #print axioms excess_small
