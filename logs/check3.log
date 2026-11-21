@@ -1,0 +1,30 @@
+@prop_dense_cost : ∀ {n m : ℕ} (hn : 0 < n),
+  2 ^ n ≤ m + n → ∀ (A : Table n m), DistinctColumns A → cost A hn = completeCost m
+@prop_dense : ∀ {n m : ℕ} (hn : 0 < n), 2 ^ n ≤ m + n → m ≤ 2 ^ n → 2 ≤ m → tG n m hn = completeCost m
+@prop_near_dense_one : ∀ {n m : ℕ} (hn3 : 3 ≤ n) (hm : m + n + 1 = 2 ^ n),
+  tG n m ⋯ - completeCost m = 2 ^ n / (↑m * ↑((2 ^ n).choose (n + 1)))
+@prop_small_m : ∀ {n m : ℕ} (hm2 : 2 ≤ m),
+  m ≤ 2 ^ n → ∀ (hn : 0 < n), tG n m hn - completeCost m = numer ⋯ n / ↑((2 ^ n).descFactorial m)
+@cor_exp : ∀ {m : ℕ} (hm4 : 4 ≤ m),
+  0 < Am hm4 ∧
+    0 < rm hm4 ∧
+      rm hm4 < 1 ∧
+        0 < θm hm4 ∧
+          θm hm4 < 1 ∧
+            ∃ C N₀,
+              ∀ (n : ℕ) (hn : 0 < n),
+                m ≤ 2 ^ n →
+                  N₀ ≤ ↑n → |tG n m hn - completeCost m - Am hm4 * rm hm4 ^ n| ≤ C * (Am hm4 * rm hm4 ^ n) * θm hm4 ^ n
+@excess_small : ∀ {n m : ℕ}, 2 ≤ m → m ≤ 3 → m ≤ 2 ^ n → ∀ (hn : 0 < n), tG n m hn - completeCost m = 0
+@Bint_nonneg : ∀ {m : ℕ} (hm2 : 2 ≤ m) (k : ℕ), 0 ≤ Bint ⋯ k
+@Bint_numTypes : ∀ {m : ℕ} (hm2 : 2 ≤ m), Bint ⋯ (numTypes ⋯) = 0
+@Bint_small : ∀ {m : ℕ} (hm2 : 2 ≤ m) (hm3 : m ≤ 3) (k : ℕ), Bint ⋯ k = 0
+@Bint_comb : ∀ {m : ℕ} (hm4 : 4 ≤ m), 0 < Bint ⋯ (m - 1)
+@J_bounds : ∀ {m : ℕ} (hm4 : 4 ≤ m), m - 1 ≤ J hm4 ∧ J hm4 < numTypes ⋯
+@coeffA_J : ∀ {m : ℕ} (hm4 : 4 ≤ m), coeffA ⋯ (J hm4) = Bk ⋯ (J hm4) / ↑(J hm4).factorial ∧ 0 < coeffA ⋯ (J hm4)
+@numTypes_eq : ∀ {m : ℕ} (hm : 0 < m), numTypes hm = 2 ^ (m - 1)
+'GradientKey.Concrete.prop_dense' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_near_dense_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_small_m' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.cor_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.excess_small' depends on axioms: [propext, Classical.choice, Quot.sound]
