@@ -1,9 +1,11 @@
 # gradient-key-lean
 
-Lean 4 proof of Theorem 4.4 of *The gradient key on random tables* (Section 4: Lemmas 4.1–4.3 and Theorem 4.4).
+Lean 4 proofs of results of *The gradient key on random tables*: Propositions 3.2, 3.4, 3.5 and Corollary 3.3
+(Section 3), and Lemmas 4.1–4.3 and Theorem 4.4 (Section 4). Proposition 3.1 and the computations of Section 3
+are not formalized. `FORMALIZATION_STATUS.md` maps each result to its declaration.
 Code and data of the article: [gradient-key-impl](https://github.com/leshikus/gradient-key-impl). MIT licence.
 
-The final theorem is `GradientKey.Concrete.theorem_4_4` in `Section4/Theorem44.lean`:
+The final theorem of Section 4 is `GradientKey.Concrete.theorem_4_4` in `Section4/Theorem44.lean`:
 
 ```
 theorem_4_4 : ∀ (n m : ℕ) (hm : 2 ≤ m) (hsize : m ≤ 2 ^ n),
@@ -22,8 +24,9 @@ number of depths with a fork on the path of column `j`, and `G` tests the first 
 
 ```sh
 lake exe cache get                  # Mathlib build cache
-lake build                          # builds GradientKey and Section4
+lake build                          # builds GradientKey, Section3 and Section4
 lake env lean Section4/Check.lean   # prints the theorem, the definitions and the axioms
+lake env lean Section3/Check3.lean  # the same for Section 3
 ```
 
 Lean and Mathlib are pinned to `v4.36.0` (`lean-toolchain`, `lakefile.toml`, `lake-manifest.json`).
@@ -31,6 +34,7 @@ CI (`.github/workflows/lean.yml`) runs `lake build` on every push and pull reque
 
 ## Layout
 
+- `Section3/`: Propositions 3.2, 3.4, 3.5 and Corollary 3.3; module list in `FORMALIZATION_STATUS.md`.
 - `Section4/`: the proof; `Section4/STATUS.md` maps each result to its declaration.
 - `drafts/original/`: the P0–P10 drafts as received, unchanged.
 - `logs/`: compiler output before and after the repairs, and the Python regression runs.
