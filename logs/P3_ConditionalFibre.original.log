@@ -1,0 +1,15 @@
+Section4/P3_ConditionalFibre.lean:1:0: error: unknown module prefix 'P3_FiniteFibreCore'
+
+No directory 'P3_FiniteFibreCore' or file 'P3_FiniteFibreCore.olean' in the search path entries:
+/home/aaf/gradient-key-lean/.lake/packages/Cli/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/batteries/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/Qq/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/aesop/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/proofwidgets/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/importGraph/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/plausible/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/packages/mathlib/.lake/build/lib/lean
+/home/aaf/gradient-key-lean/.lake/build/lib/lean
+/tmp/claude-1000/-home-aaf-gradient-key/9ad031bf-8603-4891-add2-d33e81d28440/scratchpad/elan/toolchains/leanprover--lean4---v4.36.0/lib/lean
+/tmp/claude-1000/-home-aaf-gradient-key/9ad031bf-8603-4891-add2-d33e81d28440/scratchpad/elan/toolchains/leanprover--lean4---v4.36.0/lib/lean

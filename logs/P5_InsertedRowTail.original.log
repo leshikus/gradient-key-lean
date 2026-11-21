@@ -1,0 +1,73 @@
+Section4/P5_InsertedRowTail.lean:93:38: warning: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P5_InsertedRowTail.lean:186:35: error: unsolved goals
+n m : ℕ
+B : RemainingTable n m
+S : Finset (Fin m)
+t : ℝ
+F : Finset (Fin m) := uniqueIn B S
+φ : Fin m → Bool → ℝ := fun x b => Real.exp (t * if b = true then 1 else -1)
+hUnique : ∀ a ∈ F, UniqueColumn B a
+hFactor : ∑ x, ∏ a ∈ F, φ a (↑x a) = ↑(Fintype.card (Extension B)) * ∏ a ∈ F, (φ a true + φ a false) / 2
+hExp : ∀ (x : Extension B), Real.exp (t * ∑ a ∈ F, signedBit (↑x) a) = ∏ a ∈ F, φ a (↑x a)
+⊢ (Real.exp t + Real.exp (-t)) ^ #(uniqueIn B S) / 2 ^ #(uniqueIn B S) =
+      ((Real.exp t + Real.exp (-t)) / 2) ^ #(uniqueIn B S) ∨
+    Fintype.card (Extension B) = 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Section4/P5_InsertedRowTail.lean:198:22: error: unsolved goals
+case insert.false
+m : ℕ
+x : Fin m → Bool
+a : Fin m
+T : Finset (Fin m)
+ha : a ∉ T
+ih : ∑ a ∈ T, signedBit x a = 2 * ↑(insertedOnes x T) - ↑(#T)
+h : x a = false
+⊢ (-1 + ∑ x_1 ∈ T, if x x_1 = true then 1 else -1) = -1 + ↑(#({a ∈ T | x a = true})) * 2 - ↑(#T)
+
+case insert.true
+m : ℕ
+x : Fin m → Bool
+a : Fin m
+T : Finset (Fin m)
+ha : a ∉ T
+ih : ∑ a ∈ T, signedBit x a = 2 * ↑(insertedOnes x T) - ↑(#T)
+h : x a = true
+⊢ (1 + ∑ x_1 ∈ T, if x x_1 = true then 1 else -1) = 1 + ↑(#({a ∈ T | x a = true})) * 2 - ↑(#T)
+Section4/P5_InsertedRowTail.lean:201:17: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [insertedOnes, Finset.filter_insert, signedBit, h, ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P5_InsertedRowTail.lean:234:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  DecidablePred P
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Section4/P5_InsertedRowTail.lean:237:8: warning: declaration uses `sorry`
+Section4/P5_InsertedRowTail.lean:254:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Section4/P5_InsertedRowTail.lean:253:2: warning: Unused tactic linter: `rw [he]` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P5_InsertedRowTail.lean:254:2: warning: Unused tactic linter: `simp` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

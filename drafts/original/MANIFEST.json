@@ -1,0 +1,227 @@
+[
+  {
+    "name": "GradientKeySection4.lean",
+    "size": 67988,
+    "sha256": "c2895436e9a1e7bb612bae80297f13c58ef77f60aca14dbf2258e0597dbed535"
+  },
+  {
+    "name": "GradientKeySection4_STATUS.md",
+    "size": 5143,
+    "sha256": "b2125e358234a009b4cf2c516657e752db0be6420fefeac46b379b5a85814a4b"
+  },
+  {
+    "name": "Lean_Section4_Parallel_Prompts.md",
+    "size": 38341,
+    "sha256": "46661464df389adafbd53ecc54844e8db101edd69d6131748b56826c1e96d698"
+  },
+  {
+    "name": "MASTER_PROMPT.md",
+    "size": 7775,
+    "sha256": "296bddf7af406fdb03a099bc285fa9123a602fe42c2f2439410b4c6146101946"
+  },
+  {
+    "name": "P0_REPORT.md",
+    "size": 6807,
+    "sha256": "b5a7bcfccd38f75d721eb32d4101702f707d428c510af3dd3f753d032e1fa46d"
+  },
+  {
+    "name": "P0_compile_baseline.md",
+    "size": 3139,
+    "sha256": "e4aba127e5cd1b24b855955a234dfdf1ef92bd9221c202c8d8a9a5290e0c0996"
+  },
+  {
+    "name": "P10_integration.md",
+    "size": 3838,
+    "sha256": "c9f5d04f9622c90598a2a4a80c3121c0569a188a62a73b04f8b83bfce41b8860"
+  },
+  {
+    "name": "P1_GreedyPath.lean",
+    "size": 23158,
+    "sha256": "123b7165bf5bcc4b4eccb9897b3da37e2365a3a51e336825fcbaf014fa7aa715"
+  },
+  {
+    "name": "P1_GreedyPath_STATUS.md",
+    "size": 5277,
+    "sha256": "e269df1a3f5f82bcaa249222c550942962332278e10e2d3e7f66a9da5d319477"
+  },
+  {
+    "name": "P1_GreedyPath_integration.patch",
+    "size": 24087,
+    "sha256": "45c05a01bcb967a7e374e86c063c8f5fd6770c3d9df53ab992d175deb3f58a27"
+  },
+  {
+    "name": "P1_check.py",
+    "size": 2117,
+    "sha256": "1698d24e0f3ac6beff8436070612eeb44617fe64ec523c4d66483469ecd4e11e"
+  },
+  {
+    "name": "P1_greedy_invariants.md",
+    "size": 3243,
+    "sha256": "3d1a3d74c9fb210548687fedf9a084288cf6586ac8d0a2b52684bb86165e8ff9"
+  },
+  {
+    "name": "P2_Integration.md",
+    "size": 4193,
+    "sha256": "9187c68cfad817ae33d4c6205151ecbcf56932f9a38d88a43044db4b9db0e68d"
+  },
+  {
+    "name": "P2_SizeRecurrence.lean",
+    "size": 11545,
+    "sha256": "ca346d40bd56e08a500cd323b98b2a1bbfff5fc2db29edeb2ce674502d6104c8"
+  },
+  {
+    "name": "P2_size_recurrence.md",
+    "size": 3257,
+    "sha256": "e3cc408544dc2ce46839cce9f33ffc2d78f9ddf302dd9ef12899341a3fe5b46f"
+  },
+  {
+    "name": "P2_verify.py",
+    "size": 2934,
+    "sha256": "aed3dea8a4b016782653574a5d24d79139ec119efc8dd7f27e534b2c203480dd"
+  },
+  {
+    "name": "P3_ConditionalFibre.lean",
+    "size": 15182,
+    "sha256": "cc0b7863c09f6ac67b4ec065b3e1c1e12087050e8cba565b379b9b2adca30666"
+  },
+  {
+    "name": "P3_ConditionalFibre_STATUS.md",
+    "size": 4976,
+    "sha256": "1a524ff0b612babe2dc615c829993875e9b25f9eacc2b97505bc04b53d85ac9e"
+  },
+  {
+    "name": "P3_FiniteFibreCore.lean",
+    "size": 4560,
+    "sha256": "4817d4fb8c848aed8e7afebc954bdee426aae6d8ef2c2e96ffbdcd2d17feb9e4"
+  },
+  {
+    "name": "P3_conditional_uniform.md",
+    "size": 3292,
+    "sha256": "ee00cd4bda5c84d9d2803e31293c611cbbd01bfcbd7ded7470af326549b98585"
+  },
+  {
+    "name": "P3_verify_fibres.py",
+    "size": 2370,
+    "sha256": "fee4cf0604fcb1944f370cefdddb066aebd765dd936ccf2fc3fe49b419cde4b5"
+  },
+  {
+    "name": "P4_DeletedPath.lean",
+    "size": 28613,
+    "sha256": "f17cae3b181bbf46fa3bc70a95169688717e024d834a66043f4b88f67dfd6b70"
+  },
+  {
+    "name": "P4_DeletedPath_STATUS.md",
+    "size": 5159,
+    "sha256": "baf6bd71f372bae1c649d7083701238e5f9be718eb9f3264a012703be6a84bb4"
+  },
+  {
+    "name": "P4_deleted_path_coupling.md",
+    "size": 3186,
+    "sha256": "eae8c8194d87d48add97d49be10e9da67ff044d902947bca90125d48efb26838"
+  },
+  {
+    "name": "P4_regression.py",
+    "size": 4664,
+    "sha256": "64e287fbff47a8713d2c26409b6bb1bc8d44edc749175eb524d4a2cf5daea35d"
+  },
+  {
+    "name": "P5_InsertedRowTail.lean",
+    "size": 10108,
+    "sha256": "314c46a11bbde3983c97a2be94e32a7e971cf9d798eeac90fb99838b1e3571ec"
+  },
+  {
+    "name": "P5_InsertedRowTail_STATUS.md",
+    "size": 6269,
+    "sha256": "d6a5e56cc8f759bc44eea702d0b21192de8d8eba41cda00bb52c180e4ba6b704"
+  },
+  {
+    "name": "P5_hoeffding.md",
+    "size": 3211,
+    "sha256": "0d76c69ee25a6500f94bbec48689b51e4c5f35ed4acc73df6735b481d690227b"
+  },
+  {
+    "name": "P6_MeanBound.lean",
+    "size": 14764,
+    "sha256": "f44b2793a89a6c5b42ddf28b5283b5aeb010be05c1d1a61cbec0804a6717088e"
+  },
+  {
+    "name": "P6_MeanBound_STATUS.md",
+    "size": 4743,
+    "sha256": "54c05ffd9cfcf883e00f1416805fc8bb373c2bb8db78e290333e3bcdd555f593"
+  },
+  {
+    "name": "P6_lemma43_mean.md",
+    "size": 2968,
+    "sha256": "d24cd3122b2cc86372f567289f117f58a4dbb888c02e17b9976563109a01dd1a"
+  },
+  {
+    "name": "P6_sanity_check.py",
+    "size": 2882,
+    "sha256": "947a36e98203031d047e7565e770c5d79bb83b33c5fe8d8165cb03a363b10237"
+  },
+  {
+    "name": "P7_TailAggregation.lean",
+    "size": 7467,
+    "sha256": "6424645c526385a57fd1d2aed82ad2fc552baae8ed7b73ce6edbcef27ae5deb2"
+  },
+  {
+    "name": "P7_TailAggregation_STATUS.md",
+    "size": 4511,
+    "sha256": "67f1dc90a7f02f15c65c22c7713898847096dd2f5676c20ff0df5919f354931a"
+  },
+  {
+    "name": "P7_lemma43_logarithmic.md",
+    "size": 2970,
+    "sha256": "14e1fce8ad0b558ed71848a72f4f247379a0f119e81875fe73905b2ab5cf383a"
+  },
+  {
+    "name": "P8_Theorem44.compile.log",
+    "size": 38,
+    "sha256": "a867b2941e105dad50fedc482873bb493078314df1039d9daaba979191dfc0f9"
+  },
+  {
+    "name": "P8_Theorem44.lean",
+    "size": 28315,
+    "sha256": "c501a517a895cd18fd41947c97ef75f0d13586590e190131284cd3f59748aba9"
+  },
+  {
+    "name": "P8_Theorem44_AUDIT(1).md",
+    "size": 5323,
+    "sha256": "beaa7448f5b5bd728fb5cba2fda89d071e7983beb4a23cc3878493d9be32614f"
+  },
+  {
+    "name": "P8_theorem44_audit.md",
+    "size": 2993,
+    "sha256": "662c2d6f2ade30b9a3a4ae9eab700fa9d742a0369fc24882508a62af75d44ec8"
+  },
+  {
+    "name": "P8_theorem44_numeric_audit.py",
+    "size": 1754,
+    "sha256": "b555db277e57a836a8b77768aa3c65892e7c388396d37de17ba49ef5c0b1c89a"
+  },
+  {
+    "name": "P9_Audit.md",
+    "size": 14980,
+    "sha256": "f7c088f57238b534ca7dbef789584acd1c8c6956d9a71d457e163d37e9176a8f"
+  },
+  {
+    "name": "P9_adversarial_audit.md",
+    "size": 3571,
+    "sha256": "fd4dce07778be41a24dd1b37c37b8964b93358ea25e856ace3bac05d02674977"
+  },
+  {
+    "name": "P9_patch.diff",
+    "size": 425,
+    "sha256": "45b81921349b4a9e338ac6b1ba09647301c6af3b8c4a3ed24cb2f6b7e7f2874b"
+  },
+  {
+    "name": "P9_verify.py",
+    "size": 7461,
+    "sha256": "9c744c3ceb08cb1ad66d87caa0c47e115532bcda78661396a8ad609bd5ed807f"
+  },
+  {
+    "name": "README.md",
+    "size": 1697,
+    "sha256": "1757d5c10cc85f5d72f8fb260cc2d33f3d59e6296ef0a1ab35f9d81e76fda8b9"
+  }
+]
