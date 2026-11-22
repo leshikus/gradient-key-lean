@@ -17,6 +17,7 @@ import PathEvent
 import PathCells
 import PathCoeff
 import PathCoeff2
+import PathBlocks
 
 open GradientKey.Concrete
 
@@ -116,3 +117,9 @@ open GradientKey.Concrete
 #print axioms tsum_eq_coef
 #check @sum_mu_by_type
 #print axioms sum_mu_by_type
+#check @ones_rowOf
+#print axioms ones_rowOf
+#check @adm_rowOf_iff
+#print axioms adm_rowOf_iff
+#check @card_rows_eq_blk
+#print axioms card_rows_eq_blk

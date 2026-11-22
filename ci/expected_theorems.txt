@@ -43,3 +43,6 @@ coef_rec
 tsum_rec
 tsum_eq_coef
 sum_mu_by_type
+ones_rowOf
+adm_rowOf_iff
+card_rows_eq_blk

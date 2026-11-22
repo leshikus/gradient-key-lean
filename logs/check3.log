@@ -185,3 +185,30 @@ tsum_eq_coef : ∀ (a B : ℕ), a < B → ∀ (u : ℕ → ℕ), IsTy B a u → 
       (∀ (c : OrderedFinpartition a), typeVec c ∈ T) →
         (∀ u ∈ T, IsTy B a u) → ∀ (F : (ℕ → ℕ) → ℚ), ∑ c, ↑(mu c) * F (typeVec c) = ∑ u ∈ T, coefB B a u * F u
 'GradientKey.Concrete.sum_mu_by_type' depends on axioms: [propext, Classical.choice, Quot.sound]
+@ones_rowOf : ∀ {m d : ℕ} {ι : Type u_1} [inst : Fintype ι] {size : ι → ℕ} {cellOf : ι → Fin (d + 1)}
+  {E : (b : ι) × Fin (size b) ≃ Fin m} {S : Fin (d + 1) → Finset (Fin m)},
+  (∀ (i : Fin (d + 1)) (x : Fin m), x ∈ S i ↔ i ≤ cellOf (E.symm x).fst) →
+    ∀ (bits : ι → Bool) (i : Fin (d + 1)), {x ∈ S i | rowOf E bits x = true}.card = blkOnes size cellOf bits i
+'GradientKey.Concrete.ones_rowOf' depends on axioms: [propext, Classical.choice, Quot.sound]
+@adm_rowOf_iff : ∀ {n m d : ℕ} {ι : Type u_1} [inst : Fintype ι] {size : ι → ℕ} {cellOf : ι → Fin (d + 1)}
+  {E : (b : ι) × Fin (size b) ≃ Fin m} {S : Fin (d + 1) → Finset (Fin m)},
+  (∀ (i : Fin (d + 1)) (x : Fin m), x ∈ S i ↔ i ≤ cellOf (E.symm x).fst) →
+    (∀ (b : ι), 0 < size b) →
+      ∀ (j₀ : Fin m),
+        cellOf (E.symm j₀).fst = Fin.last d →
+          ∀ (rho : Fin d ↪ Fin n) (i : Fin n) (bits : ι → Bool),
+            fixedPathRowAdmissible S j₀ rho i (rowOf E bits) ↔
+              blkAdm size cellOf (fun i => (S i).card) (fixedPathQuality S) rho i bits
+'GradientKey.Concrete.adm_rowOf_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_rows_eq_blk : ∀ {n m d : ℕ} {ι : Type u_1} [inst : Fintype ι] {size : ι → ℕ} {cellOf : ι → Fin (d + 1)}
+  {E : (b : ι) × Fin (size b) ≃ Fin m} {S : Fin (d + 1) → Finset (Fin m)},
+  (∀ (i : Fin (d + 1)) (x : Fin m), x ∈ S i ↔ i ≤ cellOf (E.symm x).fst) →
+    (∀ (b : ι), 0 < size b) →
+      ∀ (j₀ : Fin m),
+        cellOf (E.symm j₀).fst = Fin.last d →
+          ∀ (rho : Fin d ↪ Fin n) (i : Fin n),
+            {row |
+                  fixedPathRowAdmissible S j₀ rho i row ∧
+                    ∀ (b : ι) (r r' : Fin (size b)), row (E ⟨b, r⟩) = row (E ⟨b, r'⟩)}.card =
+              {bits | blkAdm size cellOf (fun i => (S i).card) (fixedPathQuality S) rho i bits}.card
+'GradientKey.Concrete.card_rows_eq_blk' depends on axioms: [propext, Classical.choice, Quot.sound]
