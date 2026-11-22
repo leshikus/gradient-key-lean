@@ -37,3 +37,6 @@ cell_sep
 distinct_iff_cells
 distinct_indicator_cells
 card_path_cells
+coef_term1
+coef_term2
+coef_rec

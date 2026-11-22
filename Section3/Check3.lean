@@ -15,6 +15,7 @@ import PathDefs
 import PathChainBridge
 import PathEvent
 import PathCells
+import PathCoeff
 
 open GradientKey.Concrete
 
@@ -102,3 +103,9 @@ open GradientKey.Concrete
 #print axioms distinct_indicator_cells
 #check @card_path_cells
 #print axioms card_path_cells
+#check @coef_term1
+#print axioms coef_term1
+#check @coef_term2
+#print axioms coef_term2
+#check @coef_rec
+#print axioms coef_rec
