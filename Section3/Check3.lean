@@ -2,6 +2,9 @@ import Dense
 import NearDense
 import Asymptotic
 import NearDense2
+import SmallItems
+import Examples
+import NumerZero
 
 open GradientKey.Concrete
 
@@ -26,3 +29,29 @@ open GradientKey.Concrete
 #print axioms prop_small_m
 #print axioms cor_exp
 #print axioms excess_small
+
+-- Small items of Propositions 3.2 and 3.5
+#check @prop32_stirling_identity
+#check @prop32_stirling_form
+#check @Bk_eq_tuple_sum
+#check @numer_eq_zero_of_two_pow_lt
+#check @numer_zero
+#check @alt_sum_Bint
+#check @example_full
+#check @example_n1_m2
+#check @example_m2
+#check @example_n3_m4
+#check @example_n4_m11
+#check @example_n4_m10
+#print axioms prop32_stirling_identity
+#print axioms prop32_stirling_form
+#print axioms Bk_eq_tuple_sum
+#print axioms numer_eq_zero_of_two_pow_lt
+#print axioms numer_zero
+#print axioms alt_sum_Bint
+#print axioms example_full
+#print axioms example_n1_m2
+#print axioms example_m2
+#print axioms example_n3_m4
+#print axioms example_n4_m11
+#print axioms example_n4_m10

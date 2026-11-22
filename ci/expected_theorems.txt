@@ -1,0 +1,21 @@
+# Final theorems whose axioms CI checks (Section3/Check3.lean, Section4/Check.lean).
+theorem_4_4
+prop_dense
+prop_near_dense_one
+prop_near_dense_two
+prop_dense_cost
+prop_small_m
+cor_exp
+excess_small
+prop32_stirling_identity
+prop32_stirling_form
+Bk_eq_tuple_sum
+numer_eq_zero_of_two_pow_lt
+numer_zero
+alt_sum_Bint
+example_full
+example_n1_m2
+example_m2
+example_n3_m4
+example_n4_m11
+example_n4_m10

@@ -17,4 +17,4 @@ roots = ["GradientKeySection4", "Lemma41", "Truncation", "Hoeffding", "DeletedPa
 [[lean_lib]]
 name = "Section3"
 srcDir = "Section3"
-roots = ["TreeDepth", "Dense", "Missing", "NearBall", "Counting", "NearDense", "Optimal", "RowList", "StirlingSum", "FirstsCount", "SmallM", "Asymptotic", "NearTwo", "NearTwoTop", "NearTwoSets", "PairCount", "NearTwoCount", "NearDense2", "Check3", "Mobius"]
+roots = ["TreeDepth", "Dense", "Missing", "NearBall", "Counting", "NearDense", "Optimal", "RowList", "StirlingSum", "FirstsCount", "SmallM", "Asymptotic", "NearTwo", "NearTwoTop", "NearTwoSets", "PairCount", "NearTwoCount", "NearDense2", "Check3", "Mobius", "SmallItems", "Examples", "NumerZero"]
