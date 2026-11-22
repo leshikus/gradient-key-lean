@@ -10,7 +10,7 @@ largest quality `min(k, s-k)`, `leafDepth` = number of forks on the path of a co
 
 | Article | Lean | Status |
 |---|---|---|
-| Proposition 3.1 (`prop:path-formula`) | — | not formalized |
+| Proposition 3.1 (`prop:path-formula`) | in progress: Möbius inversion `mobius_injective` (`Section3/Mobius.lean`) | not yet formalized |
 | Proposition 3.2 (`prop:small-m`): `t - C(m) = N_m(n)/(2^n)_m`, `N_m(n) = ∑_{j=1}^M a_j (2j)^n` | `prop_small_m` (`Section3/SmallM.lean`) | verified |
 | — `B_k ≥ 0`, `B_M = 0`, all `B_k = 0` for `m ≤ 3`, `B_{m-1} > 0` for `m ≥ 4`, `M = 2^{m-1}` | `Bint_nonneg`, `Bint_numTypes`, `Bint_small`, `Bint_comb`, `numTypes_eq` | verified |
 | — `m - 1 ≤ J < M`, `a_J = B_J/J! > 0` | `J_bounds`, `coeffA_J` | verified |
@@ -43,3 +43,4 @@ the `a_j`, Table 1, the exact values for `n ≤ 6`, the enumeration of missing w
 | `Asymptotic` | Corollary 3.3 |
 | `NearTwo`, `NearTwoTop`, `NearTwoSets`, `PairCount`, `NearTwoCount`, `NearDense2` | Proposition 3.5, second formula |
 | `Check3` | `#check` and `#print axioms` of the final theorems |
+| `Mobius` | Proposition 3.1, step: `∑_π μ(π) [x constant on the blocks of π] = [x injective]` over `OrderedFinpartition m` |
