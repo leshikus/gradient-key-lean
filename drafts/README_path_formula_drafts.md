@@ -1,7 +1,7 @@
 # Proposition 3.1 — Lean proof development, 2026-11-22
 
 Repository: https://github.com/leshikus/gradient-key-lean
-Target: **section3**, PR **#1**. Pinned Lean/Mathlib **v4.36.0**.
+Target: **main** (the only branch; PR #1 merged). Pinned Lean/Mathlib **v4.36.0**.
 
 ## Verification statement
 
@@ -11,7 +11,7 @@ exit 0, 2026-11-22). No `sorry`, `admit`, `axiom`, `native_decide` or `unsafe`.
 `#print axioms` gives `[propext, Classical.choice, Quot.sound]` for `tG_eq_forkTableCounts`,
 `pathCandidates_step_ssubset`, `pathFork_size_budget`, `pathOneStepTest_iff`, `mobius_table_indicator`,
 `card_valid_with_row_constraints`, `fixedPath_card_factor`, `fixedPath_mobius_factor`, `pathChainOfFork_sizes`.
-The modules are not yet pushed to `section3`, and CI has not run on them.
+Pushed in `1b6ef89` (PR #1, merged into `main` as `5c13cb1`); CI passed.
 
 Fixes needed to compile the original drafts:
 
@@ -69,7 +69,7 @@ or any proof bypasses.
 ## Open mathematical obligations
 
 1. **Done:** the drafts compile (see above). Register them as Lake roots, add their final theorems to
-   `Section3/Check3.lean` and `ci/expected_theorems.txt`, and push to `section3`.
+   `Section3/Check3.lean` and `ci/expected_theorems.txt`, and push. **Done** in `1b6ef89`.
 2. **Connect partitions to blocks.** Prove that a `PathPartition m a`
    multiplicity vector represents an ordinary integer partition of `a`
    (for `a≤m`); prove the per-cell Möbius coefficient identity in `ℚ`.
@@ -112,5 +112,4 @@ python3 ci/check_proofs.py logs/check3.log logs/check.log
 For each newly verified final theorem, add `#check` and `#print axioms`
 to `Section3/Check3.lean`, add its name to `ci/expected_theorems.txt`,
 update `FORMALIZATION_STATUS.md`, and regenerate `logs/check3.log`.
-Commit and push only verified milestones to `section3`, and check PR #1 CI.
-Do not touch `main` or create a new PR.
+Commit and push every verified update to `main`, and check CI. No other branches or PRs.

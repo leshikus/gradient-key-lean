@@ -8,16 +8,15 @@ claim. Connect it to the existing `tG`. Implement, compile, verify, commit and p
 at a plan.
 
 - Repository: https://github.com/leshikus/gradient-key-lean
-- Branch: `section3` (verify the current HEAD; it was `140d441` when this prompt was written)
-- Pull request: #1 (draft, open)
+- Branch: `main`, the only branch (verify the current HEAD; it was `5c13cb1` when this rule was written)
 - Mathematical source: `article.tex`, Section 3.1 (quoted in §1 below)
 
 Work autonomously, milestone by milestone. Push after every substantive update (rule 10), not only at milestones.
 
 ## 0. Rules (non-negotiable)
 
-1. Work only on branch `section3` and PR #1. Do not modify, merge into or push to `main`. No new branches or PRs.
-   Never force-push.
+1. Work only on `main`; the repository has no other branch. Do not create branches or pull requests.
+   Never force-push, never rewrite history.
 2. Keep Lean and Mathlib at `v4.36.0`. Do not change `lean-toolchain`, `lake-manifest.json` or dependencies.
 3. No `sorry`, `admit`, `axiom`, `native_decide`, `unsafe`, `implemented_by`, `extern`, `decide := true` tricks or
    other proof bypasses. Final theorems may depend only on `propext`, `Classical.choice`, `Quot.sound`.
@@ -32,8 +31,8 @@ Work autonomously, milestone by milestone. Push after every substantive update (
 8. Keep all existing results building; do not refactor verified modules beyond adding small helper lemmas.
 9. Never claim a theorem is formalized, or a push or CI run succeeded, unless you saw it succeed.
 10. **Push after every substantive update.** Each new or changed proved lemma, module, definition set or
-    fix that builds is committed and pushed to `section3` at once (after the §6 checks), not batched for
-    later; then check PR #1 CI. Nothing that builds stays only local at the end of a step.
+    fix that builds is committed and pushed to `main` at once (after the §6 checks), not batched for
+    later; then check the CI run on `main`. Nothing that builds stays only local at the end of a step.
 11. Toolchain in this environment (if `lake` is not on PATH):
     `export ELAN_HOME=/tmp/claude-1000/-home-aaf-gradient-key/9ad031bf-8603-4891-add2-d33e81d28440/scratchpad/elan PATH=$ELAN_HOME/bin:$PATH`
     (if that directory is gone, install elan into a scratch directory; `lake exe cache get` for Mathlib).
@@ -206,8 +205,8 @@ Use `decide` or `rfl` on computable definitions (no `native_decide`). If kernel 
 4. Read each public statement and check it says what the article says (hypotheses, indices, strict vs `≤`).
 5. Update `FORMALIZATION_STATUS.md` (row for Proposition 3.1: declarations, modules, what is verified,
    what remains), `ci/expected_theorems.txt`, `logs/check3.log`.
-6. Commit to `section3`, `git push origin section3` (no force), then watch PR #1 CI
-   (`gh pr checks 1 --watch` or `gh run list --branch section3`). Fix failures before the next milestone.
+6. Commit to `main`, `git push origin main` (no force), then watch the CI run
+   (`gh run list --branch main`, `gh run watch`). Fix failures before the next milestone.
 
 Suggested milestones: (A) definitions + `c` tests + (3,4) `W`/`V`/`F` tests; (B) steps 2–4; (C) steps 5–8;
 (D) per-chain identity; (E) Proposition 3.1 and pruning; (F) the `tG 3 4` check via the formula, docs, PR text.
@@ -225,7 +224,7 @@ Suggested milestones: (A) definitions + `c` tests + (3,4) `W`/`V`/`F` tests; (B)
 
 ## 8. Report after each push
 
-**Commit** (full SHA) · **Branch** `section3` · **PR** #1 · **Results completed** (Lean names ↔ article) ·
+**Commit** (full SHA) · **Branch** `main` · **Results completed** (Lean names ↔ article) ·
 **Files changed** · **Local build** pass/fail · **Shortcut scan** pass/fail · **Axiom audit** (actual sets) ·
 **GitHub CI** (run URL, conclusion) · **Remaining work** (exact open obligations) · **Next step**.
 
@@ -236,8 +235,8 @@ Suggested milestones: (A) definitions + `c` tests + (3,4) `W`/`V`/`F` tests; (B)
 - the per-chain identity, the family count, the greedy characterization, the Möbius/cell steps and `c(λ)` are
   proved as stated in §4;
 - the (3,4) regression checks of §5 pass on the actual definitions;
-- all new modules are Lake roots, the axiom audit passes, `FORMALIZATION_STATUS.md`, `README.md` and the PR #1
-  description are updated, everything is pushed to `section3`, and PR #1 CI is green.
+- all new modules are Lake roots, the axiom audit passes, `FORMALIZATION_STATUS.md`, and `README.md` are updated,
+  everything is pushed to `main`, and CI on `main` is green.
 
-Do not merge PR #1. If a step cannot be finished, push the verified part, mark the rest "not yet formalized"
+If a step cannot be finished, push the verified part, mark the rest "not yet formalized"
 in `FORMALIZATION_STATUS.md`, and report the exact open obligation.
