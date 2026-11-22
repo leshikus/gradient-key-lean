@@ -1,0 +1,38 @@
+Section4/P3_FiniteFibreCore.lean:73:32: error: unsolved goals
+α : Type u_1
+β : Type u_2
+inst✝² : Fintype α
+inst✝¹ : Fintype β
+inst✝ : Nonempty α
+q : α → β
+u : α → ℝ
+⊢ (∑ a, u a) / ↑(Fintype.card α) = (∑ b, ∑ a, u ↑a) / ↑(Fintype.card α)
+Section4/P3_FiniteFibreCore.lean:74:26: warning: This simp argument is unused:
+  sum_over_fibres
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [uniformMean]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P3_FiniteFibreCore.lean:96:29: error: Application type mismatch: The argument
+  hN
+has type
+  ∑ a, u a ≤ ↑(Fintype.card α) * c
+but is expected to have type
+  ∑ a, u a ≤ c * ↑(Fintype.card α)
+in the application
+  (div_le_iff₀ hpos).mpr hN
+Section4/P3_FiniteFibreCore.lean:112:4: error: Type mismatch
+  (div_le_iff₀ hbR).mp (h b hb)
+has type
+  ∑ a, u ↑a ≤ c * ↑(Fintype.card (Fibre q b))
+but is expected to have type
+  ∑ a, u ↑a ≤ ↑(Fintype.card (Fibre q b)) * c
+Section4/P3_FiniteFibreCore.lean:114:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`

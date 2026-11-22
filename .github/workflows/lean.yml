@@ -12,3 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: leanprover/lean-action@v1
+      - name: Run theorem checkers
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env lean Section3/Check3.lean | tee section3-axioms.log
+          lake env lean Section4/Check.lean | tee section4-axioms.log
+      - name: Check shortcuts, roots and axioms
+        run: python3 ci/check_proofs.py section3-axioms.log section4-axioms.log

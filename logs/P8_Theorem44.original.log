@@ -1,0 +1,39 @@
+Section4/P8_Theorem44.lean:52:17: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Section4/P8_Theorem44.lean:52:13: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P8_Theorem44.lean:52:17: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P8_Theorem44.lean:215:5: warning: Variable name `hEll` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hEll
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Section4/P8_Theorem44.lean:281:15: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Section4/P8_Theorem44.lean:281:15: warning: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P8_Theorem44.lean:362:19: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Section4/P8_Theorem44.lean:362:15: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P8_Theorem44.lean:362:19: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P8_Theorem44.lean:451:21: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Section4/P8_Theorem44.lean:451:17: warning: Unused tactic linter: `<;>` can be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P8_Theorem44.lean:451:21: warning: Unused tactic linter: `ring` is never executed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

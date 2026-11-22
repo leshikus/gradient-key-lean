@@ -1,0 +1,336 @@
+Section4/P4_DeletedPath.lean:68:59: error: unsolved goals
+case some
+R : Type u_1
+q : R → ℕ
+a : R
+xs : List R
+val✝ : R
+⊢ ¬(if q val✝ ≤ q a then some a else some val✝) = none
+Section4/P4_DeletedPath.lean:161:19: error: unsolved goals
+case pos.none
+R : Type u_1
+inst✝ : DecidableEq R
+q : R → ℕ
+a : R
+xs : List R
+ih : ∀ (r g : R), firstMax q xs = some g → g ≠ r → firstMax q (List.filter (fun a => decide (a ≠ r)) xs) = some g
+r b : R
+ht : firstMax q xs = some b
+hba : q b ≤ q a
+hg : firstMax q (a :: xs) = some a
+hgr : a ≠ r
+hf : firstMax q (List.filter (fun x => decide (x ≠ r)) xs) = none
+⊢ (match firstMax q (List.filter (fun a => !decide (a = r)) xs) with
+    | none => some a
+    | some b => if q b ≤ q a then some a else some b) =
+    some a
+Section4/P4_DeletedPath.lean:163:21: error: unsolved goals
+case pos.some
+R : Type u_1
+inst✝ : DecidableEq R
+q : R → ℕ
+a : R
+xs : List R
+ih : ∀ (r g : R), firstMax q xs = some g → g ≠ r → firstMax q (List.filter (fun a => decide (a ≠ r)) xs) = some g
+r b : R
+ht : firstMax q xs = some b
+hba : q b ≤ q a
+hg : firstMax q (a :: xs) = some a
+hgr : a ≠ r
+c : R
+hf : firstMax q (List.filter (fun x => decide (x ≠ r)) xs) = some c
+hc : c ∈ xs
+hca : q c ≤ q a
+⊢ (match firstMax q (List.filter (fun a => !decide (a = r)) xs) with
+    | none => some a
+    | some b => if q b ≤ q a then some a else some b) =
+    some a
+Section4/P4_DeletedPath.lean:175:12: error: unsolved goals
+case pos
+R : Type u_1
+inst✝ : DecidableEq R
+q : R → ℕ
+xs : List R
+ih : ∀ (r g : R), firstMax q xs = some g → g ≠ r → firstMax q (List.filter (fun a => decide (a ≠ r)) xs) = some g
+r b : R
+ht : firstMax q xs = some b
+hgr : b ≠ r
+hf : firstMax q (List.filter (fun x => decide (x ≠ r)) xs) = some b
+hba : ¬q b ≤ q r
+hg : firstMax q (r :: xs) = some b
+⊢ firstMax q (List.filter (fun a => !decide (a = r)) xs) = some b
+Section4/P4_DeletedPath.lean:177:12: error: unsolved goals
+case neg
+R : Type u_1
+inst✝ : DecidableEq R
+q : R → ℕ
+a : R
+xs : List R
+ih : ∀ (r g : R), firstMax q xs = some g → g ≠ r → firstMax q (List.filter (fun a => decide (a ≠ r)) xs) = some g
+r b : R
+ht : firstMax q xs = some b
+hba : ¬q b ≤ q a
+hg : firstMax q (a :: xs) = some b
+hgr : b ≠ r
+hf : firstMax q (List.filter (fun x => decide (x ≠ r)) xs) = some b
+har : ¬a = r
+⊢ (match firstMax q (List.filter (fun a => !decide (a = r)) xs) with
+    | none => some a
+    | some b => if q b ≤ q a then some a else some b) =
+    some b
+Section4/P4_DeletedPath.lean:162:37: warning: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [firstMax, hgr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:168:37: warning: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [firstMax, hgr, hca]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:168:41: warning: This simp argument is unused:
+  hca
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [firstMax, hgr, hf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:176:20: warning: This simp argument is unused:
+  firstMax
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:176:30: warning: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [firstMax]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:177:35: warning: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [firstMax, har, hba]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:177:39: warning: This simp argument is unused:
+  hba
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [firstMax, har, hf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:188:2: error: Type mismatch
+  (List.mem_filter.mp
+      (firstMax_mem (quality A S) (List.filter (fun r => decide (r ∈ available)) (List.finRange n)) g hg)).right
+has type
+  decide (g ∈ available) = true
+but is expected to have type
+  g ∈ available
+Section4/P4_DeletedPath.lean:198:22: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ha, hr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:264:14: warning: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hq, hr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:275:14: warning: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hq, hj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:311:8: error: 'change' tactic failed, pattern
+  PairClosed (deleteRow A r) ({a ∈ st.candidate | A g a = A g j})
+is not definitionally equal to target
+  PairClosed (deleteRow A r)
+    (match some g with
+      | none => st
+      | some g =>
+        if 0 < quality A st.candidate g then
+          { candidate := {a ∈ st.candidate | A g a = A g j}, available := st.available.erase g }
+        else st).candidate
+Section4/P4_DeletedPath.lean:343:18: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:347:12: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hz]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:377:2: error: unsolved goals
+case left
+n m : ℕ
+A : Table n m
+j : Fin m
+r g : Fin n
+full deleted : PathState n m
+hS : deleted.candidate = full.candidate
+hR : deleted.available = full.available.erase r
+hg : selectRow A full.candidate full.available = some g
+hgr : g ≠ r
+hq : 0 < quality A full.candidate g
+hd : selectRow A deleted.candidate deleted.available = some g
+⊢ (match selectRow A full.candidate deleted.available with
+      | none => deleted
+      | some g =>
+        if 0 < quality A full.candidate g then
+          { candidate := {a ∈ full.candidate | A g a = A g j}, available := deleted.available.erase g }
+        else deleted).candidate =
+    {a ∈ full.candidate | A g a = A g j}
+Section4/P4_DeletedPath.lean:378:36: error(lean.unknownIdentifier): Unknown constant `Finset.erase_comm`
+Section4/P4_DeletedPath.lean:378:2: error: unsolved goals
+case right
+n m : ℕ
+A : Table n m
+j : Fin m
+r g : Fin n
+full deleted : PathState n m
+hS : deleted.candidate = full.candidate
+hR : deleted.available = full.available.erase r
+hg : selectRow A full.candidate full.available = some g
+hgr : g ≠ r
+hq : 0 < quality A full.candidate g
+hd : selectRow A deleted.candidate deleted.available = some g
+⊢ (match selectRow A full.candidate (full.available.erase r) with
+      | none => deleted
+      | some g =>
+        if 0 < quality A full.candidate g then
+          { candidate := {a ∈ full.candidate | A g a = A g j}, available := (full.available.erase r).erase g }
+        else deleted).available =
+    (full.available.erase g).erase r
+Section4/P4_DeletedPath.lean:377:20: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [step, hg, hq, hS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:378:20: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [step, hg, hq, hS, hR, Finset.erase_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:419:50: error: Application type mismatch: The argument
+  hr
+has type
+  r ∈ available
+but is expected to have type
+  decide (r ∈ available) = true
+in the application
+  ⟨List.mem_finRange r, hr⟩
+Section4/P4_DeletedPath.lean:427:60: error: unsolved goals
+n m : ℕ
+A : Table n m
+j : Fin m
+st : PathState n m
+g : Fin n
+hg : selectRow A st.candidate st.available = some g
+hq : 0 < quality A st.candidate g
+hm : g ∈ st.available
+⊢ #st.available - 1 + 1 = #st.available
+Section4/P4_DeletedPath.lean:459:18: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:463:14: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:540:22: error: unsolved goals
+case insert.false
+n m : ℕ
+A : Table n m
+r : Fin n
+a : Fin m
+S : Finset (Fin m)
+ha : a ∉ S
+ih : ones A S r + zeros A S r = #S
+h : A r a = false
+⊢ #({a ∈ S | A r a = true}) + (#({a ∈ S | A r a = false}) + 1) = #S + 1
+
+case insert.true
+n m : ℕ
+A : Table n m
+r : Fin n
+a : Fin m
+S : Finset (Fin m)
+ha : a ∉ S
+ih : ones A S r + zeros A S r = #S
+h : A r a = true
+⊢ #({a ∈ S | A r a = true}) + 1 + #({a ∈ S | A r a = false}) = #S + 1
+Section4/P4_DeletedPath.lean:542:56: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ones, zeros, Finset.filter_insert, h, ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Section4/P4_DeletedPath.lean:632:4: warning: Unused tactic linter: `change (st.available.card : ℝ) = _` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Section4/P4_DeletedPath.lean:674:18: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (Event A j r i)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Section4/P4_DeletedPath.lean:706:20: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (Event A j r i)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Section4/P4_DeletedPath.lean:716:21: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (Event A j r i)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Section4/P4_DeletedPath.lean:719:6: error: Tactic `split_ifs` failed: no if-then-else conditions to split
+
+n m : ℕ
+A : Table n m
+j : Fin m
+i : ℕ
+hi : i < n
+hForks :
+  ∀ d < i,
+    ∃ g,
+      selectRow A (fullState A j d).candidate (fullState A j d).available = some g ∧
+        0 < quality A (fullState A j d).candidate g
+hCurrent :
+  2 ≤ #(fullState A j i).candidate →
+    ∃ g,
+      selectRow A (fullState A j i).candidate (fullState A j i).available = some g ∧
+        0 < quality A (fullState A j i).candidate g
+hbase :
+  actualImbalance A j i ≤ (∑ r ∈ (fullState A j i).available, rowImbalance A r (fullState A j i).candidate) / (↑n - ↑i)
+hf : ¬2 ≤ #(fullState A j i).candidate
+hzero : actualImbalance A j i = 0
+r : Fin n
+a✝ : r ∈ univ
+⊢ 0 ≤ sorry

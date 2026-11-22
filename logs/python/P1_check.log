@@ -1,0 +1,2 @@
+PASS: 4054 distinct-column tables; all columns; h=0,...,n+5
+Includes n=1, m=2, m=2^n, and h>n.

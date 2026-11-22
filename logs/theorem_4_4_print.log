@@ -1,0 +1,21 @@
+theorem_4_4 : ∀ (n m : ℕ) (hm : 2 ≤ m) (hsize : m ≤ 2 ^ n),
+  tG n m ⋯ ≤ displayedBound n m ∧
+    tG n m ⋯ < Real.logb 2 ↑m + 2 + 2 * Real.log (2 * ↑(Nat.log 2 m)) ∧
+      tG n m ⋯ < Real.logb 2 ↑m + 1 + (↑(Nat.log 2 m) - 1) / (↑n - ↑(Nat.log 2 m) + 1) ∧
+        (2 * Nat.log 2 m - 2 ≤ n → tG n m ⋯ < Real.logb 2 ↑m + 2)
+def GradientKey.Concrete.tG : (n : ℕ) → ℕ → 0 < n → ℝ :=
+fun n m hn => (∑ A, cost (↑A) hn) / ↑(Fintype.card (ValidTable n m))
+def GradientKey.Concrete.cost : {n m : ℕ} → Table n m → 0 < n → ℝ :=
+fun {n m} A hn => (∑ j, ↑(leafDepth A hn j)) / ↑m
+def GradientKey.Concrete.leafDepth : {n m : ℕ} → Table n m → 0 < n → Fin m → ℕ :=
+fun {n m} A hn j => {i | 2 ≤ (candidateAt A j hn i).card}.ncard
+def GradientKey.Concrete.displayedBound : ℕ → ℕ → ℝ :=
+fun n m =>
+  ↑(Nat.log 2 m) - 1 + ↑m / 2 ^ Nat.log 2 m +
+    ∑ i ∈ Finset.range (Nat.log 2 m),
+      2 ^ i / 2 ^ Nat.log 2 m * min (↑n / (↑n - ↑i)) (2 + 2 * Real.log (2 * ↑n / (↑n - ↑i)))
+def GradientKey.Concrete.greedyRow : {n m : ℕ} → Table n m → Finset (Fin m) → 0 < n → Fin n :=
+fun {n m} A S hn => (List.argmax (quality A S) (List.finRange n)).getD ⟨0, hn⟩
+def GradientKey.Concrete.candidateStep : {n m : ℕ} → Table n m → Finset (Fin m) → Fin m → 0 < n → Finset (Fin m) :=
+fun {n m} A S j hn => if S.card ≤ 1 then S else {k ∈ S | A (greedyRow A S hn) k = A (greedyRow A S hn) j}
+'GradientKey.Concrete.theorem_4_4' depends on axioms: [propext, Classical.choice, Quot.sound]

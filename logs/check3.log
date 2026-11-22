@@ -1,0 +1,92 @@
+@prop_dense_cost : ∀ {n m : ℕ} (hn : 0 < n),
+  2 ^ n ≤ m + n → ∀ (A : Table n m), DistinctColumns A → cost A hn = completeCost m
+@prop_dense : ∀ {n m : ℕ} (hn : 0 < n), 2 ^ n ≤ m + n → m ≤ 2 ^ n → 2 ≤ m → tG n m hn = completeCost m
+@prop_near_dense_one : ∀ {n m : ℕ} (hn3 : 3 ≤ n) (hm : m + n + 1 = 2 ^ n),
+  tG n m ⋯ - completeCost m = 2 ^ n / (↑m * ↑((2 ^ n).choose (n + 1)))
+@prop_near_dense_two : ∀ {n m : ℕ} (hn4 : 4 ≤ n) (hm : m + n + 2 = 2 ^ n),
+  tG n m ⋯ - completeCost m = ↑(2 ^ (n - 2) * (3 ^ n - 2 * n - 1)) / (↑m * ↑((2 ^ n).choose (n + 2)))
+@prop_small_m : ∀ {n m : ℕ} (hm2 : 2 ≤ m),
+  m ≤ 2 ^ n → ∀ (hn : 0 < n), tG n m hn - completeCost m = numer ⋯ n / ↑((2 ^ n).descFactorial m)
+@cor_exp : ∀ {m : ℕ} (hm4 : 4 ≤ m),
+  0 < Am hm4 ∧
+    0 < rm hm4 ∧
+      rm hm4 < 1 ∧
+        0 < θm hm4 ∧
+          θm hm4 < 1 ∧
+            ∃ C N₀,
+              ∀ (n : ℕ) (hn : 0 < n),
+                m ≤ 2 ^ n →
+                  N₀ ≤ ↑n → |tG n m hn - completeCost m - Am hm4 * rm hm4 ^ n| ≤ C * (Am hm4 * rm hm4 ^ n) * θm hm4 ^ n
+@excess_small : ∀ {n m : ℕ}, 2 ≤ m → m ≤ 3 → m ≤ 2 ^ n → ∀ (hn : 0 < n), tG n m hn - completeCost m = 0
+@Bint_nonneg : ∀ {m : ℕ} (hm2 : 2 ≤ m) (k : ℕ), 0 ≤ Bint ⋯ k
+@Bint_numTypes : ∀ {m : ℕ} (hm2 : 2 ≤ m), Bint ⋯ (numTypes ⋯) = 0
+@Bint_small : ∀ {m : ℕ} (hm2 : 2 ≤ m) (hm3 : m ≤ 3) (k : ℕ), Bint ⋯ k = 0
+@Bint_comb : ∀ {m : ℕ} (hm4 : 4 ≤ m), 0 < Bint ⋯ (m - 1)
+@J_bounds : ∀ {m : ℕ} (hm4 : 4 ≤ m), m - 1 ≤ J hm4 ∧ J hm4 < numTypes ⋯
+@coeffA_J : ∀ {m : ℕ} (hm4 : 4 ≤ m), coeffA ⋯ (J hm4) = Bk ⋯ (J hm4) / ↑(J hm4).factorial ∧ 0 < coeffA ⋯ (J hm4)
+@numTypes_eq : ∀ {m : ℕ} (hm : 0 < m), numTypes hm = 2 ^ (m - 1)
+'GradientKey.Concrete.prop_dense' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_near_dense_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_near_dense_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_dense_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop_small_m' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.cor_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.excess_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+prop32_stirling_identity : ∀ (n k : ℕ),
+  ↑(k.factorial * n.stirlingSecond k) = ∑ j ∈ Finset.range (k + 1), (-1) ^ (k - j) * ↑(k.choose j) * ↑j ^ n
+@prop32_stirling_form : ∀ {n m : ℕ} (hm : 0 < m),
+  0 < n → numer hm n = 2 ^ n * ∑ k ∈ Finset.range (numTypes hm + 1), Bk hm k * ↑(n.stirlingSecond k)
+@Bk_eq_tuple_sum : ∀ {m : ℕ} (hm : 0 < m) (k : ℕ) (hk : 0 < k),
+  Bk hm k = ∑ e, if DistinctColumns (tblOf hm e) then cost (tblOf hm e) hk - completeCost m else 0
+@numer_eq_zero_of_two_pow_lt : ∀ {n m : ℕ} (hm : 0 < m), 0 < n → 2 ^ n < m → numer hm n = 0
+@numer_zero : ∀ {m : ℕ} (hm2 : 2 ≤ m), numer ⋯ 0 = 0
+@alt_sum_Bint : ∀ {m : ℕ} (hm2 : 2 ≤ m), ∑ k ∈ Finset.range (numTypes ⋯ + 1), (-1) ^ k * ↑(Bint ⋯ k) / ↑k.factorial = 0
+example_full : ∀ (n : ℕ) (hn : 0 < n), tG n (2 ^ n) hn = ↑n
+example_n1_m2 : tG 1 2 ⋯ = 1
+example_m2 : ∀ (n : ℕ) (hn : 0 < n), tG n 2 hn = 1
+example_n3_m4 : tG 3 4 ⋯ = 3408 / 1680
+example_n4_m11 : tG 4 11 ⋯ - completeCost 11 = 1 / 3003
+example_n4_m10 : tG 4 10 ⋯ - completeCost 10 = 18 / 5005
+'GradientKey.Concrete.prop32_stirling_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.prop32_stirling_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.Bk_eq_tuple_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.numer_eq_zero_of_two_pow_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.numer_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.alt_sum_Bint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.example_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.example_n1_m2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.example_m2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.example_n3_m4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.example_n4_m11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GradientKey.Concrete.example_n4_m10' depends on axioms: [propext, Classical.choice, Quot.sound]
+@tG_eq_forkTableCounts : ∀ {n m : ℕ} (hn : 0 < n),
+  2 ≤ m → tG n m hn = (∑ j, ∑ i ∈ Finset.range n, ↑(forkTableCount n m hn j i)) / (↑m * ↑((2 ^ n).descFactorial m))
+'GradientKey.Concrete.tG_eq_forkTableCounts' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathCandidates_step_ssubset : ∀ {n m : ℕ} (A : ValidTable n m) (hn : 0 < n) (j : Fin m) (d : ℕ),
+  2 ≤ (candidateAt (↑A) j hn d).card →
+    ∀ (i : Fin d), pathCandidates (↑A) hn j d i.succ ⊂ pathCandidates (↑A) hn j d i.castSucc
+'GradientKey.Concrete.pathCandidates_step_ssubset' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathFork_size_budget : ∀ {n m : ℕ} (A : ValidTable n m) (hn : 0 < n) (j : Fin m) (d : ℕ),
+  2 ≤ (candidateAt (↑A) j hn d).card → d + 2 ≤ m
+'GradientKey.Concrete.pathFork_size_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathOneStepTest_iff : ∀ {n m : ℕ} (A : Table n m) (S T : Finset (Fin m)) (j : Fin m) (hn : 0 < n) (r : Fin n),
+  2 ≤ S.card → (pathOneStepTest A S T j r ↔ greedyRow A S hn = r ∧ candidateStep A S j hn = T)
+'GradientKey.Concrete.pathOneStepTest_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+@mobius_table_indicator : ∀ {n m : ℕ} (A : Table n m),
+  (∑ c, if ∀ (i : Fin n), ConstOn c (A i) then mu c else 0) = if DistinctColumns A then 1 else 0
+'GradientKey.Concrete.mobius_table_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_valid_with_row_constraints : ∀ {n m : ℕ} (P : Fin n → (Fin m → Bool) → Prop),
+  (∑ A, if (∀ (i : Fin n), P i (A i)) ∧ DistinctColumns A then 1 else 0) =
+    ∑ c, mu c * ∏ i, ↑{row | P i row ∧ ConstOn c row}.card
+'GradientKey.Concrete.card_valid_with_row_constraints' depends on axioms: [propext, Classical.choice, Quot.sound]
+@fixedPath_card_factor : ∀ {n m d : ℕ} (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m) (rho : Fin d ↪ Fin n),
+  {A | fixedPathRowwise S j₀ rho A}.card = ∏ i, {row | fixedPathRowAdmissible S j₀ rho i row}.card
+'GradientKey.Concrete.fixedPath_card_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+@fixedPath_mobius_factor : ∀ {n m d : ℕ} (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m) (rho : Fin d ↪ Fin n),
+  (∑ A, if fixedPathRowwise S j₀ rho A ∧ DistinctColumns A then 1 else 0) =
+    ∑ c, mu c * ∏ i, ↑{row | fixedPathRowAdmissible S j₀ rho i row ∧ ConstOn c row}.card
+'GradientKey.Concrete.fixedPath_mobius_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathChainOfFork_sizes : ∀ {n m : ℕ} (A : ValidTable n m) (hn : 0 < n) (j : Fin m) (d : ℕ)
+  (hd : 2 ≤ (candidateAt (↑A) j hn d).card) (i : Fin (d + 1)),
+  ↑(pathChainSizes (pathChainOfFork A hn j d hd) i) = (candidateAt (↑A) j hn ↑i).card
+'GradientKey.Concrete.pathChainOfFork_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]

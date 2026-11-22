@@ -1,0 +1,7 @@
+{'remaining_rows': 0, 'columns': 2, 'deleted_tables': 1, 'positive': 1, 'with_duplicates': 1, 'zero_fibres': 0, 'row_fibres': 1, 'joint_fibres': 2}
+{'remaining_rows': 0, 'columns': 3, 'deleted_tables': 1, 'positive': 0, 'with_duplicates': 0, 'zero_fibres': 1, 'row_fibres': 1, 'joint_fibres': 3}
+{'remaining_rows': 1, 'columns': 3, 'deleted_tables': 8, 'positive': 6, 'with_duplicates': 6, 'zero_fibres': 2, 'row_fibres': 16, 'joint_fibres': 48}
+{'remaining_rows': 1, 'columns': 4, 'deleted_tables': 16, 'positive': 6, 'with_duplicates': 6, 'zero_fibres': 10, 'row_fibres': 32, 'joint_fibres': 128}
+{'remaining_rows': 2, 'columns': 4, 'deleted_tables': 256, 'positive': 204, 'with_duplicates': 180, 'zero_fibres': 52, 'row_fibres': 768, 'joint_fibres': 3072}
+{'remaining_rows': 2, 'columns': 5, 'deleted_tables': 1024, 'positive': 600, 'with_duplicates': 600, 'zero_fibres': 424, 'row_fibres': 3072, 'joint_fibres': 15360}
+PASS (exhaustive finite checks; Lean NOT COMPILED)

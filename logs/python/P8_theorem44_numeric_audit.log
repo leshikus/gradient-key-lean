@@ -1,0 +1,2 @@
+PASS: 57100 numerical parameter trials, n=1..20, including powers of two and m=2
+Smallest observed margin in (b): 0.24831537, at (n,m,ell)=(14, 8, 3)
