@@ -14,6 +14,7 @@ import PathRows
 import PathDefs
 import PathChainBridge
 import PathEvent
+import PathCells
 
 open GradientKey.Concrete
 
@@ -93,3 +94,11 @@ open GradientKey.Concrete
 #print axioms path_indicator_eq_sum
 #check @card_path_eq
 #print axioms card_path_eq
+#check @cell_sep
+#print axioms cell_sep
+#check @distinct_iff_cells
+#print axioms distinct_iff_cells
+#check @distinct_indicator_cells
+#print axioms distinct_indicator_cells
+#check @card_path_cells
+#print axioms card_path_cells

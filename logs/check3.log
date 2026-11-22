@@ -122,3 +122,33 @@ example_n4_m10 : tG 4 10 ⋯ - completeCost 10 = 18 / 5005
       ↑{A | ∀ (i : Fin (d + 1)), candidateAt (↑A) j₀ hn ↑i = S i}.card =
         ∑ rho, ∑ c, mu c * ∏ i, ↑{row | fixedPathRowAdmissible S j₀ rho i row ∧ ConstOn c row}.card
 'GradientKey.Concrete.card_path_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+@cell_sep : ∀ {n m d : ℕ} {A : Table n m} {S : Fin (d + 1) → Finset (Fin m)} {j₀ : Fin m} {rho : Fin d ↪ Fin n},
+  fixedPathRowwise S j₀ rho A →
+    ∀ {k l : Fin (d + 1)}, ↑k < ↑l → ∀ {x y : Fin m}, x ∈ cell S k → y ∈ cell S l → ∃ r, A r x ≠ A r y
+'GradientKey.Concrete.cell_sep' depends on axioms: [propext, Classical.choice, Quot.sound]
+@distinct_iff_cells : ∀ {n m d : ℕ} {A : Table n m} {S : Fin (d + 1) → Finset (Fin m)} {j₀ : Fin m}
+  {rho : Fin d ↪ Fin n},
+  fixedPathRowwise S j₀ rho A →
+    S 0 = Finset.univ → (DistinctColumns A ↔ ∀ (j : Fin (d + 1)), Function.Injective fun t i => A i (cellEmb S j t))
+'GradientKey.Concrete.distinct_iff_cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+@distinct_indicator_cells : ∀ {n m d : ℕ} {A : Table n m} {S : Fin (d + 1) → Finset (Fin m)} {j₀ : Fin m}
+  {rho : Fin d ↪ Fin n},
+  fixedPathRowwise S j₀ rho A →
+    S 0 = Finset.univ →
+      (if DistinctColumns A then 1 else 0) =
+        ∑ ps,
+          (∏ j, mu (ps j)) *
+            if ∀ (i : Fin n) (j : Fin (d + 1)), ConstOn (ps j) fun t => A i (cellEmb S j t) then 1 else 0
+'GradientKey.Concrete.distinct_indicator_cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_path_cells : ∀ {n m d : ℕ} (hn : 0 < n) (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m),
+  S 0 = Finset.univ →
+    (∀ (j : Fin d), 2 ≤ (S j.castSucc).card) →
+      ↑{A | ∀ (i : Fin (d + 1)), candidateAt (↑A) j₀ hn ↑i = S i}.card =
+        ∑ rho,
+          ∑ ps,
+            (∏ j, mu (ps j)) *
+              ∏ i,
+                ↑{row |
+                      fixedPathRowAdmissible S j₀ rho i row ∧
+                        ∀ (j : Fin (d + 1)), ConstOn (ps j) fun t => row (cellEmb S j t)}.card
+'GradientKey.Concrete.card_path_cells' depends on axioms: [propext, Classical.choice, Quot.sound]

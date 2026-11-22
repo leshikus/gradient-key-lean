@@ -33,3 +33,7 @@ rowwise_of_candidateAt
 rowwise_unique
 path_indicator_eq_sum
 card_path_eq
+cell_sep
+distinct_iff_cells
+distinct_indicator_cells
+card_path_cells
