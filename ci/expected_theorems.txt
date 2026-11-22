@@ -40,3 +40,6 @@ card_path_cells
 coef_term1
 coef_term2
 coef_rec
+tsum_rec
+tsum_eq_coef
+sum_mu_by_type

@@ -171,3 +171,17 @@ example_n4_m10 : tG 4 10 ⋯ - completeCost 10 = 18 / 5005
         (if 1 ≤ u 1 then coefB B a (rem1 u) else 0) +
           ∑ t ∈ Finset.range a, if 1 ≤ u (t + 2) then -(↑t + 1) * (↑(u (t + 1)) + 1) * coefB B a (remv u (t + 1)) else 0
 'GradientKey.Concrete.coef_rec' depends on axioms: [propext, Classical.choice, Quot.sound]
+tsum_rec : ∀ (a : ℕ) (u : ℕ → ℕ),
+  GradientKey.Concrete.tsum (a + 1) u =
+    (if 1 ≤ u 1 then GradientKey.Concrete.tsum a (rem1 u) else 0) +
+      ∑ t ∈ Finset.range a,
+        if 1 ≤ u (t + 2) then -(↑t + 1) * (↑(u (t + 1)) + 1) * GradientKey.Concrete.tsum a (remv u (t + 1)) else 0
+'GradientKey.Concrete.tsum_rec' depends on axioms: [propext, Classical.choice, Quot.sound]
+tsum_eq_coef : ∀ (a B : ℕ), a < B → ∀ (u : ℕ → ℕ), IsTy B a u → GradientKey.Concrete.tsum a u = coefB B a u
+'GradientKey.Concrete.tsum_eq_coef' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sum_mu_by_type : ∀ {a B : ℕ},
+  a < B →
+    ∀ (T : Finset (ℕ → ℕ)),
+      (∀ (c : OrderedFinpartition a), typeVec c ∈ T) →
+        (∀ u ∈ T, IsTy B a u) → ∀ (F : (ℕ → ℕ) → ℚ), ∑ c, ↑(mu c) * F (typeVec c) = ∑ u ∈ T, coefB B a u * F u
+'GradientKey.Concrete.sum_mu_by_type' depends on axioms: [propext, Classical.choice, Quot.sound]
