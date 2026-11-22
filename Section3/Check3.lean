@@ -13,6 +13,7 @@ import PathMobius
 import PathRows
 import PathDefs
 import PathChainBridge
+import PathEvent
 
 open GradientKey.Concrete
 
@@ -82,3 +83,13 @@ open GradientKey.Concrete
 #print axioms fixedPath_mobius_factor
 #check @pathChainOfFork_sizes
 #print axioms pathChainOfFork_sizes
+#check @candidateAt_of_rowwise
+#print axioms candidateAt_of_rowwise
+#check @rowwise_of_candidateAt
+#print axioms rowwise_of_candidateAt
+#check @rowwise_unique
+#print axioms rowwise_unique
+#check @path_indicator_eq_sum
+#print axioms path_indicator_eq_sum
+#check @card_path_eq
+#print axioms card_path_eq

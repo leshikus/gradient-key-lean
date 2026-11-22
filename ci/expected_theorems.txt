@@ -28,3 +28,8 @@ card_valid_with_row_constraints
 fixedPath_card_factor
 fixedPath_mobius_factor
 pathChainOfFork_sizes
+candidateAt_of_rowwise
+rowwise_of_candidateAt
+rowwise_unique
+path_indicator_eq_sum
+card_path_eq

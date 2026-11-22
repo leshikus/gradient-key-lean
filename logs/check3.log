@@ -90,3 +90,35 @@ example_n4_m10 : tG 4 10 ⋯ - completeCost 10 = 18 / 5005
   (hd : 2 ≤ (candidateAt (↑A) j hn d).card) (i : Fin (d + 1)),
   ↑(pathChainSizes (pathChainOfFork A hn j d hd) i) = (candidateAt (↑A) j hn ↑i).card
 'GradientKey.Concrete.pathChainOfFork_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+@candidateAt_of_rowwise : ∀ {n m d : ℕ} (A : Table n m) (hn : 0 < n) (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m)
+  (rho : Fin d ↪ Fin n),
+  S 0 = Finset.univ →
+    (∀ (j : Fin d), 2 ≤ (S j.castSucc).card) →
+      fixedPathRowwise S j₀ rho A → ∀ (i : Fin (d + 1)), candidateAt A j₀ hn ↑i = S i
+'GradientKey.Concrete.candidateAt_of_rowwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+@rowwise_of_candidateAt : ∀ {n m d : ℕ} (A : Table n m),
+  DistinctColumns A →
+    ∀ (hn : 0 < n) (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m),
+      (∀ (j : Fin d), 2 ≤ (S j.castSucc).card) →
+        (∀ (i : Fin (d + 1)), candidateAt A j₀ hn ↑i = S i) →
+          ∃ rho, (∀ (j : Fin d), rho j = greedyRow A (S j.castSucc) hn) ∧ fixedPathRowwise S j₀ rho A
+'GradientKey.Concrete.rowwise_of_candidateAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+@rowwise_unique : ∀ {n m d : ℕ} (A : Table n m),
+  0 < n →
+    ∀ (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m) (rho rho' : Fin d ↪ Fin n),
+      fixedPathRowwise S j₀ rho A → fixedPathRowwise S j₀ rho' A → rho = rho'
+'GradientKey.Concrete.rowwise_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+@path_indicator_eq_sum : ∀ {n m d : ℕ} (A : Table n m),
+  DistinctColumns A →
+    ∀ (hn : 0 < n) (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m),
+      S 0 = Finset.univ →
+        (∀ (j : Fin d), 2 ≤ (S j.castSucc).card) →
+          (if ∀ (i : Fin (d + 1)), candidateAt A j₀ hn ↑i = S i then 1 else 0) =
+            ∑ rho, if fixedPathRowwise S j₀ rho A then 1 else 0
+'GradientKey.Concrete.path_indicator_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_path_eq : ∀ {n m d : ℕ} (hn : 0 < n) (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m),
+  S 0 = Finset.univ →
+    (∀ (j : Fin d), 2 ≤ (S j.castSucc).card) →
+      ↑{A | ∀ (i : Fin (d + 1)), candidateAt (↑A) j₀ hn ↑i = S i}.card =
+        ∑ rho, ∑ c, mu c * ∏ i, ↑{row | fixedPathRowAdmissible S j₀ rho i row ∧ ConstOn c row}.card
+'GradientKey.Concrete.card_path_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
