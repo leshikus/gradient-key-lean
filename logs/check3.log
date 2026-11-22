@@ -212,3 +212,31 @@ tsum_eq_coef : ∀ (a B : ℕ), a < B → ∀ (u : ℕ → ℕ), IsTy B a u → 
                     ∀ (b : ι) (r r' : Fin (size b)), row (E ⟨b, r⟩) = row (E ⟨b, r'⟩)}.card =
               {bits | blkAdm size cellOf (fun i => (S i).card) (fixedPathQuality S) rho i bits}.card
 'GradientKey.Concrete.card_rows_eq_blk' depends on axioms: [propext, Classical.choice, Quot.sound]
+@rowcount_eq_blk : ∀ {n m d : ℕ} {S : Fin (d + 1) → Finset (Fin m)},
+  S 0 = Finset.univ →
+    (∀ (j : Fin d), S j.succ ⊆ S j.castSucc) →
+      ∀ j₀ ∈ S (Fin.last d),
+        ∀ (ps : (j : Fin (d + 1)) → OrderedFinpartition (cell S j).card) (rho : Fin d ↪ Fin n) (i : Fin n),
+          {row |
+                fixedPathRowAdmissible S j₀ rho i row ∧
+                  ∀ (j : Fin (d + 1)), ConstOn (ps j) fun t => row (cellEmb S j t)}.card =
+            {bits |
+                blkAdm (fun b => (ps b.fst).partSize b.snd) (fun b => b.fst) (fun i => (S i).card) (fixedPathQuality S)
+                  rho i bits}.card
+'GradientKey.Concrete.rowcount_eq_blk' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_blkAdm_equiv : ∀ {n d : ℕ} {ι : Type u_1} {ι' : Type u_2} [inst : Fintype ι] [inst_1 : Fintype ι'] (e : ι' ≃ ι)
+  (size : ι → ℕ) (cellOf : ι → Fin (d + 1)) (sz : Fin (d + 1) → ℕ) (q : Fin d → ℕ) (rho : Fin d ↪ Fin n) (i : Fin n),
+  {bits | blkAdm size cellOf sz q rho i bits}.card = {bits | blkAdm (size ∘ ⇑e) (cellOf ∘ ⇑e) sz q rho i bits}.card
+'GradientKey.Concrete.card_blkAdm_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+@rowcount_eq_cntU : ∀ {n m d : ℕ} {S : Fin (d + 1) → Finset (Fin m)},
+  S 0 = Finset.univ →
+    (∀ (j : Fin d), S j.succ ⊆ S j.castSucc) →
+      ∀ j₀ ∈ S (Fin.last d),
+        ∀ (B : ℕ),
+          m < B →
+            ∀ (ps : (j : Fin (d + 1)) → OrderedFinpartition (cell S j).card) (rho : Fin d ↪ Fin n) (i : Fin n),
+              {row |
+                    fixedPathRowAdmissible S j₀ rho i row ∧
+                      ∀ (j : Fin (d + 1)), ConstOn (ps j) fun t => row (cellEmb S j t)}.card =
+                cntU B (fun j v => typeVec (ps j) ↑v) (fun i => (S i).card) (fixedPathQuality S) rho i
+'GradientKey.Concrete.rowcount_eq_cntU' depends on axioms: [propext, Classical.choice, Quot.sound]

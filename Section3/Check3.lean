@@ -18,6 +18,7 @@ import PathCells
 import PathCoeff
 import PathCoeff2
 import PathBlocks
+import PathRowCount
 
 open GradientKey.Concrete
 
@@ -123,3 +124,9 @@ open GradientKey.Concrete
 #print axioms adm_rowOf_iff
 #check @card_rows_eq_blk
 #print axioms card_rows_eq_blk
+#check @rowcount_eq_blk
+#print axioms rowcount_eq_blk
+#check @card_blkAdm_equiv
+#print axioms card_blkAdm_equiv
+#check @rowcount_eq_cntU
+#print axioms rowcount_eq_cntU

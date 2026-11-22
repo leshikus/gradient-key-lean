@@ -46,3 +46,6 @@ sum_mu_by_type
 ones_rowOf
 adm_rowOf_iff
 card_rows_eq_blk
+rowcount_eq_blk
+card_blkAdm_equiv
+rowcount_eq_cntU
