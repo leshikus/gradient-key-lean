@@ -5,6 +5,14 @@ import NearDense2
 import SmallItems
 import Examples
 import NumerZero
+import PathFork
+import PathShape
+import PathGreedy
+import PathFactor
+import PathMobius
+import PathRows
+import PathDefs
+import PathChainBridge
 
 open GradientKey.Concrete
 
@@ -55,3 +63,22 @@ open GradientKey.Concrete
 #print axioms example_n3_m4
 #print axioms example_n4_m11
 #print axioms example_n4_m10
+-- Proposition 3.1, steps (partial)
+#check @tG_eq_forkTableCounts
+#print axioms tG_eq_forkTableCounts
+#check @pathCandidates_step_ssubset
+#print axioms pathCandidates_step_ssubset
+#check @pathFork_size_budget
+#print axioms pathFork_size_budget
+#check @pathOneStepTest_iff
+#print axioms pathOneStepTest_iff
+#check @mobius_table_indicator
+#print axioms mobius_table_indicator
+#check @card_valid_with_row_constraints
+#print axioms card_valid_with_row_constraints
+#check @fixedPath_card_factor
+#print axioms fixedPath_card_factor
+#check @fixedPath_mobius_factor
+#print axioms fixedPath_mobius_factor
+#check @pathChainOfFork_sizes
+#print axioms pathChainOfFork_sizes

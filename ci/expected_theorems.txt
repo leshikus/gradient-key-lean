@@ -19,3 +19,12 @@ example_m2
 example_n3_m4
 example_n4_m11
 example_n4_m10
+tG_eq_forkTableCounts
+pathCandidates_step_ssubset
+pathFork_size_budget
+pathOneStepTest_iff
+mobius_table_indicator
+card_valid_with_row_constraints
+fixedPath_card_factor
+fixedPath_mobius_factor
+pathChainOfFork_sizes

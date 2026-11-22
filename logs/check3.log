@@ -59,3 +59,34 @@ example_n4_m10 : tG 4 10 ⋯ - completeCost 10 = 18 / 5005
 'GradientKey.Concrete.example_n3_m4' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GradientKey.Concrete.example_n4_m11' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GradientKey.Concrete.example_n4_m10' depends on axioms: [propext, Classical.choice, Quot.sound]
+@tG_eq_forkTableCounts : ∀ {n m : ℕ} (hn : 0 < n),
+  2 ≤ m → tG n m hn = (∑ j, ∑ i ∈ Finset.range n, ↑(forkTableCount n m hn j i)) / (↑m * ↑((2 ^ n).descFactorial m))
+'GradientKey.Concrete.tG_eq_forkTableCounts' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathCandidates_step_ssubset : ∀ {n m : ℕ} (A : ValidTable n m) (hn : 0 < n) (j : Fin m) (d : ℕ),
+  2 ≤ (candidateAt (↑A) j hn d).card →
+    ∀ (i : Fin d), pathCandidates (↑A) hn j d i.succ ⊂ pathCandidates (↑A) hn j d i.castSucc
+'GradientKey.Concrete.pathCandidates_step_ssubset' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathFork_size_budget : ∀ {n m : ℕ} (A : ValidTable n m) (hn : 0 < n) (j : Fin m) (d : ℕ),
+  2 ≤ (candidateAt (↑A) j hn d).card → d + 2 ≤ m
+'GradientKey.Concrete.pathFork_size_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathOneStepTest_iff : ∀ {n m : ℕ} (A : Table n m) (S T : Finset (Fin m)) (j : Fin m) (hn : 0 < n) (r : Fin n),
+  2 ≤ S.card → (pathOneStepTest A S T j r ↔ greedyRow A S hn = r ∧ candidateStep A S j hn = T)
+'GradientKey.Concrete.pathOneStepTest_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+@mobius_table_indicator : ∀ {n m : ℕ} (A : Table n m),
+  (∑ c, if ∀ (i : Fin n), ConstOn c (A i) then mu c else 0) = if DistinctColumns A then 1 else 0
+'GradientKey.Concrete.mobius_table_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_valid_with_row_constraints : ∀ {n m : ℕ} (P : Fin n → (Fin m → Bool) → Prop),
+  (∑ A, if (∀ (i : Fin n), P i (A i)) ∧ DistinctColumns A then 1 else 0) =
+    ∑ c, mu c * ∏ i, ↑{row | P i row ∧ ConstOn c row}.card
+'GradientKey.Concrete.card_valid_with_row_constraints' depends on axioms: [propext, Classical.choice, Quot.sound]
+@fixedPath_card_factor : ∀ {n m d : ℕ} (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m) (rho : Fin d ↪ Fin n),
+  {A | fixedPathRowwise S j₀ rho A}.card = ∏ i, {row | fixedPathRowAdmissible S j₀ rho i row}.card
+'GradientKey.Concrete.fixedPath_card_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+@fixedPath_mobius_factor : ∀ {n m d : ℕ} (S : Fin (d + 1) → Finset (Fin m)) (j₀ : Fin m) (rho : Fin d ↪ Fin n),
+  (∑ A, if fixedPathRowwise S j₀ rho A ∧ DistinctColumns A then 1 else 0) =
+    ∑ c, mu c * ∏ i, ↑{row | fixedPathRowAdmissible S j₀ rho i row ∧ ConstOn c row}.card
+'GradientKey.Concrete.fixedPath_mobius_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathChainOfFork_sizes : ∀ {n m : ℕ} (A : ValidTable n m) (hn : 0 < n) (j : Fin m) (d : ℕ)
+  (hd : 2 ≤ (candidateAt (↑A) j hn d).card) (i : Fin (d + 1)),
+  ↑(pathChainSizes (pathChainOfFork A hn j d hd) i) = (candidateAt (↑A) j hn ↑i).card
+'GradientKey.Concrete.pathChainOfFork_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]
