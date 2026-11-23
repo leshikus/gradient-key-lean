@@ -22,6 +22,7 @@ import PathRowCount
 import PathFixed
 import PathFormula
 import PathPrune
+import PathExample
 
 open GradientKey.Concrete
 
@@ -151,3 +152,13 @@ open GradientKey.Concrete
 #print axioms path_shape_bounds
 #check @prop_path_prune
 #print axioms prop_path_prune
+#check @GradientKey.Concrete.Example34.example34_coeff
+#print axioms GradientKey.Concrete.Example34.example34_coeff
+#check @GradientKey.Concrete.Example34.example34_W
+#print axioms GradientKey.Concrete.Example34.example34_W
+#check @GradientKey.Concrete.Example34.example34_V
+#print axioms GradientKey.Concrete.Example34.example34_V
+#check @GradientKey.Concrete.Example34.example34_F
+#print axioms GradientKey.Concrete.Example34.example34_F
+#check @GradientKey.Concrete.Example34.path_formula_n3_m4_total
+#print axioms GradientKey.Concrete.Example34.path_formula_n3_m4_total

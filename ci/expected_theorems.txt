@@ -58,3 +58,8 @@ chain_count
 prop_path_formula
 path_shape_bounds
 prop_path_prune
+GradientKey.Concrete.Example34.example34_coeff
+GradientKey.Concrete.Example34.example34_W
+GradientKey.Concrete.Example34.example34_V
+GradientKey.Concrete.Example34.example34_F
+GradientKey.Concrete.Example34.path_formula_n3_m4_total

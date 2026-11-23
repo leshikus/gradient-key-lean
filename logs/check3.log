@@ -284,3 +284,23 @@ tsum_eq_coef : ∀ (a B : ℕ), a < B → ∀ (u : ℕ → ℕ), IsTy B a u → 
       2 ^ (n - ↑j - 1) < max (pathCellSize s j.castSucc) ↑(pathChainSizes s j.succ) →
     pathChainTerm s = 0
 'GradientKey.Concrete.prop_path_prune' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_coeff : ∀ (h1 : ↑(U11 ⟨0, ⋯⟩) = 0 ∧ ∑ v, ↑v * ↑(U11 v) = 2)
+  (h2 : ↑(U2 ⟨0, ⋯⟩) = 0 ∧ ∑ v, ↑v * ↑(U2 v) = 2), pathCoeff ⟨U11, h1⟩ = 1 ∧ pathCoeff ⟨U2, h2⟩ = -1
+'GradientKey.Concrete.Example34.example34_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_W : (pathW Example34.chain42 Example34.P11_11 ∅ = 10 ∧
+    pathW Example34.chain42 Example34.P11_11 {Example34.d0} = 16) ∧
+  (pathW Example34.chain42 Example34.P2_11 ∅ = 6 ∧ pathW Example34.chain42 Example34.P2_11 {Example34.d0} = 8) ∧
+    (pathW Example34.chain42 Example34.P11_2 ∅ = 6 ∧ pathW Example34.chain42 Example34.P11_2 {Example34.d0} = 8) ∧
+      pathW Example34.chain42 Example34.P2_2 ∅ = 2 ∧ pathW Example34.chain42 Example34.P2_2 {Example34.d0} = 4
+'GradientKey.Concrete.Example34.example34_W' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_V : pathV Example34.chain42 Example34.P11_11 Example34.d0 ∅ = 2 ∧
+  pathV Example34.chain42 Example34.P2_11 Example34.d0 ∅ = 2 ∧
+    pathV Example34.chain42 Example34.P11_2 Example34.d0 ∅ = 2 ∧
+      pathV Example34.chain42 Example34.P2_2 Example34.d0 ∅ = 2
+'GradientKey.Concrete.Example34.example34_V' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_F : pathF Example34.chain42 Example34.P11_11 = 1032 ∧
+  pathF Example34.chain42 Example34.P2_11 = 296 ∧
+    pathF Example34.chain42 Example34.P11_2 = 296 ∧ pathF Example34.chain42 Example34.P2_2 = 56
+'GradientKey.Concrete.Example34.example34_F' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.path_formula_n3_m4_total : ∑ s, ↑(pathChainTerm s) = 3408
+'GradientKey.Concrete.Example34.path_formula_n3_m4_total' depends on axioms: [propext, Classical.choice, Quot.sound]
