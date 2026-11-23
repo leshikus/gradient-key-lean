@@ -133,4 +133,31 @@ theorem prop_path_formula (hn : 0 < n) (hm : 2 ≤ m) : tG n m hn = pathFormulaR
   have hm0 : (m : ℝ) ≠ 0 := by positivity
   rw [mul_div_mul_left _ _ hm0]
 
+/-- Every chain term is a natural number: by `chain_count` it counts tables, although its Möbius expansion has
+negative summands. -/
+theorem chain_term_natural (s : PathChain n m) : ∃ k : ℕ, (k : ℚ) = pathChainTerm s := by
+  have hn : 0 < n := Fin.pos s.1.1
+  have hm : 0 < m := by have h0 := chain_zero s; have h2 := chain_two_le s 0; omega
+  exact ⟨_, chain_count hn s ⟨0, hm⟩⟩
+
+theorem chain_term_nonneg (s : PathChain n m) : 0 ≤ pathChainTerm s := by
+  obtain ⟨k, hk⟩ := chain_term_natural s
+  rw [← hk]; positivity
+
+/-- A chain of depth `0` is matched by every valid table, so its term is `(2^n)_m`. -/
+theorem path_chain_term_depth_zero (s : PathChain n m) (hd : pathChainDepth s = 0) :
+    pathChainTerm s = ((2 ^ n).descFactorial m : ℚ) := by
+  have hn : 0 < n := Fin.pos s.1.1
+  have hm : 0 < m := by have h0 := chain_zero s; have h2 := chain_two_le s 0; omega
+  have hmatch : ∀ A : ValidTable n m, MatchesChain A hn ⟨0, hm⟩ s := by
+    intro A i
+    have hi : i = 0 := Fin.ext (by have := i.isLt; omega)
+    subst hi
+    rw [chain_zero s]
+    show (candidateAt A.1 ⟨0, hm⟩ hn 0).card = m
+    simp [candidateAt]
+  rw [← chain_count hn s ⟨0, hm⟩, ← card_valid, ← Finset.card_univ]
+  congr 2
+  ext A; simp [hmatch A]
+
 end GradientKey.Concrete

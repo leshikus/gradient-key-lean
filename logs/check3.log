@@ -304,3 +304,30 @@ Example34.example34_F : pathF Example34.chain42 Example34.P11_11 = 1032 ∧
 'GradientKey.Concrete.Example34.example34_F' depends on axioms: [propext, Classical.choice, Quot.sound]
 Example34.path_formula_n3_m4_total : ∑ s, ↑(pathChainTerm s) = 3408
 'GradientKey.Concrete.Example34.path_formula_n3_m4_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+@chain_term_natural : ∀ {n m : ℕ} (s : PathChain n m), ∃ k, ↑k = pathChainTerm s
+'GradientKey.Concrete.chain_term_natural' depends on axioms: [propext, Classical.choice, Quot.sound]
+@chain_term_nonneg : ∀ {n m : ℕ} (s : PathChain n m), 0 ≤ pathChainTerm s
+'GradientKey.Concrete.chain_term_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+@path_chain_term_depth_zero : ∀ {n m : ℕ} (s : PathChain n m),
+  pathChainDepth s = 0 → pathChainTerm s = ↑((2 ^ n).descFactorial m)
+'GradientKey.Concrete.path_chain_term_depth_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_chains : Finset.univ = {Example34.chain4, Example34.chain42, Example34.chain43, Example34.chain432}
+'GradientKey.Concrete.Example34.example34_chains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_chain4 : pathChainTerm Example34.chain4 = 1680
+'GradientKey.Concrete.Example34.example34_chain4' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_chain42 : pathChainTerm Example34.chain42 = 1488
+'GradientKey.Concrete.Example34.example34_chain42' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_chain43 : pathChainTerm Example34.chain43 = 144
+'GradientKey.Concrete.Example34.example34_chain43' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_chain432 : pathChainTerm Example34.chain432 = 96
+'GradientKey.Concrete.Example34.example34_chain432' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_F43 : pathF Example34.chain43 Example34.P43_111 = 248 ∧
+  pathF Example34.chain43 Example34.P43_21 = 104 ∧ pathF Example34.chain43 Example34.P43_3 = 56
+'GradientKey.Concrete.Example34.example34_F43' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_F432 : pathF Example34.chain432 Example34.P432_11 = 64 ∧
+  pathF Example34.chain432 Example34.P432_2 = 48
+'GradientKey.Concrete.Example34.example34_F432' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_rhs : pathFormulaRHS 3 4 = 3408 / 1680
+'GradientKey.Concrete.Example34.example34_rhs' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_tG : tG 3 4 ⋯ = 3408 / 1680
+'GradientKey.Concrete.Example34.example34_tG' depends on axioms: [propext, Classical.choice, Quot.sound]

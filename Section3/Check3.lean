@@ -162,3 +162,27 @@ open GradientKey.Concrete
 #print axioms GradientKey.Concrete.Example34.example34_F
 #check @GradientKey.Concrete.Example34.path_formula_n3_m4_total
 #print axioms GradientKey.Concrete.Example34.path_formula_n3_m4_total
+#check @chain_term_natural
+#print axioms chain_term_natural
+#check @chain_term_nonneg
+#print axioms chain_term_nonneg
+#check @path_chain_term_depth_zero
+#print axioms path_chain_term_depth_zero
+#check @GradientKey.Concrete.Example34.example34_chains
+#print axioms GradientKey.Concrete.Example34.example34_chains
+#check @GradientKey.Concrete.Example34.example34_chain4
+#print axioms GradientKey.Concrete.Example34.example34_chain4
+#check @GradientKey.Concrete.Example34.example34_chain42
+#print axioms GradientKey.Concrete.Example34.example34_chain42
+#check @GradientKey.Concrete.Example34.example34_chain43
+#print axioms GradientKey.Concrete.Example34.example34_chain43
+#check @GradientKey.Concrete.Example34.example34_chain432
+#print axioms GradientKey.Concrete.Example34.example34_chain432
+#check @GradientKey.Concrete.Example34.example34_F43
+#print axioms GradientKey.Concrete.Example34.example34_F43
+#check @GradientKey.Concrete.Example34.example34_F432
+#print axioms GradientKey.Concrete.Example34.example34_F432
+#check @GradientKey.Concrete.Example34.example34_rhs
+#print axioms GradientKey.Concrete.Example34.example34_rhs
+#check @GradientKey.Concrete.Example34.example34_tG
+#print axioms GradientKey.Concrete.Example34.example34_tG

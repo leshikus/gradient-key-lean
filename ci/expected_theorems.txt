@@ -63,3 +63,15 @@ GradientKey.Concrete.Example34.example34_W
 GradientKey.Concrete.Example34.example34_V
 GradientKey.Concrete.Example34.example34_F
 GradientKey.Concrete.Example34.path_formula_n3_m4_total
+chain_term_natural
+chain_term_nonneg
+path_chain_term_depth_zero
+GradientKey.Concrete.Example34.example34_chains
+GradientKey.Concrete.Example34.example34_chain4
+GradientKey.Concrete.Example34.example34_chain42
+GradientKey.Concrete.Example34.example34_chain43
+GradientKey.Concrete.Example34.example34_chain432
+GradientKey.Concrete.Example34.example34_F43
+GradientKey.Concrete.Example34.example34_F432
+GradientKey.Concrete.Example34.example34_rhs
+GradientKey.Concrete.Example34.example34_tG
