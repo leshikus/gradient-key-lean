@@ -8,7 +8,6 @@ A fork at depth `d` yields nested candidate sets
 Their sizes are strictly decreasing, all at least two, and `d < n`.
 
 Draft against Lean v4.36.0 and pinned Mathlib v4.36.0.
-Compilation and axiom auditing have NOT been performed in this runtime.
 -/
 
 noncomputable section

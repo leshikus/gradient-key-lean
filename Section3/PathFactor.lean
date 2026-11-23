@@ -9,7 +9,6 @@ assumptions about the greedy algorithm. The path formula will use them
 with the row predicate derived from its greedy-path characterization.
 
 Draft against Lean v4.36.0 and pinned Mathlib v4.36.0.
-Compilation and axiom auditing have NOT been performed in this runtime.
 -/
 
 noncomputable section

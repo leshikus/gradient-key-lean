@@ -266,3 +266,10 @@ tsum_eq_coef : ∀ (a B : ℕ), a < B → ∀ (u : ℕ → ℕ), IsTy B a u → 
   (hn : 0 < n),
   S ∈ pathFams s j₀ → ↑↑{A | ∀ (i : Fin (pathChainDepth s + 1)), candidateAt (↑A) j₀ hn ↑i = S i}.card = pathPartSum s
 'GradientKey.Concrete.card_path_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_pathFams : ∀ {m n : ℕ} (s : PathChain n m) (j₀ : Fin m), (pathFams s j₀).card = pathFamilyFactor s
+'GradientKey.Concrete.card_pathFams' depends on axioms: [propext, Classical.choice, Quot.sound]
+@chain_count : ∀ {n m : ℕ} (hn : 0 < n) (s : PathChain n m) (j₀ : Fin m),
+  ↑{A | MatchesChain A hn j₀ s}.card = pathChainTerm s
+'GradientKey.Concrete.chain_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+@prop_path_formula : ∀ {n m : ℕ} (hn : 0 < n), 2 ≤ m → tG n m hn = pathFormulaRHS n m
+'GradientKey.Concrete.prop_path_formula' depends on axioms: [propext, Classical.choice, Quot.sound]

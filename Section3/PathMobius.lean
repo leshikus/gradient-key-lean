@@ -11,7 +11,6 @@ The LHS counts tables with pairwise distinct columns satisfying every
 row condition. The RHS applies existing partition Möbius coefficients
 and factors the count into the independent rows.
 
-Draft only: Lean 4.36 / Mathlib 4.36 compilation has NOT been checked.
 -/
 
 noncomputable section

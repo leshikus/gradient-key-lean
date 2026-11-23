@@ -10,8 +10,6 @@ chain/partition path formula.  It uses the existing `tG`, `leafDepth`,
 The result is valid even when there are no injective tables: both sides
 are then zero under Lean's total division convention.
 
-Draft for Lean v4.36.0 / pinned Mathlib v4.36.0.
-Compilation and axiom auditing have NOT been performed.
 -/
 
 noncomputable section

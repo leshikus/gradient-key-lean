@@ -9,7 +9,6 @@ have `d<n` and a strictly decreasing vector of sizes. This module
 constructs such an index from the actual `candidateAt` sets, without
 postulating a chain hypothesis. It is used to group the fork count.
 
-Draft only; no Lean compiler or Mathlib present in this environment.
 -/
 
 noncomputable section

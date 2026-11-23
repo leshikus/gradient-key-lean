@@ -20,6 +20,7 @@ import PathCoeff2
 import PathBlocks
 import PathRowCount
 import PathFixed
+import PathFormula
 
 open GradientKey.Concrete
 
@@ -139,3 +140,9 @@ open GradientKey.Concrete
 #print axioms cntU_V
 #check @card_path_fixed
 #print axioms card_path_fixed
+#check @card_pathFams
+#print axioms card_pathFams
+#check @chain_count
+#print axioms chain_count
+#check @prop_path_formula
+#print axioms prop_path_formula

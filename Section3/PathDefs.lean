@@ -9,9 +9,8 @@ article's list-of-parts notation, and gives finite index types directly.
 The coefficient `c`, assignment counts `W` and `V`, injection sum `F`,
 chain weight, and complete RHS are all defined from these data.
 
-IMPORTANT: uncompiled draft for Lean v4.36.0 / Mathlib v4.36.0.
-No proof of equivalence with `Nat.Partition` or the actual `tG` is
-included. No declarations have been pushed to GitHub.
+`prop_path_formula` (`PathFormula`) proves that the right-hand side
+equals the existing `tG`.
 -/
 
 noncomputable section
