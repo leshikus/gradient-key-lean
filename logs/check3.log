@@ -331,3 +331,12 @@ Example34.example34_rhs : pathFormulaRHS 3 4 = 3408 / 1680
 'GradientKey.Concrete.Example34.example34_rhs' depends on axioms: [propext, Classical.choice, Quot.sound]
 Example34.example34_tG : tG 3 4 ⋯ = 3408 / 1680
 'GradientKey.Concrete.Example34.example34_tG' depends on axioms: [propext, Classical.choice, Quot.sound]
+@prop_path_formula_sets : ∀ {n m : ℕ} (hn : 0 < n) (hm : 2 ≤ m)
+  (S : (s : PathChain n m) → Fin (pathChainDepth s + 1) → Finset (Fin m)),
+  (∀ (s : PathChain n m), S s ∈ pathFams s ⟨0, ⋯⟩) →
+    tG n m hn =
+      (∑ s,
+          ↑(↑(pathFamilyFactor s) *
+              ∑ rho, ∑ c, mu c * ∏ i, ↑{row | fixedPathRowAdmissible (S s) ⟨0, ⋯⟩ rho i row ∧ ConstOn c row}.card)) /
+        ↑((2 ^ n).descFactorial m)
+'GradientKey.Concrete.prop_path_formula_sets' depends on axioms: [propext, Classical.choice, Quot.sound]

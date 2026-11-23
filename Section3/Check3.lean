@@ -186,3 +186,5 @@ open GradientKey.Concrete
 #print axioms GradientKey.Concrete.Example34.example34_rhs
 #check @GradientKey.Concrete.Example34.example34_tG
 #print axioms GradientKey.Concrete.Example34.example34_tG
+#check @prop_path_formula_sets
+#print axioms prop_path_formula_sets

@@ -13,7 +13,8 @@ largest quality `min(k, s-k)`, `leafDepth` = number of forks on the path of a co
 | Article | Lean | Status |
 |---|---|---|
 | Lemma 3.1 (`lem:distinct`): the number of matrices with distinct columns and row `i` in `R_i` is `∑_p μ(p) ∏_i r_i(p)` | `card_valid_with_row_constraints` (`Section3/PathMobius.lean`); set partitions as Mathlib's `OrderedFinpartition` (blocks ordered by least element), `R_i` given by a predicate `P i` | verified |
-| Proposition 3.2 (`prop:path-formula`), in the grouped form of equation (1): `t_{n,m}(G) = (2^n)_m⁻¹ ∑_s ∏_j C(s_j-1,s_{j+1}-1) ∑_λ ∏_j c(λ_j) F_n` | `prop_path_formula` (`tG n m hn = pathFormulaRHS n m`, `0 < n`, `2 ≤ m`) (`Section3/PathFormula.lean`); per-chain identity `chain_count` (the summand of a chain is the number of valid tables in which column `j₀` has candidate sets of the chain's sizes). The set-partition form in the statement of Proposition 3.2 is not a separate theorem: it is the intermediate step `card_valid_with_row_constraints` applied to the path conditions (`PathFactor`, `PathCells`), before grouping by types (`PathGroup`, `sum_mu_pi`) | verified |
+| Proposition 3.2 (`prop:path-formula`): `t_{n,m}(G) = (2^n)_m⁻¹ ∑_s ∏_{j<d} C(s_j-1,s_{j+1}-1) ∑_ρ ∑_p μ(p) ∏_i r_i^ρ(p)`, for any fixed candidate sets per chain | `prop_path_formula_sets` (`Section3/PathFormula.lean`), from `card_path_eq` (`PathEvent`, one family of candidate sets) | verified |
+| — the grouped form, equation (1): `t_{n,m}(G) = (2^n)_m⁻¹ ∑_s ∏_{j<d} C(s_j-1,s_{j+1}-1) ∑_λ ∏_j c(λ_j) F_n` | `prop_path_formula` (`tG n m hn = pathFormulaRHS n m`, `0 < n`, `2 ≤ m`); per-chain identity `chain_count` (the summand of a chain is the number of valid tables in which column `j₀` has candidate sets of the chain's sizes) | verified |
 | — each chain term is a nonnegative integer; a chain of depth `0` contributes `(2^n)_m` | `chain_term_natural`, `chain_term_nonneg`, `path_chain_term_depth_zero` (`Section3/PathFormula.lean`), from `chain_count` | verified |
 | — pruning: a chain contributes `0` if `q_j(n-j) < s_j - 1` or `max(Δ_j, s_{j+1}) > 2^{n-j-1}` for some `j < d` | `prop_path_prune`, from `path_shape_bounds` (the inequalities hold for every path that occurs) (`Section3/PathPrune.lean`) | verified |
 | — the example `(n,m) = (3,4)` on the definitions: the chains are `(4)`, `(4,2)`, `(4,3)`, `(4,3,2)`; chain terms `1680`, `1488`, `144`, `96` (`c(λ)` and `F_3` for each type; for `(4,2)`: `(W(∅),W({0})) = (10,16), (6,8), (6,8), (2,4)`, `V_0 = 2`, `F_3 = 1032, 296, 296, 56`); `(2^3)_4⁻¹ · 3408 = 3408/1680`, equal to `example_n3_m4` | `example34_chains`, `example34_chain4`, `example34_chain42`, `example34_chain43`, `example34_chain432`, `example34_coeff`, `example34_W`, `example34_V`, `example34_F`, `example34_F43`, `example34_F432`, `example34_rhs`, `example34_tG`, `path_formula_n3_m4_total` (`Section3/PathExample.lean`) | verified |
@@ -54,8 +55,27 @@ length.
 | `Asymptotic` | Corollary 3.4 |
 | `NearTwo`, `NearTwoTop`, `NearTwoSets`, `PairCount`, `NearTwoCount`, `NearDense2` | Proposition 3.6, second formula |
 | `Check3` | `#check` and `#print axioms` of the final theorems |
-| `Mobius` | Proposition 3.2, step: `∑_π μ(π) [x constant on the blocks of π] = [x injective]` over `OrderedFinpartition m` |
+| `Mobius` | Lemma 3.1, step: `∑_p μ(p) [x constant on the blocks of p] = [x injective]` over `OrderedFinpartition m` |
 | `SmallItems` | Stirling form of Proposition 3.3, `B_k` as a sum over `𝒯_k`, `N_m(n) = 0` for `2^n < m` |
 | `NumerZero` | a constant row inserted into a row list leaves the tree unchanged; `B_{k+1} = B'_{k+1} + (k+1)B'_k`; `N_m(0) = 0` |
 | `Examples` | `C(2^k) = k` and exact instances of Propositions 3.3, 3.5, 3.6 |
-| `PathFork`, `PathShape`, `PathGreedy`, `PathFactor`, `PathMobius`, `PathRows`, `PathDefs`, `PathChainBridge`, `PathEvent`, `PathCells`, `PathCoeff`, `PathCoeff2`, `PathBlocks`, `PathRowCount`, `PathGroup`, `PathWV`, `PathFixed`, `PathFamily`, `PathFormula`, `PathPrune`, `PathExample` | Proposition 3.2: fork counting, path shape, greedy step, Möbius step and row factorization, definitions of the right-hand side; rowwise conditions ⇔ greedy path; cells and Möbius inversion within each cell; `∑_{type λ} μ = c(λ)`; rows constant on blocks = assignments; row counts depend only on block sizes; grouping by types; row counts are `W` and `V`; the count for one family of candidate sets; number of families; per-chain identity and the formula; pruning; the (3,4) example |
+| `PathFork` | fork counting: `tG_eq_forkTableCounts` |
+| `PathShape` | shape of candidate-set chains: `pathFork_depth_lt_n`, `pathFork_size_budget` |
+| `PathGreedy` | one greedy step: `pathOneStepTest_iff` |
+| `PathFactor` | Möbius step and row factorization: `card_row_constraints_constOn` |
+| `PathMobius` | Lemma 3.1: `card_valid_with_row_constraints` |
+| `PathRows` | path conditions on rows for fixed candidate sets: `fixedPath_mobius_factor` |
+| `PathDefs` | definitions of the right-hand side: chains, `c(λ)`, `W`, `V_j`, `F_n` |
+| `PathChainBridge` | every fork gives a chain: `pathChainOfFork_sizes` |
+| `PathEvent` | path conditions ⇔ greedy path; count for one family of candidate sets: `card_path_eq` |
+| `PathCells` | Möbius inversion within cells: `card_path_cells` |
+| `PathCoeff`, `PathCoeff2` | `∑_{type λ} μ = c(λ)`: `sum_mu_by_type` |
+| `PathBlocks` | rows constant on blocks: `card_rows_eq_blk` |
+| `PathRowCount` | row counts depend only on block sizes: `rowcount_eq_cntU` |
+| `PathGroup` | grouping by types: `sum_mu_pi` |
+| `PathWV` | row counts are `W` and `V_j`: `cntU_W`, `cntU_V` |
+| `PathFixed` | count for one family of candidate sets, grouped: `card_path_fixed` |
+| `PathFamily` | number of families: `card_pathFams` |
+| `PathFormula` | Proposition 3.2 and equation (1): `prop_path_formula_sets`, `prop_path_formula`, `chain_count`; `chain_term_natural`, `path_chain_term_depth_zero` |
+| `PathPrune` | pruning: `prop_path_prune`, `path_shape_bounds` |
+| `PathExample` | the example `(3,4)`: `example34_chains`, `example34_chain4/42/43/432`, `example34_rhs`, `example34_tG` |

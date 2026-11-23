@@ -8,8 +8,6 @@ Thus a fixed split `S -> T` at row `r` is equivalent to its bit-class
 condition and strict quality bounds before `r`, weak bounds after `r`.
 These are the article's rowwise conditions, before replacing the selected
 quality by `q_j = min(a_j,s_(j+1))`.
-
-Draft, not Lean-compiled or axiom-audited.
 -/
 
 noncomputable section

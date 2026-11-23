@@ -133,6 +133,37 @@ theorem prop_path_formula (hn : 0 < n) (hm : 2 ≤ m) : tG n m hn = pathFormulaR
   have hm0 : (m : ℝ) ≠ 0 := by positivity
   rw [mul_div_mul_left _ _ hm0]
 
+/-- **Proposition 3.2**, as stated in the article: for each chain `s` fix any nested candidate sets `S s` of its
+sizes, with column `j₀ = 0` in the last one. Then `(2^n)_m t_{n,m}(G)` is the sum over chains of the number of
+families times `∑_ρ ∑_p μ(p) ∏_i r_i^ρ(p)`, where `r_i^ρ(p)` counts the rows satisfying the path conditions on row
+`i` (`fixedPathRowAdmissible`) that are constant on the blocks of `p`. -/
+theorem prop_path_formula_sets (hn : 0 < n) (hm : 2 ≤ m)
+    (S : (s : PathChain n m) → Fin (pathChainDepth s + 1) → Finset (Fin m))
+    (hS : ∀ s, S s ∈ pathFams s ⟨0, by omega⟩) :
+    tG n m hn = (∑ s : PathChain n m, (((pathFamilyFactor s : ℤ) *
+        ∑ rho : Fin (pathChainDepth s) ↪ Fin n, ∑ c : OrderedFinpartition m,
+          mu c * ∏ i : Fin n, ((univ.filter (fun row : Row m =>
+            fixedPathRowAdmissible (S s) ⟨0, by omega⟩ rho i row ∧ ConstOn c row)).card : ℤ) : ℤ) : ℝ))
+      / (((2 ^ n).descFactorial m : ℕ) : ℝ) := by
+  have hpt : ∀ s : PathChain n m, ((pathChainTerm s : ℚ) : ℝ) = (((pathFamilyFactor s : ℤ) *
+      ∑ rho : Fin (pathChainDepth s) ↪ Fin n, ∑ c : OrderedFinpartition m,
+        mu c * ∏ i : Fin n, ((univ.filter (fun row : Row m =>
+          fixedPathRowAdmissible (S s) ⟨0, by omega⟩ rho i row ∧ ConstOn c row)).card : ℤ) : ℤ) : ℝ) := by
+    intro s
+    obtain ⟨h0, _, _, hsz⟩ := mem_pathFams.mp (hS s)
+    have h2 : ∀ j : Fin (pathChainDepth s), 2 ≤ (S s j.castSucc).card := fun j => by
+      rw [hsz]; exact chain_two_le s _
+    have e1 := card_path_eq hn (S s) ⟨0, by omega⟩ h0 h2
+    have e2 := card_path_fixed hn (hS s)
+    rw [← e1]
+    have : pathChainTerm s = (pathFamilyFactor s : ℚ) * pathPartSum s := rfl
+    rw [this, ← e2]
+    push_cast
+    rfl
+  rw [prop_path_formula hn hm]
+  unfold pathFormulaRHS
+  simp only [hpt]
+
 /-- Every chain term is a natural number: by `chain_count` it counts tables, although its Möbius expansion has
 negative summands. -/
 theorem chain_term_natural (s : PathChain n m) : ∃ k : ℕ, (k : ℚ) = pathChainTerm s := by
