@@ -1,7 +1,7 @@
 import PathCoeff
 
 /-!
-# Proposition 3.1: `∑_{π of type u} μ(π) = c(u)`
+# Proposition 3.2: `∑_{π of type u} μ(π) = c(u)`
 
 `typeVec c v` is the number of blocks of size `v` of the set partition `c` of `Fin a`, and
 `tsum a u = ∑_{c of type u} μ(c)`. Extending a partition of `Fin a` by a singleton block or by

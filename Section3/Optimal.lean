@@ -3,7 +3,7 @@ import NearBall
 /-!
 # The complete tree is optimal
 
-`cdepth s` is the least total depth of a tree of splitting forks with `s` leaves. Used in Proposition 3.2:
+`cdepth s` is the least total depth of a tree of splitting forks with `s` leaves. Used in Proposition 3.3:
 `B_k ≥ 0` (cost is at least `C(m)`), `B_M = 0` (balanced forks), `m ≤ 3` (every fork is balanced), and the comb
 that gives `B_{m-1} > 0` for `m ≥ 4`.
 -/

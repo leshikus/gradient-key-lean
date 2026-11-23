@@ -1,7 +1,7 @@
 import PathCells
 
 /-!
-# Proposition 3.1: rows constant on blocks are assignments
+# Proposition 3.2: rows constant on blocks are assignments
 
 Let the columns be enumerated as `E : (Σ b : ι, Fin (size b)) ≃ Fin m`, block `b` having `size b ≥ 1`
 columns and lying in the cell `cellOf b`, so that `x ∈ S_i ↔ i ≤ cellOf (block of x)`. A row constant on

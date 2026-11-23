@@ -1,7 +1,7 @@
 import PathFormula
 
 /-!
-# Proposition 3.1: the pruning claim
+# Proposition 3.2: the pruning claim
 
 If a valid table has a fork at depth `d` on the path of column `j₀`, with candidate sets of sizes
 `s₀,…,s_d`, then for every `j < d` (`path_shape_bounds`):
@@ -182,7 +182,7 @@ theorem path_shape_bounds (hn : 0 < n) (s : PathChain n m) (j₀ : Fin m) (A : V
     have hi' : i.val ≤ j.val := Fin.le_def.mp (Finset.mem_Iic.mp hi)
     rw [hconst i j.succ (by simp; omega) x hx, hconst i j.succ (by simp; omega) y hy]
 
-/-- **Proposition 3.1, pruning.** A chain contributes `0` if for some `j < d` either
+/-- **Proposition 3.2, pruning.** A chain contributes `0` if for some `j < d` either
 `q_j (n - j) < s_j - 1` or `max(Δ_j, s_{j+1}) > 2^{n-j-1}`. -/
 theorem prop_path_prune (s : PathChain n m) (j : Fin (pathChainDepth s))
     (h : (n - j.val) * pathQuality s j < (pathChainSizes s j.castSucc).val - 1 ∨

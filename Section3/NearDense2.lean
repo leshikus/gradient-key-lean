@@ -2,7 +2,7 @@ import NearTwoCount
 import NearDense
 
 /-!
-# Proposition 3.5, second formula
+# Proposition 3.6, second formula
 
 If `n ≥ 4` and `m = 2^n - n - 2`, then `t_{n,m}(G) - C(m) = 2^{n-2} (3^n - 2n - 1) / (m · C(2^n, n+2))`.
 -/
@@ -103,7 +103,7 @@ theorem card_tables_good (hn : 0 < n) (hm : m + n + 2 = 2 ^ n) :
   rw [this]
   convert card_missing_eq (m := m) R (by rw [hR.1]; omega) using 2
 
-/-- **Proposition 3.5**, second formula. -/
+/-- **Proposition 3.6**, second formula. -/
 theorem prop_near_dense_two (hn4 : 4 ≤ n) (hm : m + n + 2 = 2 ^ n) :
     tG n m (by omega) - completeCost m =
       ((2 ^ (n - 2) * (3 ^ n - 2 * n - 1) : ℕ) : ℝ) / ((m : ℝ) * ((2 ^ n).choose (n + 2) : ℕ)) := by

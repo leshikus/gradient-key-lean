@@ -1,10 +1,10 @@
 import SmallM
 
 /-!
-# Small items of Proposition 3.2
+# Small items of Proposition 3.3
 
 * `prop32_stirling_identity`: `k! S(n,k) = ∑_j (-1)^(k-j) C(k,j) j^n`.
-* `prop32_stirling_form`: `N_m(n) = 2^n ∑_{k=0}^{M} B_k S(n,k)` (the first form in Proposition 3.2).
+* `prop32_stirling_form`: `N_m(n) = 2^n ∑_{k=0}^{M} B_k S(n,k)` (the first form in Proposition 3.3).
 * `Bk_eq_tuple_sum`: `B_k` is the sum of `L̄(G(T)) - C(m)` over the ordered `k`-tuples `T` of distinct
   row types that separate the columns; `T` is an embedding `Fin k ↪ Ty m hm`, and `G(T)` is built from the
   table `tblOf hm T` of its canonical representatives (the rows with a `0` in column `0`).
@@ -24,7 +24,7 @@ theorem prop32_stirling_identity (n k : ℕ) :
       ∑ j ∈ range (k + 1), (-1 : ℤ) ^ (k - j) * (k.choose j : ℤ) * (j : ℤ) ^ n :=
   factorial_mul_stirlingSecond n k
 
-/-- Proposition 3.2, first form: `N_m(n) = 2^n ∑_{k=0}^{M} B_k S(n,k)` for `n ≥ 1`. -/
+/-- Proposition 3.3, first form: `N_m(n) = 2^n ∑_{k=0}^{M} B_k S(n,k)` for `n ≥ 1`. -/
 theorem prop32_stirling_form (hm : 0 < m) (hn : 0 < n) :
     numer hm n = (2 : ℝ) ^ n * ∑ k ∈ range (numTypes hm + 1), Bk hm k * (Nat.stirlingSecond n k : ℝ) := by
   rw [← numer_eq hm hn, mul_div_assoc, sum_div]

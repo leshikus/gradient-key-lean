@@ -1,7 +1,7 @@
 import Mobius
 
 /-!
-# Proposition 3.1: the coefficient `c(λ)`
+# Proposition 3.2: the coefficient `c(λ)`
 
 A type of a set partition of `Fin a` is its vector of multiplicities `u v` = number of blocks of size `v`.
 We prove that the sum of the Möbius weights `μ(π)` over the set partitions `π` of `Fin a` of type `u` is

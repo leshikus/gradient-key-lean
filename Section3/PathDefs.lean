@@ -1,7 +1,7 @@
 import PathMobius
 
 /-!
-# Proposition 3.1: finite version of the exact path formula
+# Proposition 3.2: finite version of the exact path formula
 
 Integer partitions are represented by their multiplicity vectors: a part
 of size `v` occurs `multiplicity v` times. This is equivalent to the
@@ -137,7 +137,7 @@ def pathBefore {n m : ℕ} (s : PathChain n m)
     Finset (Fin (pathChainDepth s)) :=
   univ.filter (fun j => rho j < r)
 
-/-- The `F_n` of Proposition 3.1, summed over all injective row schedules. -/
+/-- The `F_n` of Proposition 3.2, summed over all injective row schedules. -/
 def pathF {n m : ℕ} (s : PathChain n m)
     (parts : PathPartitionTypes s) : ℕ :=
   ∑ rho : Fin (pathChainDepth s) ↪ Fin n,
@@ -160,7 +160,7 @@ def pathChainTerm {n m : ℕ} (s : PathChain n m) : ℚ :=
       (∏ j : Fin (pathChainDepth s + 1),
         pathCoeff (parts j)) * (pathF s parts : ℚ))
 
-/-- The full right-hand side of Proposition 3.1, as a real number. -/
+/-- The full right-hand side of Proposition 3.2, as a real number. -/
 def pathFormulaRHS (n m : ℕ) : ℝ :=
   (∑ s : PathChain n m, (pathChainTerm s : ℝ)) /
     (((2 ^ n).descFactorial m : ℕ) : ℝ)

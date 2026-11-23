@@ -1,7 +1,7 @@
 import PathFork
 
 /-!
-# Proposition 3.1: shape of genuine candidate-set chains
+# Proposition 3.2: shape of genuine candidate-set chains
 
 A fork at depth `d` yields nested candidate sets
 `S₀ ⊋ S₁ ⊋ ... ⊋ S_d`, all containing the distinguished column.

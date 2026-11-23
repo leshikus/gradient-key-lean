@@ -1,7 +1,7 @@
 import SmallM
 
 /-!
-# Corollary 3.3 (`cor:exp`)
+# Corollary 3.4 (`cor:exp`)
 
 For fixed `m ≥ 4`, `t_{n,m}(G) - C(m) = A_m r_m^n (1 + O_m(θ_m^n))` as `n → ∞`, with `A_m = B_J / J!`,
 `r_m = J / 2^{m-1}` and `θ_m = (J-1)/J`. Stated with explicit constants: there are `C` and `N₀` with
@@ -86,7 +86,7 @@ def rm (hm4 : 4 ≤ m) : ℝ := (J hm4 : ℝ) / 2 ^ (m - 1)
 def θm (hm4 : 4 ≤ m) : ℝ := ((J hm4 : ℝ) - 1) / J hm4
 
 set_option maxHeartbeats 4000000 in
-/-- **Corollary 3.3.** For fixed `m ≥ 4`: `A_m > 0`, `0 < r_m < 1`, `0 < θ_m < 1`, and
+/-- **Corollary 3.4.** For fixed `m ≥ 4`: `A_m > 0`, `0 < r_m < 1`, `0 < θ_m < 1`, and
 `t_{n,m}(G) - C(m) = A_m r_m^n (1 + O_m(θ_m^n))`, with explicit `C` and `N₀` depending on `m`. -/
 theorem cor_exp (hm4 : 4 ≤ m) :
     0 < Am hm4 ∧ 0 < rm hm4 ∧ rm hm4 < 1 ∧ 0 < θm hm4 ∧ θm hm4 < 1 ∧

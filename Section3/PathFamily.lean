@@ -1,7 +1,7 @@
 import PathFixed
 
 /-!
-# Proposition 3.1: the number of families of candidate sets
+# Proposition 3.2: the number of families of candidate sets
 
 The number of families `S₀ = T₀ ⊇ S₁ ⊇ … ⊇ S_d` with `|S_i| = s_i` and `j₀ ∈ S_d` is
 `∏_{k<d} C(s_k - 1, s_{k+1} - 1)`: `S_{k+1}` is `j₀` together with `s_{k+1} - 1` of the other

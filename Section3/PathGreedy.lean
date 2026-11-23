@@ -1,7 +1,7 @@
 import PathShape
 
 /-!
-# Proposition 3.1: single-step greedy characterization
+# Proposition 3.2: single-step greedy characterization
 
 The selected row is exactly the first row with maximal quality.
 Thus a fixed split `S -> T` at row `r` is equivalent to its bit-class

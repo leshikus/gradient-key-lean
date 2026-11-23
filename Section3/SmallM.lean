@@ -2,7 +2,7 @@ import FirstsCount
 import Counting
 
 /-!
-# Proposition 3.2 (`prop:small-m`)
+# Proposition 3.3 (`prop:small-m`)
 
 A *type* is a row up to complement; we take the representative with a `0` in column `0`. There are
 `M = 2^{m-1}` types. `B_k` is the sum of `L̄ - C(m)` over the ordered `k`-tuples of distinct types that separate
@@ -202,7 +202,7 @@ theorem numer_eq (hm : 0 < m) (hn : 0 < n) :
   push_cast
   simp only [Function.Embedding.coeFn_mk, Nat.cast_add, Nat.cast_one]
 
-/-- **Proposition 3.2.** For `2 ≤ m ≤ 2^n`, `t_{n,m}(G) - C(m) = N_m(n) / (2^n)_m`. -/
+/-- **Proposition 3.3.** For `2 ≤ m ≤ 2^n`, `t_{n,m}(G) - C(m) = N_m(n) / (2^n)_m`. -/
 theorem prop_small_m (hm2 : 2 ≤ m) (hsize : m ≤ 2 ^ n) (hn : 0 < n) :
     tG n m hn - completeCost m = numer (by omega : 0 < m) n / ((2 ^ n).descFactorial m : ℝ) := by
   have hm : 0 < m := by omega

@@ -2,7 +2,7 @@ import PathDefs
 import PathShape
 
 /-!
-# Proposition 3.1: map every genuine fork to its finite chain
+# Proposition 3.2: map every genuine fork to its finite chain
 
 The combinatorial RHS is indexed by `PathChain n m`, whose members
 have `d<n` and a strictly decreasing vector of sizes. This module

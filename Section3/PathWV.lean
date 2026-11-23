@@ -1,7 +1,7 @@
 import PathGroup
 
 /-!
-# Proposition 3.1: the row counts are `W(M)` and `V_j(M)`
+# Proposition 3.2: the row counts are `W(M)` and `V_j(M)`
 
 For a chain `s`, integer partitions `λ_j` of the cell sizes and a schedule `ρ`, the count `cntU` of
 admissible assignments of row `i` equals `W(M_i)` if `i` is not a tested row and `V_j(M_{ρ(j)})` if

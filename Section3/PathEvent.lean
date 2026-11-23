@@ -1,7 +1,7 @@
 import PathRows
 
 /-!
-# Proposition 3.1: the rowwise conditions are exactly the greedy path
+# Proposition 3.2: the rowwise conditions are exactly the greedy path
 
 For candidate sets `S₀,…,S_d` with `S₀ = univ` and `|S_j| ≥ 2` for `j < d`, and an injective schedule
 `ρ : Fin d ↪ Fin n`, `fixedPathRowwise S j₀ ρ A` holds iff the path of column `j₀` in `G(A)` has

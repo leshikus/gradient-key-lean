@@ -2,7 +2,7 @@ import PathRowCount
 import PathDefs
 
 /-!
-# Proposition 3.1: grouping the set partitions of the cells by type
+# Proposition 3.2: grouping the set partitions of the cells by type
 
 The set partitions `ps j` of the cells enter the path count only through the product of their Möbius
 weights and through their types (`rowcount_eq_cntU`). Grouping the sum over `ps` by the types gives the

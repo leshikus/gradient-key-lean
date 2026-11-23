@@ -48,7 +48,7 @@ open GradientKey.Concrete
 #print axioms cor_exp
 #print axioms excess_small
 
--- Small items of Propositions 3.2 and 3.5
+-- Small items of Propositions 3.3 and 3.6
 #check @prop32_stirling_identity
 #check @prop32_stirling_form
 #check @Bk_eq_tuple_sum
@@ -73,7 +73,7 @@ open GradientKey.Concrete
 #print axioms example_n3_m4
 #print axioms example_n4_m11
 #print axioms example_n4_m10
--- Proposition 3.1, steps (partial)
+-- Proposition 3.2, steps (partial)
 #check @tG_eq_forkTableCounts
 #print axioms tG_eq_forkTableCounts
 #check @pathCandidates_step_ssubset

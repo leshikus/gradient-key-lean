@@ -3,7 +3,7 @@ import Counting
 import Optimal
 
 /-!
-# Proposition 3.5, second formula: the root in terms of the missing words
+# Proposition 3.6, second formula: the root in terms of the missing words
 
 For a table `A ∈ 𝒜_{n,m}` with `n ≥ 4` and `m = 2^n - n - 2`, let `R` be its `n + 2` missing words. The greedy row
 at the root is the first row `i` of largest `μ_R(i) = min(#{w ∈ R : w_i = 1}, #{w ∈ R : w_i = 0})`, and the

@@ -1,7 +1,7 @@
 import Missing
 
 /-!
-# `k + 1` missing words (first case of Proposition 3.5)
+# `k + 1` missing words (first case of Proposition 3.6)
 
 A candidate set whose columns agree outside `k ≥ 3` rows and miss `k + 1` words of `{0,1}^k` has total depth
 `cdepth |S| + 1` if the missing words form a ball of radius `1`, and `cdepth |S|` otherwise.

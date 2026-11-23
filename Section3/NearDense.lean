@@ -2,7 +2,7 @@ import NearBall
 import Counting
 
 /-!
-# Proposition 3.5 (`prop:near-dense`)
+# Proposition 3.6 (`prop:near-dense`)
 
 First formula: if `n ≥ 3` and `m = 2^n - n - 1`, then `t_{n,m}(G) - C(m) = 2^n / (m · C(2^n, n+1))`.
 -/
@@ -49,7 +49,7 @@ theorem sum_ball_tables (hn : 2 ≤ n) (hm : m + n + 1 = 2 ^ n) :
     exact_mod_cast this
   rw [Finset.sum_congr rfl (fun c _ => this c), Finset.sum_const, card_univ, card_word, smul_eq_mul]
 
-/-- **Proposition 3.5**, first formula. -/
+/-- **Proposition 3.6**, first formula. -/
 theorem prop_near_dense_one (hn3 : 3 ≤ n) (hm : m + n + 1 = 2 ^ n) :
     tG n m (by omega) - completeCost m =
       (2 ^ n : ℝ) / ((m : ℝ) * ((2 ^ n).choose (n + 1) : ℕ)) := by

@@ -2,7 +2,7 @@ import Counting
 import Mobius
 
 /-!
-# Proposition 3.1: row independence and Möbius inversion
+# Proposition 3.2: row independence and Möbius inversion
 
 The two lemmas in this file are generic. They do not postulate any
 assumptions about the greedy algorithm. The path formula will use them

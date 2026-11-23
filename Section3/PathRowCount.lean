@@ -2,7 +2,7 @@ import PathBlocks
 import PathCoeff2
 
 /-!
-# Proposition 3.1: the row counts depend only on the block sizes
+# Proposition 3.2: the row counts depend only on the block sizes
 
 For nested candidate sets `S` with `S₀ = univ` and `j₀ ∈ S_d`, and set partitions `ps j` of the cells,
 the columns are enumerated by (cell, block, position in block). By `card_rows_eq_blk` the number of

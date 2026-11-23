@@ -1,7 +1,7 @@
 import PathWV
 
 /-!
-# Proposition 3.1: the count for one family of candidate sets
+# Proposition 3.2: the count for one family of candidate sets
 
 Fix a chain `s` and a column `j₀`. A family of candidate sets for `s` is `S₀ ⊇ … ⊇ S_d` with `S₀` the set
 of all columns, `|S_i| = s_i` and `j₀ ∈ S_d` (`pathFams`). For each such family, the number of valid
@@ -23,7 +23,7 @@ def pathFams (s : PathChain n m) (j₀ : Fin m) :
   univ.filter (fun S => S 0 = univ ∧ (∀ k : Fin (pathChainDepth s), S k.succ ⊆ S k.castSucc) ∧
     j₀ ∈ S (Fin.last _) ∧ ∀ i, (S i).card = (pathChainSizes s i).val)
 
-/-- The sum over the integer partitions of the cells in Proposition 3.1. -/
+/-- The sum over the integer partitions of the cells in Proposition 3.2. -/
 def pathPartSum (s : PathChain n m) : ℚ :=
   ∑ parts : PathPartitionTypes s, (∏ j, pathCoeff (parts j)) * (pathF s parts : ℚ)
 

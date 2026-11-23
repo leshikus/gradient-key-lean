@@ -3,10 +3,10 @@ import PathFork
 import PathChainBridge
 
 /-!
-# Proposition 3.1: the path formula
+# Proposition 3.2: the path formula
 
 **Per-chain identity** (`chain_count`). For a chain `s` and a column `j₀`, the summand of `s` in
-Proposition 3.1 equals the number of valid tables in which the path of `j₀` has candidate sets of sizes
+Proposition 3.2 equals the number of valid tables in which the path of `j₀` has candidate sets of sizes
 `s₀,…,s_d`, i.e. a fork at depth `d` with these sizes.
 
 **Formula** (`prop_path_formula`). Summing over chains and columns gives
@@ -110,7 +110,7 @@ theorem sum_forkTableCount_eq (hn : 0 < n) (j : Fin m) :
   intro A _
   rw [← card_filter, ← card_filter, card_matching_chains]
 
-/-- **Proposition 3.1.** -/
+/-- **Proposition 3.2.** -/
 theorem prop_path_formula (hn : 0 < n) (hm : 2 ≤ m) : tG n m hn = pathFormulaRHS n m := by
   rw [tG_eq_forkTableCounts hn hm]
   unfold pathFormulaRHS

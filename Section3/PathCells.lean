@@ -1,7 +1,7 @@
 import PathEvent
 
 /-!
-# Proposition 3.1: cells and Möbius inversion within each cell
+# Proposition 3.2: cells and Möbius inversion within each cell
 
 The cells of a path are `S_j \ S_{j+1}` (`j < d`) and `S_d`. Under the rowwise conditions the row tested
 at depth `k` separates the cell `k` from every later cell, so the columns are distinct iff they are

@@ -1,9 +1,9 @@
 import Counting
 
 /-!
-# Proposition 3.1: exact fork-counting reduction
+# Proposition 3.2: exact fork-counting reduction
 
-This is the first (enumerative) step of Proposition 3.1, not the full
+This is the first (enumerative) step of Proposition 3.2, not the full
 chain/partition path formula.  It uses the existing `tG`, `leafDepth`,
 `candidateAt` and `ValidTable` without redefining any of them.
 
@@ -77,7 +77,7 @@ theorem sum_leafDepth_eq_sum_forkTableCount
           intro i _
           simp only [forkTableCount, Finset.card_filter]
 
-/-- First counting identity behind Proposition 3.1, connected to
+/-- First counting identity behind Proposition 3.2, connected to
     the existing `tG`.  The path/partition formula will replace
     each `forkTableCount` by its chain/partition expansion. -/
 theorem tG_eq_forkTableCounts (hn : 0 < n) (hm : 2 ≤ m) :

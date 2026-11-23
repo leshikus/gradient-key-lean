@@ -3,7 +3,7 @@ import PathMobius
 import RowList
 
 /-!
-# Proposition 3.1: rowwise admissibility for a fixed path
+# Proposition 3.2: rowwise admissibility for a fixed path
 
 For fixed sets `S₀,...,S_d`, a distinguished column `j₀`, and an
 injective schedule `ρ : Fin d ↪ Fin n`, the following predicates use only

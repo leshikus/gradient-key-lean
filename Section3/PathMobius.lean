@@ -1,7 +1,7 @@
 import PathFactor
 
 /-!
-# Proposition 3.1: generic Möbius-corrected row product
+# Proposition 3.2: generic Möbius-corrected row product
 
 This is the main algebraic reduction in Steps 4--5 of the article's proof.
 It does not use any special property of the greedy algorithm: `P i row`

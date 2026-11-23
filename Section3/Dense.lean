@@ -1,7 +1,7 @@
 import TreeDepth
 
 /-!
-# Proposition 3.4 (`prop:dense`)
+# Proposition 3.5 (`prop:dense`)
 
 If `n ≥ 1` and `2^n - n ≤ m ≤ 2^n`, then `L̄(G(A)) = C(m)` for every `A ∈ 𝒜_{n,m}`; so `t_{n,m}(G) = C(m)`.
 
@@ -212,7 +212,7 @@ theorem exists_good_row (A : Table n m) (hA : DistinctColumns A) (F : Finset (Fi
       obtain ⟨j, hj, hje⟩ := hb p' (by simpa using this)
       exact hmiss p' hp' j hj hje
 
-/-- The core of Proposition 3.4: at most `k` missing words in a `k`-dimensional subcube. -/
+/-- The core of Proposition 3.5: at most `k` missing words in a `k`-dimensional subcube. -/
 theorem totalDepth_dense (A : Table n m) (hA : DistinctColumns A) (hn : 0 < n) :
     ∀ k, ∀ (F : Finset (Fin n)) (S : Finset (Fin m)), F.card = k → AgreeOff A F S →
       2 ^ k ≤ S.card + k → totalDepth A hn S = cdepth S.card := by
@@ -288,7 +288,7 @@ theorem totalDepth_dense (A : Table n m) (hA : DistinctColumns A) (hn : 0 < n) :
         (by omega) (by rw [Nat.sub_add_cancel hkpos]; omega)
       omega
 
-/-- **Proposition 3.4.** If `n ≥ 1` and `2^n - n ≤ m ≤ 2^n`, every table has cost `C(m)`. -/
+/-- **Proposition 3.5.** If `n ≥ 1` and `2^n - n ≤ m ≤ 2^n`, every table has cost `C(m)`. -/
 theorem prop_dense_cost (hn : 0 < n) (hlow : 2 ^ n ≤ m + n) (A : Table n m)
     (hA : DistinctColumns A) : cost A hn = completeCost m := by
   have hm : 0 < m := by
@@ -314,7 +314,7 @@ theorem prop_dense_cost (hn : 0 < n) (hlow : 2 ^ n ≤ m + n) (A : Table n m)
   push_cast
   field_simp
 
-/-- **Proposition 3.4**, average form: `t_{n,m}(G) = C(m)`. -/
+/-- **Proposition 3.5**, average form: `t_{n,m}(G) = C(m)`. -/
 theorem prop_dense (hn : 0 < n) (hlow : 2 ^ n ≤ m + n) (hsize : m ≤ 2 ^ n) (hm : 2 ≤ m) :
     tG n m hn = completeCost m := by
   have hne : Nonempty (Sample n m) := sample_nonempty hm hsize

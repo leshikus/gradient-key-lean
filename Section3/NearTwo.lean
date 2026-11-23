@@ -1,7 +1,7 @@
 import NearBall
 
 /-!
-# `k + 2` missing words (second case of Proposition 3.5), the recursion
+# `k + 2` missing words (second case of Proposition 3.6), the recursion
 
 A candidate set whose columns agree outside `k ≥ 4` rows and miss `k + 2` words: the greedy row `g` has at least
 two missing words on each side. The total depth is `cdepth |S| + 1` if some side `b` of `g` misses exactly two

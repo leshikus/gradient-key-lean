@@ -2,7 +2,7 @@ import PathPrune
 import Examples
 
 /-!
-# Proposition 3.1: the example `(n,m) = (3,4)`
+# Proposition 3.2: the example `(n,m) = (3,4)`
 
 Checks of the definitions of `PathDefs` on the article's example. `W`, `V_j` and `F_n` are evaluated through
 copies with computable instances (`wDec`, `vDec`, `fDec`), proved equal to the definitions.
@@ -12,7 +12,7 @@ copies with computable instances (`wDec`, `vDec`, `fDec`), proved equal to the d
   `((2),(2))`; `V_0 = 2`; `F_3 = 1032, 296, 56`.
 * Chains `(4,3)`: `c = 1, -3, 2`, `F_3 = 248, 104, 56`; `(4,3,2)`: `F_3 = 64, 48`.
 * The chains are `(4)`, `(4,2)`, `(4,3)`, `(4,3,2)` (`example34_chains`), with terms `1680`, `1488`, `144`, `96`.
-  Hence `pathFormulaRHS 3 4 = 3408/1680` (`example34_rhs`) and, by Proposition 3.1, `t_{3,4}(G) = 3408/1680`
+  Hence `pathFormulaRHS 3 4 = 3408/1680` (`example34_rhs`) and, by Proposition 3.2, `t_{3,4}(G) = 3408/1680`
   (`example34_tG`), the value of `example_n3_m4`.
 -/
 
@@ -436,7 +436,7 @@ theorem example34_chains :
     have e2 : (v 2).val = 2 := by omega
     right; right; right
     exact chain_eq_of _ _ h _ fun i => by fin_cases i; exacts [h0, e1, e2]
-/-- The right-hand side of Proposition 3.1 at `(3,4)`, from the four chain terms. -/
+/-- The right-hand side of Proposition 3.2 at `(3,4)`, from the four chain terms. -/
 theorem example34_rhs : pathFormulaRHS 3 4 = (3408 : ℝ) / 1680 := by
   have h : ∑ s : PathChain 3 4, (pathChainTerm s : ℝ) = 3408 := by
     rw [example34_chains, sum_insert (by decide), sum_insert (by decide), sum_insert (by decide),
@@ -447,11 +447,11 @@ theorem example34_rhs : pathFormulaRHS 3 4 = (3408 : ℝ) / 1680 := by
   convert congrArg (· / (1680 : ℝ)) h using 3
   congr 1; exact Subsingleton.elim _ _
 
-/-- Proposition 3.1 gives `t_{3,4}(G) = 3408/1680`, the value `example_n3_m4` obtains from Proposition 3.5. -/
+/-- Proposition 3.2 gives `t_{3,4}(G) = 3408/1680`, the value `example_n3_m4` obtains from Proposition 3.6. -/
 theorem example34_tG : tG 3 4 (by norm_num) = (3408 : ℝ) / 1680 := by
   rw [prop_path_formula (by norm_num) (by norm_num), example34_rhs]
 
-/-- The chain terms of Proposition 3.1 for `(n,m) = (3,4)` sum to `3408`. -/
+/-- The chain terms of Proposition 3.2 for `(n,m) = (3,4)` sum to `3408`. -/
 theorem path_formula_n3_m4_total : ∑ s : PathChain 3 4, (pathChainTerm s : ℝ) = 3408 := by
   have h := prop_path_formula (n := 3) (m := 4) (by norm_num) (by norm_num)
   rw [example_n3_m4] at h
