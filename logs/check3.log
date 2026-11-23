@@ -240,3 +240,29 @@ tsum_eq_coef : ∀ (a B : ℕ), a < B → ∀ (u : ℕ → ℕ), IsTy B a u → 
                       ∀ (j : Fin (d + 1)), ConstOn (ps j) fun t => row (cellEmb S j t)}.card =
                 cntU B (fun j v => typeVec (ps j) ↑v) (fun i => (S i).card) (fixedPathQuality S) rho i
 'GradientKey.Concrete.rowcount_eq_cntU' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sum_mu_pi : ∀ {m d : ℕ} (a b : Fin (d + 1) → ℕ),
+  (∀ (j : Fin (d + 1)), a j = b j) →
+    (∀ (j : Fin (d + 1)), b j ≤ m) →
+      ∀ (K : (Fin (d + 1) → Fin (m + 1) → ℕ) → ℚ),
+        (∑ ps, ↑(∏ j, mu (ps j)) * K fun j v => typeVec (ps j) ↑v) =
+          ∑ parts, (∏ j, pathCoeff (parts j)) * K fun j v => ↑(↑(parts j) v)
+'GradientKey.Concrete.sum_mu_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+@cntU_W : ∀ {n m : ℕ} {s : PathChain n m} (parts : PathPartitionTypes s) (sz : Fin (pathChainDepth s + 1) → ℕ)
+  (q : Fin (pathChainDepth s) → ℕ),
+  (∀ (i : Fin (pathChainDepth s + 1)), sz i = ↑(pathChainSizes s i)) →
+    (∀ (j : Fin (pathChainDepth s)), q j = pathQuality s j) →
+      ∀ (rho : Fin (pathChainDepth s) ↪ Fin n) (i : Fin n),
+        (∀ (j : Fin (pathChainDepth s)), rho j ≠ i) →
+          cntU (m + 1) (fun j v => ↑(↑(parts j) v)) sz q rho i = pathW s parts (pathBefore s rho i)
+'GradientKey.Concrete.cntU_W' depends on axioms: [propext, Classical.choice, Quot.sound]
+@cntU_V : ∀ {n m : ℕ} {s : PathChain n m} (parts : PathPartitionTypes s) (sz : Fin (pathChainDepth s + 1) → ℕ)
+  (q : Fin (pathChainDepth s) → ℕ),
+  (∀ (i : Fin (pathChainDepth s + 1)), sz i = ↑(pathChainSizes s i)) →
+    (∀ (j : Fin (pathChainDepth s)), q j = pathQuality s j) →
+      ∀ (rho : Fin (pathChainDepth s) ↪ Fin n) (j₁ : Fin (pathChainDepth s)),
+        cntU (m + 1) (fun j v => ↑(↑(parts j) v)) sz q rho (rho j₁) = pathV s parts j₁ (pathBefore s rho (rho j₁))
+'GradientKey.Concrete.cntU_V' depends on axioms: [propext, Classical.choice, Quot.sound]
+@card_path_fixed : ∀ {n m : ℕ} {s : PathChain n m} {j₀ : Fin m} {S : Fin (pathChainDepth s + 1) → Finset (Fin m)}
+  (hn : 0 < n),
+  S ∈ pathFams s j₀ → ↑↑{A | ∀ (i : Fin (pathChainDepth s + 1)), candidateAt (↑A) j₀ hn ↑i = S i}.card = pathPartSum s
+'GradientKey.Concrete.card_path_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -49,3 +49,7 @@ card_rows_eq_blk
 rowcount_eq_blk
 card_blkAdm_equiv
 rowcount_eq_cntU
+sum_mu_pi
+cntU_W
+cntU_V
+card_path_fixed

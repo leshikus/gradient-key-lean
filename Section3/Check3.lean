@@ -19,6 +19,7 @@ import PathCoeff
 import PathCoeff2
 import PathBlocks
 import PathRowCount
+import PathFixed
 
 open GradientKey.Concrete
 
@@ -130,3 +131,11 @@ open GradientKey.Concrete
 #print axioms card_blkAdm_equiv
 #check @rowcount_eq_cntU
 #print axioms rowcount_eq_cntU
+#check @sum_mu_pi
+#print axioms sum_mu_pi
+#check @cntU_W
+#print axioms cntU_W
+#check @cntU_V
+#print axioms cntU_V
+#check @card_path_fixed
+#print axioms card_path_fixed
