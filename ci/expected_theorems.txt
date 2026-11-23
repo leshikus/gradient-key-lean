@@ -56,3 +56,5 @@ card_path_fixed
 card_pathFams
 chain_count
 prop_path_formula
+path_shape_bounds
+prop_path_prune

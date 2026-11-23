@@ -21,6 +21,7 @@ import PathBlocks
 import PathRowCount
 import PathFixed
 import PathFormula
+import PathPrune
 
 open GradientKey.Concrete
 
@@ -146,3 +147,7 @@ open GradientKey.Concrete
 #print axioms chain_count
 #check @prop_path_formula
 #print axioms prop_path_formula
+#check @path_shape_bounds
+#print axioms path_shape_bounds
+#check @prop_path_prune
+#print axioms prop_path_prune

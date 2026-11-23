@@ -273,3 +273,14 @@ tsum_eq_coef : ∀ (a B : ℕ), a < B → ∀ (u : ℕ → ℕ), IsTy B a u → 
 'GradientKey.Concrete.chain_count' depends on axioms: [propext, Classical.choice, Quot.sound]
 @prop_path_formula : ∀ {n m : ℕ} (hn : 0 < n), 2 ≤ m → tG n m hn = pathFormulaRHS n m
 'GradientKey.Concrete.prop_path_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+@path_shape_bounds : ∀ {n m : ℕ} (hn : 0 < n) (s : PathChain n m) (j₀ : Fin m) (A : ValidTable n m),
+  MatchesChain A hn j₀ s →
+    ∀ (j : Fin (pathChainDepth s)),
+      ↑(pathChainSizes s j.castSucc) - 1 ≤ (n - ↑j) * pathQuality s j ∧
+        pathCellSize s j.castSucc ≤ 2 ^ (n - ↑j - 1) ∧ ↑(pathChainSizes s j.succ) ≤ 2 ^ (n - ↑j - 1)
+'GradientKey.Concrete.path_shape_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+@prop_path_prune : ∀ {n m : ℕ} (s : PathChain n m) (j : Fin (pathChainDepth s)),
+  (n - ↑j) * pathQuality s j < ↑(pathChainSizes s j.castSucc) - 1 ∨
+      2 ^ (n - ↑j - 1) < max (pathCellSize s j.castSucc) ↑(pathChainSizes s j.succ) →
+    pathChainTerm s = 0
+'GradientKey.Concrete.prop_path_prune' depends on axioms: [propext, Classical.choice, Quot.sound]

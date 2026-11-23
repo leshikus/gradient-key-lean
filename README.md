@@ -1,8 +1,8 @@
 # gradient-key-lean
 
-Lean 4 proofs of results of *The gradient key on random tables*: Propositions 3.2, 3.4, 3.5 and Corollary 3.3
-(Section 3), and Lemmas 4.1–4.3 and Theorem 4.4 (Section 4). Proposition 3.1 and the computations of Section 3
-are not formalized. `FORMALIZATION_STATUS.md` maps each result to its declaration.
+Lean 4 proofs of results of *The gradient key on random tables*: Propositions 3.1 (the path formula and its
+pruning claim), 3.2, 3.4, 3.5 and Corollary 3.3 (Section 3), and Lemmas 4.1–4.3 and Theorem 4.4 (Section 4).
+The computations of Section 3 are not formalized. `FORMALIZATION_STATUS.md` maps each result to its declaration.
 Code and data of the article: [gradient-key-impl](https://github.com/leshikus/gradient-key-impl). MIT licence.
 
 The final theorem of Section 4 is `GradientKey.Concrete.theorem_4_4` in `Section4/Theorem44.lean`:
