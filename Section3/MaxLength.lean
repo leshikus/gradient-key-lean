@@ -187,15 +187,17 @@ theorem cdep_ofFn (A : Table n m) (hA : DistinctColumns A) (hn : 0 < n) (j : Fin
     exact candidateStep_eq_lstep A T j hn
   simp only [hc]
 
+/-- `L_max = max_j L_j` of the greedy key of a table. -/
+def maxLeafDepth (A : Table n m) (hn : 0 < n) : ℕ := (univ : Finset (Fin m)).sup (leafDepth A hn)
+
 theorem lmax_ofFn (A : Table n m) (hA : DistinctColumns A) (hn : 0 < n) :
-    lmax (List.ofFn A) = (univ : Finset (Fin m)).sup (leafDepth A hn) := by
-  unfold lmax
+    lmax (List.ofFn A) = maxLeafDepth A hn := by
+  unfold lmax maxLeafDepth
   rw [show cdep (List.ofFn A) = leafDepth A hn from funext (cdep_ofFn A hA hn)]
 
-/-- `t^max_{n,m}(G)`: the average of `L_max = max_j L_j` over `𝒜_{n,m}`. -/
+/-- `t^max_{n,m}(G)`: the average of `L_max` over `𝒜_{n,m}`. -/
 def tGmax (n m : ℕ) (hn : 0 < n) : ℝ :=
-  (∑ A : ValidTable n m, ((univ : Finset (Fin m)).sup (leafDepth A.1 hn) : ℝ)) /
-    (Fintype.card (ValidTable n m) : ℝ)
+  (∑ A : ValidTable n m, (maxLeafDepth A.1 hn : ℝ)) / (Fintype.card (ValidTable n m) : ℝ)
 
 open Classical in
 /-- `L_max - ⌈log m⌉` if the rows separate the columns, else `0`. -/
@@ -237,7 +239,7 @@ theorem prop_max_length (hm2 : 2 ≤ m) (hsize : m ≤ 2 ^ n) (hn : 0 < n) :
   have hsum := sum_stat_numer (n := n) hm (maxExcess m) hn (maxExcess_canon hm) maxExcess_firsts
     (fun L h => by simp [maxExcess, h])
   have hterm (A : ValidTable n m) : ((maxExcess m (List.ofFn A.1) : ℤ) : ℝ) =
-      ((univ : Finset (Fin m)).sup (leafDepth A.1 hn) : ℝ) - Nat.clog 2 m := by
+      (maxLeafDepth A.1 hn : ℝ) - Nat.clog 2 m := by
     rw [maxExcess, if_pos ((sep_iff_distinct A.1).mpr A.2), lmax_ofFn A.1 A.2 hn]
     push_cast
     ring
