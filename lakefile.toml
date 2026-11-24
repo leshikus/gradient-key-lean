@@ -1,5 +1,5 @@
 name = "gradient-key-lean"
-defaultTargets = ["GradientKey", "Section4", "Section3"]
+defaultTargets = ["Section4", "Section3"]
 
 [[require]]
 name = "mathlib"
@@ -7,12 +7,9 @@ git = "https://github.com/leanprover-community/mathlib4"
 rev = "v4.36.0"
 
 [[lean_lib]]
-name = "GradientKey"
-
-[[lean_lib]]
 name = "Section4"
 srcDir = "Section4"
-roots = ["GradientKeySection4", "Lemma41", "Truncation", "Hoeffding", "DeletedPath", "Lemma43", "Theorem44", "P1_GreedyPath", "P2_SizeRecurrence", "P3_FiniteFibreCore", "P3_ConditionalFibre", "P5_InsertedRowTail", "P7_TailAggregation", "P8_Theorem44"]
+roots = ["GradientKeySection4", "Lemma41", "Truncation", "Hoeffding", "DeletedPath", "Lemma43", "Theorem44", "P1_GreedyPath", "P2_SizeRecurrence", "P3_FiniteFibreCore", "P3_ConditionalFibre", "P5_InsertedRowTail", "P7_TailAggregation"]
 
 [[lean_lib]]
 name = "Section3"

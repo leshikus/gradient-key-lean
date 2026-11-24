@@ -31,11 +31,12 @@ No `sorry`, `admit`, `axiom`, `unsafe` or `native_decide` in `Section4/*.lean`.
 | P1 | compiler errors fixed; used as is |
 | P2 | errors fixed; `fiber` takes `[DecidableEq C]`; connected to `candidateAt` in `Lemma41.lean` |
 | P3 | errors fixed; duplicate `Fintype` instance removed; used as is |
-| P4 | not used: it models the full path with its own available-row state, not the baseline `candidateAt`. `DeletedPath.lean` defines `G(∂_r A)` directly with the baseline's `greedyRow` rule and proves the coupling against `candidateAt`. The original is kept in `drafts/original/`. |
+| P4 | not used: it models the full path with its own available-row state, not the baseline `candidateAt`. `DeletedPath.lean` defines `G(∂_r A)` directly with the baseline's `greedyRow` rule and proves the coupling against `candidateAt`. |
 | P5 | errors fixed; its exact mgf (`unique_sign_mgf_exact`) feeds the Chernoff bound in `Hoeffding.lean` |
-| P6 | not used: its interface hypotheses are proved directly in `Lemma43.lean`. The original is kept in `drafts/original/`. |
+| P6 | not used: its interface hypotheses are proved directly in `Lemma43.lean`. |
 | P7 | errors fixed; `htrunc` proved in `Truncation.lean` (layer cake for the counting measure, split at `z = 2 ln(2/q)`) |
-| P8 | compiles unchanged; it is not on the dependency path of `theorem_4_4` |
+| P8 | not used: not on the dependency path of `theorem_4_4`; removed in the cleanup |
 | P9 | patch applied; its Python check passes |
 
-The Python regression scripts (`drafts/original/*.py`) all pass; their output is in `logs/python/`.
+The original drafts (P0–P10), their Python regression scripts and the compiler logs are in the history of this
+repository (commit `aa1652f` and before).

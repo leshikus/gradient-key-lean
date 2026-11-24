@@ -28,17 +28,19 @@ number of depths with a fork on the path of column `j`, and `G` tests the first 
 
 ```sh
 lake exe cache get                  # Mathlib build cache
-lake build                          # builds GradientKey, Section3 and Section4
+lake build                          # builds Section3 and Section4
 lake env lean Section4/Check.lean   # prints the theorem, the definitions and the axioms
 lake env lean Section3/Check3.lean  # the same for Section 3
 ```
 
 Lean and Mathlib are pinned to `v4.36.0` (`lean-toolchain`, `lakefile.toml`, `lake-manifest.json`).
-CI (`.github/workflows/lean.yml`) runs `lake build` on every push and pull request.
+CI (`.github/workflows/lean.yml`) runs `lake build`, both checkers and `ci/check_proofs.py` on every push.
+Rules for changes: `CONTRIBUTING.md`.
 
 ## Layout
 
 - `Section3/`: Propositions 3.3, 3.5, 3.6 and Corollary 3.4; module list in `FORMALIZATION_STATUS.md`.
 - `Section4/`: the proof; `Section4/STATUS.md` maps each result to its declaration.
-- `drafts/original/`: the P0–P10 drafts as received, unchanged.
-- `logs/`: compiler output before and after the repairs, and the Python regression runs.
+- `ci/`: `check_proofs.py` (shortcuts, roots, axioms), `expected_theorems.txt`, `generate_exact.py` (exact values from
+  `data/fixed_n.csv`, a copy of `gradient-key-impl/data/small/fixed_n.csv`).
+- `drafts/`: the prompt of the current review. The original drafts and compiler logs are in the history (`aa1652f`).

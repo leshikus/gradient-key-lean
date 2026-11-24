@@ -1,2 +1,0 @@
-PASS: 55987 exact finite partition instances, m=0..6, 3 parent labels, both branch bits
-PASS: 10668 exact greedy-depth checks, n=1..3, m<=4; all injective ordered tables

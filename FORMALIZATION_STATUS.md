@@ -2,7 +2,7 @@
 
 Lean `v4.36.0`, Mathlib `v4.36.0`. `lake build` exits with 0. No `sorry`, `admit`, `axiom`, `unsafe` or
 `native_decide` in `Section3/*.lean` or `Section4/*.lean`. Every final theorem below depends only on `propext`,
-`Classical.choice`, `Quot.sound` (`logs/check3.log`, `logs/check.log`). CI runs both checkers and
+`Classical.choice`, `Quot.sound` (CI prints the axiom reports). CI runs both checkers and
 `ci/check_proofs.py`: no proof shortcuts outside comments, every module a Lake root, and an axiom report with only
 these three axioms for every theorem in `ci/expected_theorems.txt`.
 

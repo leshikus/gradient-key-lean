@@ -25,7 +25,7 @@ FORBIDDEN = [
     (r"@\[\s*extern\b", "extern"),
     (r"\bdebug\.skipKernelTC\b", "debug.skipKernelTC"),
 ]
-DIRS = ["GradientKey", "Section3", "Section4"]
+DIRS = ["Section3", "Section4"]
 
 
 def strip_comments(src: str) -> str:
@@ -57,7 +57,6 @@ def strip_comments(src: str) -> str:
 def main() -> int:
     errors = []
     files = [p for d in DIRS for p in sorted((ROOT / d).glob("*.lean"))]
-    files.append(ROOT / "GradientKey.lean")
     for path in files:
         code = strip_comments(path.read_text())
         for pat, name in FORBIDDEN:
