@@ -3,7 +3,10 @@
 Lean 4 proofs of results of *The gradient key on random tables*: Lemma 3.1, Propositions 3.2 (the path formula and its
 pruning claim, the example (3,4) and the row-by-row recurrence for F_n), 3.3 (with the integrality of the B_k), 3.5, 3.6
 and Corollary 3.4 (Section 3), and Lemmas 4.1–4.3 and Theorem 4.4 (Section 4).
-The computations of Section 3 are not formalized. `FORMALIZATION_STATUS.md` maps each result to its declaration.
+Also: `t_{3,5} = C(5) < t_{4,5}`; the 41 exact values for `n ≤ 6` given by Propositions 3.3, 3.5 and 3.6, and Table 2 rows
+`n ≤ 3`; the integrality of `(2^n)_m t_{n,m}(G)` and the uniqueness of the `a_j` from `N_m(0),…,N_m(M-1)`; the reduction to missing
+sets containing `0`; the maximum-length formula. The other computations of Section 3 are not formalized.
+`FORMALIZATION_STATUS.md` maps each result to its declaration.
 Code and data of the article: [gradient-key-impl](https://github.com/leshikus/gradient-key-impl). MIT licence.
 
 The final theorem of Section 4 is `GradientKey.Concrete.theorem_4_4` in `Section4/Theorem44.lean`:
