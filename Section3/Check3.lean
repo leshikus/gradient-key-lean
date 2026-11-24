@@ -25,6 +25,9 @@ import PathPrune
 import PathExample
 import PathRecurrence
 import BkInteger
+import StrictFive
+import ExactAnalytic
+import Table2Small
 
 open GradientKey.Concrete
 
@@ -210,3 +213,101 @@ open GradientKey.Concrete
 #print axioms Bint_dvd
 #check @Bk_integer
 #print axioms Bk_integer
+#check @GradientKey.Concrete.strict_five
+#print axioms GradientKey.Concrete.strict_five
+#check @GradientKey.Concrete.exact_n1_m2
+#print axioms GradientKey.Concrete.exact_n1_m2
+#check @GradientKey.Concrete.exact_n2_m2
+#print axioms GradientKey.Concrete.exact_n2_m2
+#check @GradientKey.Concrete.exact_n2_m3
+#print axioms GradientKey.Concrete.exact_n2_m3
+#check @GradientKey.Concrete.exact_n2_m4
+#print axioms GradientKey.Concrete.exact_n2_m4
+#check @GradientKey.Concrete.exact_n3_m2
+#print axioms GradientKey.Concrete.exact_n3_m2
+#check @GradientKey.Concrete.exact_n3_m3
+#print axioms GradientKey.Concrete.exact_n3_m3
+#check @GradientKey.Concrete.exact_n3_m4
+#print axioms GradientKey.Concrete.exact_n3_m4
+#check @GradientKey.Concrete.exact_n3_m5
+#print axioms GradientKey.Concrete.exact_n3_m5
+#check @GradientKey.Concrete.exact_n3_m6
+#print axioms GradientKey.Concrete.exact_n3_m6
+#check @GradientKey.Concrete.exact_n3_m7
+#print axioms GradientKey.Concrete.exact_n3_m7
+#check @GradientKey.Concrete.exact_n3_m8
+#print axioms GradientKey.Concrete.exact_n3_m8
+#check @GradientKey.Concrete.exact_n4_m2
+#print axioms GradientKey.Concrete.exact_n4_m2
+#check @GradientKey.Concrete.exact_n4_m3
+#print axioms GradientKey.Concrete.exact_n4_m3
+#check @GradientKey.Concrete.exact_n4_m10
+#print axioms GradientKey.Concrete.exact_n4_m10
+#check @GradientKey.Concrete.exact_n4_m11
+#print axioms GradientKey.Concrete.exact_n4_m11
+#check @GradientKey.Concrete.exact_n4_m12
+#print axioms GradientKey.Concrete.exact_n4_m12
+#check @GradientKey.Concrete.exact_n4_m13
+#print axioms GradientKey.Concrete.exact_n4_m13
+#check @GradientKey.Concrete.exact_n4_m14
+#print axioms GradientKey.Concrete.exact_n4_m14
+#check @GradientKey.Concrete.exact_n4_m15
+#print axioms GradientKey.Concrete.exact_n4_m15
+#check @GradientKey.Concrete.exact_n4_m16
+#print axioms GradientKey.Concrete.exact_n4_m16
+#check @GradientKey.Concrete.exact_n5_m2
+#print axioms GradientKey.Concrete.exact_n5_m2
+#check @GradientKey.Concrete.exact_n5_m3
+#print axioms GradientKey.Concrete.exact_n5_m3
+#check @GradientKey.Concrete.exact_n5_m25
+#print axioms GradientKey.Concrete.exact_n5_m25
+#check @GradientKey.Concrete.exact_n5_m26
+#print axioms GradientKey.Concrete.exact_n5_m26
+#check @GradientKey.Concrete.exact_n5_m27
+#print axioms GradientKey.Concrete.exact_n5_m27
+#check @GradientKey.Concrete.exact_n5_m28
+#print axioms GradientKey.Concrete.exact_n5_m28
+#check @GradientKey.Concrete.exact_n5_m29
+#print axioms GradientKey.Concrete.exact_n5_m29
+#check @GradientKey.Concrete.exact_n5_m30
+#print axioms GradientKey.Concrete.exact_n5_m30
+#check @GradientKey.Concrete.exact_n5_m31
+#print axioms GradientKey.Concrete.exact_n5_m31
+#check @GradientKey.Concrete.exact_n5_m32
+#print axioms GradientKey.Concrete.exact_n5_m32
+#check @GradientKey.Concrete.exact_n6_m2
+#print axioms GradientKey.Concrete.exact_n6_m2
+#check @GradientKey.Concrete.exact_n6_m3
+#print axioms GradientKey.Concrete.exact_n6_m3
+#check @GradientKey.Concrete.exact_n6_m56
+#print axioms GradientKey.Concrete.exact_n6_m56
+#check @GradientKey.Concrete.exact_n6_m57
+#print axioms GradientKey.Concrete.exact_n6_m57
+#check @GradientKey.Concrete.exact_n6_m58
+#print axioms GradientKey.Concrete.exact_n6_m58
+#check @GradientKey.Concrete.exact_n6_m59
+#print axioms GradientKey.Concrete.exact_n6_m59
+#check @GradientKey.Concrete.exact_n6_m60
+#print axioms GradientKey.Concrete.exact_n6_m60
+#check @GradientKey.Concrete.exact_n6_m61
+#print axioms GradientKey.Concrete.exact_n6_m61
+#check @GradientKey.Concrete.exact_n6_m62
+#print axioms GradientKey.Concrete.exact_n6_m62
+#check @GradientKey.Concrete.exact_n6_m63
+#print axioms GradientKey.Concrete.exact_n6_m63
+#check @GradientKey.Concrete.exact_n6_m64
+#print axioms GradientKey.Concrete.exact_n6_m64
+#check @GradientKey.Concrete.table2_n1_bound
+#print axioms GradientKey.Concrete.table2_n1_bound
+#check @GradientKey.Concrete.table2_n1_attained
+#print axioms GradientKey.Concrete.table2_n1_attained
+#check @GradientKey.Concrete.table2_n2_bound
+#print axioms GradientKey.Concrete.table2_n2_bound
+#check @GradientKey.Concrete.table2_n2_attained
+#print axioms GradientKey.Concrete.table2_n2_attained
+#check @GradientKey.Concrete.table2_n3_bound
+#print axioms GradientKey.Concrete.table2_n3_bound
+#check @GradientKey.Concrete.table2_n3_attained
+#print axioms GradientKey.Concrete.table2_n3_attained
+#check @GradientKey.Concrete.table2_n3_unique
+#print axioms GradientKey.Concrete.table2_n3_unique
