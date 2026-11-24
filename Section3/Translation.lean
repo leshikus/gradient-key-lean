@@ -115,6 +115,9 @@ theorem translateSet_involutive (v : Word n) : Function.Involutive (translateSet
   ext w
   rw [mem_translateSet_iff, mem_translateSet_iff, xorWord_involutive]
 
+theorem translateSet_translateSet (v : Word n) (R : Finset (Word n)) :
+    translateSet v (translateSet v R) = R := translateSet_involutive v R
+
 theorem zero_mem_translate_iff (v : Word n) (R : Finset (Word n)) :
     zeroWord ∈ translateSet v R ↔ v ∈ R := by
   rw [mem_translateSet_iff, xorWord_zero]
@@ -155,14 +158,14 @@ theorem missing_weighted_count (r : ℕ) (f : Finset (Word n) → ℝ)
       ∑ p ∈ Finset.sigma (α := fun _ => Word n) (missingSets n r) (fun R => R), f p.1 := by
     rw [sum_sigma, mul_sum]
     refine sum_congr rfl fun R hR => ?_
-    rw [sum_const, (mem_filter.mp hR).2, nsmul_eq_mul]
+    simp only [sum_const, nsmul_eq_mul, (mem_filter.mp hR).2]
   have hr : (2 : ℝ) ^ n * ∑ R ∈ zeroSets n r, f R =
       ∑ p ∈ zeroSets n r ×ˢ (univ : Finset (Word n)), f p.1 := by
     rw [sum_product, mul_sum]
     refine sum_congr rfl fun R _ => ?_
-    rw [sum_const, card_univ, card_word, nsmul_eq_mul]
+    simp only [sum_const, card_univ, card_word, nsmul_eq_mul]
     push_cast
-    ring
+    all_goals ring
   rw [hl, hr]
   refine sum_bij' (fun p _ => (translateSet p.2 p.1, p.2))
     (fun q _ => (⟨translateSet q.2 q.1, q.2⟩ : Σ _ : Finset (Word n), Word n)) ?_ ?_ ?_ ?_ ?_
@@ -177,12 +180,12 @@ theorem missing_weighted_count (r : ℕ) (f : Finset (Word n) → ℝ)
     rw [mem_sigma]
     simp only [missingSets, mem_filter, mem_univ, true_and]
     refine ⟨(translateSet_card w R).trans h.1, ?_⟩
-    rw [← zero_mem_translate_iff, translateSet_involutive]
+    rw [← zero_mem_translate_iff, translateSet_translateSet]
     exact h.2
   · rintro ⟨R, w⟩ _
-    simp only [translateSet_involutive]
+    simp only [translateSet_translateSet]
   · rintro ⟨R, w⟩ _
-    simp only [translateSet_involutive]
+    simp only [translateSet_translateSet]
   · rintro ⟨R, w⟩ _
     exact (hf w R).symm
 
@@ -224,8 +227,8 @@ theorem missingDepth_translate (hm : 0 < m) (hn : 0 < n) (v : Word n) (R : Finse
     (totalDepth (translateTable v A.1) hn univ : ℝ) else 0)
   rw [translate_missing, translate_totalDepth hm]
   by_cases h : missing A.1 univ univ = translateSet v R
-  · rw [if_pos h, if_pos (by rw [h, translateSet_involutive])]
-  · rw [if_neg h, if_neg (fun h' => h (by rw [← h', translateSet_involutive]))]
+  · rw [if_pos h, if_pos (by rw [h, translateSet_translateSet])]
+  · rw [if_neg h, if_neg (fun h' => h (by rw [← h', translateSet_translateSet]))]
 
 theorem ldepth_map_prow (π : Equiv.Perm (Fin m)) (L : List (Row m)) :
     ldepth (L.map (prow π)) = ldepth L := by
