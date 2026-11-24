@@ -77,7 +77,7 @@ def exact_analytic(rows):
         k = m.bit_length() - 1
         out += [f"theorem completeCost_val_{m} : completeCost {m} = {rat(cost(m))} := by",
                 f"  rw [completeCost_of_log {k} (by norm_num) (by norm_num)]",
-                "  norm_num", ""]
+                "  all_goals norm_num", ""]
     count = 0
     for (n, m) in sorted(rows):
         method = route(n, m)
@@ -98,7 +98,7 @@ def exact_analytic(rows):
         elif method == "dense":
             out += [f"  rw [prop_dense (n := {n}) (m := {m}) (by norm_num) (by norm_num) (by norm_num) "
                     f"(by norm_num), completeCost_val_{m}]",
-                    "  norm_num"]
+                    "  all_goals norm_num"]
         else:
             d = 1 if method == "near_one" else 2
             decl = "prop_near_dense_one" if d == 1 else "prop_near_dense_two"
@@ -131,11 +131,11 @@ def table2(rows, ns, name, imports):
                 f"    tG {n} m (by norm_num) - completeCost m ≤ {rat(best)} := by",
                 "  norm_num at hs", "  interval_cases m"]
         for m in es:
-            out += [f"  · rw [exact_n{n}_m{m}, completeCost_val_{m}]", "    norm_num"]
+            out += [f"  · rw [exact_n{n}_m{m}, completeCost_val_{m}]", "    all_goals norm_num"]
         out += ["", f"/-- Table 2, `n = {n}`: the maximum `{best}` is attained at `m = {arg[0]}`. -/",
                 f"theorem table2_n{n}_attained :",
                 f"    tG {n} {arg[0]} (by norm_num) - completeCost {arg[0]} = {rat(best)} := by",
-                f"  rw [exact_n{n}_m{arg[0]}, completeCost_val_{arg[0]}]", "  norm_num", ""]
+                f"  rw [exact_n{n}_m{arg[0]}, completeCost_val_{arg[0]}]", "  all_goals norm_num", ""]
         if n >= 3:
             out += [f"/-- Table 2, `n = {n}`: `m = {arg[0]}` is the only `m` attaining the maximum. -/",
                     f"theorem table2_n{n}_unique (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ {n})",
@@ -145,7 +145,7 @@ def table2(rows, ns, name, imports):
                 if m == arg[0]:
                     out += ["  · rfl"]
                 else:
-                    out += [f"  · rw [exact_n{n}_m{m}, completeCost_val_{m}] at h", "    norm_num at h"]
+                    out += [f"  · rw [exact_n{n}_m{m}, completeCost_val_{m}] at h", "    all_goals norm_num at h"]
             out.append("")
     out += ["end GradientKey.Concrete"]
     (ROOT / f"Section3/{name}.lean").write_text("\n".join(out) + "\n")

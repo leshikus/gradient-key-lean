@@ -19,255 +19,255 @@ theorem completeCost_of_log {m : ℕ} (k : ℕ) (h1 : 2 ^ k ≤ m) (h2 : m < 2 ^
 
 theorem completeCost_val_2 : completeCost 2 = (1 : ℝ) / 1 := by
   rw [completeCost_of_log 1 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_3 : completeCost 3 = (5 : ℝ) / 3 := by
   rw [completeCost_of_log 1 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_4 : completeCost 4 = (2 : ℝ) / 1 := by
   rw [completeCost_of_log 2 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_5 : completeCost 5 = (12 : ℝ) / 5 := by
   rw [completeCost_of_log 2 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_6 : completeCost 6 = (8 : ℝ) / 3 := by
   rw [completeCost_of_log 2 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_7 : completeCost 7 = (20 : ℝ) / 7 := by
   rw [completeCost_of_log 2 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_8 : completeCost 8 = (3 : ℝ) / 1 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_9 : completeCost 9 = (29 : ℝ) / 9 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_10 : completeCost 10 = (17 : ℝ) / 5 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_11 : completeCost 11 = (39 : ℝ) / 11 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_12 : completeCost 12 = (11 : ℝ) / 3 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_13 : completeCost 13 = (49 : ℝ) / 13 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_14 : completeCost 14 = (27 : ℝ) / 7 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_15 : completeCost 15 = (59 : ℝ) / 15 := by
   rw [completeCost_of_log 3 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_16 : completeCost 16 = (4 : ℝ) / 1 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_17 : completeCost 17 = (70 : ℝ) / 17 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_18 : completeCost 18 = (38 : ℝ) / 9 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_19 : completeCost 19 = (82 : ℝ) / 19 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_20 : completeCost 20 = (22 : ℝ) / 5 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_21 : completeCost 21 = (94 : ℝ) / 21 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_22 : completeCost 22 = (50 : ℝ) / 11 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_23 : completeCost 23 = (106 : ℝ) / 23 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_24 : completeCost 24 = (14 : ℝ) / 3 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_25 : completeCost 25 = (118 : ℝ) / 25 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_26 : completeCost 26 = (62 : ℝ) / 13 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_27 : completeCost 27 = (130 : ℝ) / 27 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_28 : completeCost 28 = (34 : ℝ) / 7 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_29 : completeCost 29 = (142 : ℝ) / 29 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_30 : completeCost 30 = (74 : ℝ) / 15 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_31 : completeCost 31 = (154 : ℝ) / 31 := by
   rw [completeCost_of_log 4 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_32 : completeCost 32 = (5 : ℝ) / 1 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_33 : completeCost 33 = (167 : ℝ) / 33 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_34 : completeCost 34 = (87 : ℝ) / 17 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_35 : completeCost 35 = (181 : ℝ) / 35 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_36 : completeCost 36 = (47 : ℝ) / 9 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_37 : completeCost 37 = (195 : ℝ) / 37 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_38 : completeCost 38 = (101 : ℝ) / 19 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_39 : completeCost 39 = (209 : ℝ) / 39 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_40 : completeCost 40 = (27 : ℝ) / 5 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_41 : completeCost 41 = (223 : ℝ) / 41 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_42 : completeCost 42 = (115 : ℝ) / 21 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_43 : completeCost 43 = (237 : ℝ) / 43 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_44 : completeCost 44 = (61 : ℝ) / 11 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_45 : completeCost 45 = (251 : ℝ) / 45 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_46 : completeCost 46 = (129 : ℝ) / 23 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_47 : completeCost 47 = (265 : ℝ) / 47 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_48 : completeCost 48 = (17 : ℝ) / 3 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_49 : completeCost 49 = (279 : ℝ) / 49 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_50 : completeCost 50 = (143 : ℝ) / 25 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_51 : completeCost 51 = (293 : ℝ) / 51 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_52 : completeCost 52 = (75 : ℝ) / 13 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_53 : completeCost 53 = (307 : ℝ) / 53 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_54 : completeCost 54 = (157 : ℝ) / 27 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_55 : completeCost 55 = (321 : ℝ) / 55 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_56 : completeCost 56 = (41 : ℝ) / 7 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_57 : completeCost 57 = (335 : ℝ) / 57 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_58 : completeCost 58 = (171 : ℝ) / 29 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_59 : completeCost 59 = (349 : ℝ) / 59 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_60 : completeCost 60 = (89 : ℝ) / 15 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_61 : completeCost 61 = (363 : ℝ) / 61 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_62 : completeCost 62 = (185 : ℝ) / 31 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_63 : completeCost 63 = (377 : ℝ) / 63 := by
   rw [completeCost_of_log 5 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 theorem completeCost_val_64 : completeCost 64 = (6 : ℝ) / 1 := by
   rw [completeCost_of_log 6 (by norm_num) (by norm_num)]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{1,2}(G) = 1` (Proposition 3.3, `m ≤ 3`). -/
 theorem exact_n1_m2 : tG 1 2 (by norm_num) = (1 : ℝ) / 1 := by
@@ -290,7 +290,7 @@ theorem exact_n2_m3 : tG 2 3 (by norm_num) = (5 : ℝ) / 3 := by
 /-- `t_{2,4}(G) = 2` (Proposition 3.5). -/
 theorem exact_n2_m4 : tG 2 4 (by norm_num) = (2 : ℝ) / 1 := by
   rw [prop_dense (n := 2) (m := 4) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_4]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{3,2}(G) = 1` (Proposition 3.3, `m ≤ 3`). -/
 theorem exact_n3_m2 : tG 3 2 (by norm_num) = (1 : ℝ) / 1 := by
@@ -317,22 +317,22 @@ theorem exact_n3_m4 : tG 3 4 (by norm_num) = (71 : ℝ) / 35 := by
 /-- `t_{3,5}(G) = 12/5` (Proposition 3.5). -/
 theorem exact_n3_m5 : tG 3 5 (by norm_num) = (12 : ℝ) / 5 := by
   rw [prop_dense (n := 3) (m := 5) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_5]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{3,6}(G) = 8/3` (Proposition 3.5). -/
 theorem exact_n3_m6 : tG 3 6 (by norm_num) = (8 : ℝ) / 3 := by
   rw [prop_dense (n := 3) (m := 6) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_6]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{3,7}(G) = 20/7` (Proposition 3.5). -/
 theorem exact_n3_m7 : tG 3 7 (by norm_num) = (20 : ℝ) / 7 := by
   rw [prop_dense (n := 3) (m := 7) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_7]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{3,8}(G) = 3` (Proposition 3.5). -/
 theorem exact_n3_m8 : tG 3 8 (by norm_num) = (3 : ℝ) / 1 := by
   rw [prop_dense (n := 3) (m := 8) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_8]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{4,2}(G) = 1` (Proposition 3.3, `m ≤ 3`). -/
 theorem exact_n4_m2 : tG 4 2 (by norm_num) = (1 : ℝ) / 1 := by
@@ -369,27 +369,27 @@ theorem exact_n4_m11 : tG 4 11 (by norm_num) = (968 : ℝ) / 273 := by
 /-- `t_{4,12}(G) = 11/3` (Proposition 3.5). -/
 theorem exact_n4_m12 : tG 4 12 (by norm_num) = (11 : ℝ) / 3 := by
   rw [prop_dense (n := 4) (m := 12) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_12]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{4,13}(G) = 49/13` (Proposition 3.5). -/
 theorem exact_n4_m13 : tG 4 13 (by norm_num) = (49 : ℝ) / 13 := by
   rw [prop_dense (n := 4) (m := 13) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_13]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{4,14}(G) = 27/7` (Proposition 3.5). -/
 theorem exact_n4_m14 : tG 4 14 (by norm_num) = (27 : ℝ) / 7 := by
   rw [prop_dense (n := 4) (m := 14) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_14]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{4,15}(G) = 59/15` (Proposition 3.5). -/
 theorem exact_n4_m15 : tG 4 15 (by norm_num) = (59 : ℝ) / 15 := by
   rw [prop_dense (n := 4) (m := 15) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_15]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{4,16}(G) = 4` (Proposition 3.5). -/
 theorem exact_n4_m16 : tG 4 16 (by norm_num) = (4 : ℝ) / 1 := by
   rw [prop_dense (n := 4) (m := 16) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_16]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{5,2}(G) = 1` (Proposition 3.3, `m ≤ 3`). -/
 theorem exact_n5_m2 : tG 5 2 (by norm_num) = (1 : ℝ) / 1 := by
@@ -426,32 +426,32 @@ theorem exact_n5_m26 : tG 5 26 (by norm_num) = (270115 : ℝ) / 56637 := by
 /-- `t_{5,27}(G) = 130/27` (Proposition 3.5). -/
 theorem exact_n5_m27 : tG 5 27 (by norm_num) = (130 : ℝ) / 27 := by
   rw [prop_dense (n := 5) (m := 27) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_27]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{5,28}(G) = 34/7` (Proposition 3.5). -/
 theorem exact_n5_m28 : tG 5 28 (by norm_num) = (34 : ℝ) / 7 := by
   rw [prop_dense (n := 5) (m := 28) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_28]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{5,29}(G) = 142/29` (Proposition 3.5). -/
 theorem exact_n5_m29 : tG 5 29 (by norm_num) = (142 : ℝ) / 29 := by
   rw [prop_dense (n := 5) (m := 29) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_29]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{5,30}(G) = 74/15` (Proposition 3.5). -/
 theorem exact_n5_m30 : tG 5 30 (by norm_num) = (74 : ℝ) / 15 := by
   rw [prop_dense (n := 5) (m := 30) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_30]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{5,31}(G) = 154/31` (Proposition 3.5). -/
 theorem exact_n5_m31 : tG 5 31 (by norm_num) = (154 : ℝ) / 31 := by
   rw [prop_dense (n := 5) (m := 31) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_31]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{5,32}(G) = 5` (Proposition 3.5). -/
 theorem exact_n5_m32 : tG 5 32 (by norm_num) = (5 : ℝ) / 1 := by
   rw [prop_dense (n := 5) (m := 32) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_32]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{6,2}(G) = 1` (Proposition 3.3, `m ≤ 3`). -/
 theorem exact_n6_m2 : tG 6 2 (by norm_num) = (1 : ℝ) / 1 := by
@@ -488,36 +488,36 @@ theorem exact_n6_m57 : tG 6 57 (by norm_num) = (171140974 : ℝ) / 29119509 := b
 /-- `t_{6,58}(G) = 171/29` (Proposition 3.5). -/
 theorem exact_n6_m58 : tG 6 58 (by norm_num) = (171 : ℝ) / 29 := by
   rw [prop_dense (n := 6) (m := 58) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_58]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{6,59}(G) = 349/59` (Proposition 3.5). -/
 theorem exact_n6_m59 : tG 6 59 (by norm_num) = (349 : ℝ) / 59 := by
   rw [prop_dense (n := 6) (m := 59) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_59]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{6,60}(G) = 89/15` (Proposition 3.5). -/
 theorem exact_n6_m60 : tG 6 60 (by norm_num) = (89 : ℝ) / 15 := by
   rw [prop_dense (n := 6) (m := 60) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_60]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{6,61}(G) = 363/61` (Proposition 3.5). -/
 theorem exact_n6_m61 : tG 6 61 (by norm_num) = (363 : ℝ) / 61 := by
   rw [prop_dense (n := 6) (m := 61) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_61]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{6,62}(G) = 185/31` (Proposition 3.5). -/
 theorem exact_n6_m62 : tG 6 62 (by norm_num) = (185 : ℝ) / 31 := by
   rw [prop_dense (n := 6) (m := 62) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_62]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{6,63}(G) = 377/63` (Proposition 3.5). -/
 theorem exact_n6_m63 : tG 6 63 (by norm_num) = (377 : ℝ) / 63 := by
   rw [prop_dense (n := 6) (m := 63) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_63]
-  norm_num
+  all_goals norm_num
 
 /-- `t_{6,64}(G) = 6` (Proposition 3.5). -/
 theorem exact_n6_m64 : tG 6 64 (by norm_num) = (6 : ℝ) / 1 := by
   rw [prop_dense (n := 6) (m := 64) (by norm_num) (by norm_num) (by norm_num) (by norm_num), completeCost_val_64]
-  norm_num
+  all_goals norm_num
 
 end GradientKey.Concrete

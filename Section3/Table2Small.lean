@@ -17,13 +17,13 @@ theorem table2_n1_bound (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ 1) :
   norm_num at hs
   interval_cases m
   · rw [exact_n1_m2, completeCost_val_2]
-    norm_num
+    all_goals norm_num
 
 /-- Table 2, `n = 1`: the maximum `0` is attained at `m = 2`. -/
 theorem table2_n1_attained :
     tG 1 2 (by norm_num) - completeCost 2 = (0 : ℝ) / 1 := by
   rw [exact_n1_m2, completeCost_val_2]
-  norm_num
+  all_goals norm_num
 
 /-- Table 2, `n = 2`: `t_{2,m}(G) - C(m) ≤ 0` for `2 ≤ m ≤ 2^2`. -/
 theorem table2_n2_bound (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ 2) :
@@ -31,17 +31,17 @@ theorem table2_n2_bound (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ 2) :
   norm_num at hs
   interval_cases m
   · rw [exact_n2_m2, completeCost_val_2]
-    norm_num
+    all_goals norm_num
   · rw [exact_n2_m3, completeCost_val_3]
-    norm_num
+    all_goals norm_num
   · rw [exact_n2_m4, completeCost_val_4]
-    norm_num
+    all_goals norm_num
 
 /-- Table 2, `n = 2`: the maximum `0` is attained at `m = 2`. -/
 theorem table2_n2_attained :
     tG 2 2 (by norm_num) - completeCost 2 = (0 : ℝ) / 1 := by
   rw [exact_n2_m2, completeCost_val_2]
-  norm_num
+  all_goals norm_num
 
 /-- Table 2, `n = 3`: `t_{3,m}(G) - C(m) ≤ 1/35` for `2 ≤ m ≤ 2^3`. -/
 theorem table2_n3_bound (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ 3) :
@@ -49,25 +49,25 @@ theorem table2_n3_bound (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ 3) :
   norm_num at hs
   interval_cases m
   · rw [exact_n3_m2, completeCost_val_2]
-    norm_num
+    all_goals norm_num
   · rw [exact_n3_m3, completeCost_val_3]
-    norm_num
+    all_goals norm_num
   · rw [exact_n3_m4, completeCost_val_4]
-    norm_num
+    all_goals norm_num
   · rw [exact_n3_m5, completeCost_val_5]
-    norm_num
+    all_goals norm_num
   · rw [exact_n3_m6, completeCost_val_6]
-    norm_num
+    all_goals norm_num
   · rw [exact_n3_m7, completeCost_val_7]
-    norm_num
+    all_goals norm_num
   · rw [exact_n3_m8, completeCost_val_8]
-    norm_num
+    all_goals norm_num
 
 /-- Table 2, `n = 3`: the maximum `1/35` is attained at `m = 4`. -/
 theorem table2_n3_attained :
     tG 3 4 (by norm_num) - completeCost 4 = (1 : ℝ) / 35 := by
   rw [exact_n3_m4, completeCost_val_4]
-  norm_num
+  all_goals norm_num
 
 /-- Table 2, `n = 3`: `m = 4` is the only `m` attaining the maximum. -/
 theorem table2_n3_unique (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ 3)
@@ -75,17 +75,17 @@ theorem table2_n3_unique (m : ℕ) (hm : 2 ≤ m) (hs : m ≤ 2 ^ 3)
   norm_num at hs
   interval_cases m
   · rw [exact_n3_m2, completeCost_val_2] at h
-    norm_num at h
+    all_goals norm_num at h
   · rw [exact_n3_m3, completeCost_val_3] at h
-    norm_num at h
+    all_goals norm_num at h
   · rfl
   · rw [exact_n3_m5, completeCost_val_5] at h
-    norm_num at h
+    all_goals norm_num at h
   · rw [exact_n3_m6, completeCost_val_6] at h
-    norm_num at h
+    all_goals norm_num at h
   · rw [exact_n3_m7, completeCost_val_7] at h
-    norm_num at h
+    all_goals norm_num at h
   · rw [exact_n3_m8, completeCost_val_8] at h
-    norm_num at h
+    all_goals norm_num at h
 
 end GradientKey.Concrete
