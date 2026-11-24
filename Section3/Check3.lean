@@ -28,6 +28,7 @@ import BkInteger
 import StrictFive
 import ExactAnalytic
 import Table2Small
+import Interpolation
 
 open GradientKey.Concrete
 
@@ -311,3 +312,17 @@ open GradientKey.Concrete
 #print axioms GradientKey.Concrete.table2_n3_attained
 #check @GradientKey.Concrete.table2_n3_unique
 #print axioms GradientKey.Concrete.table2_n3_unique
+#check @GradientKey.Concrete.sum_table_leafDepth_eq
+#print axioms GradientKey.Concrete.sum_table_leafDepth_eq
+#check @GradientKey.Concrete.scaled_tG_eq_column_sum
+#print axioms GradientKey.Concrete.scaled_tG_eq_column_sum
+#check @GradientKey.Concrete.tG_scaled_natural
+#print axioms GradientKey.Concrete.tG_scaled_natural
+#check @GradientKey.Concrete.numer_eq_scaled_sub
+#print axioms GradientKey.Concrete.numer_eq_scaled_sub
+#check @GradientKey.Concrete.coeffA_determined
+#print axioms GradientKey.Concrete.coeffA_determined
+#check @GradientKey.Concrete.sampleNumer_eq
+#print axioms GradientKey.Concrete.sampleNumer_eq
+#check @GradientKey.Concrete.coeffA_determined_samples
+#print axioms GradientKey.Concrete.coeffA_determined_samples

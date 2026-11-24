@@ -135,3 +135,10 @@ GradientKey.Concrete.table2_n2_attained
 GradientKey.Concrete.table2_n3_bound
 GradientKey.Concrete.table2_n3_attained
 GradientKey.Concrete.table2_n3_unique
+GradientKey.Concrete.sum_table_leafDepth_eq
+GradientKey.Concrete.scaled_tG_eq_column_sum
+GradientKey.Concrete.tG_scaled_natural
+GradientKey.Concrete.numer_eq_scaled_sub
+GradientKey.Concrete.coeffA_determined
+GradientKey.Concrete.sampleNumer_eq
+GradientKey.Concrete.coeffA_determined_samples
