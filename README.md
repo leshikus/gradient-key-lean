@@ -1,7 +1,8 @@
 # gradient-key-lean
 
 Lean 4 proofs of results of *The gradient key on random tables*: Lemma 3.1, Propositions 3.2 (the path formula and its
-pruning claim), 3.3, 3.5, 3.6 and Corollary 3.4 (Section 3), and Lemmas 4.1–4.3 and Theorem 4.4 (Section 4).
+pruning claim, the example (3,4) and the row-by-row recurrence for F_n), 3.3 (with the integrality of the B_k), 3.5, 3.6
+and Corollary 3.4 (Section 3), and Lemmas 4.1–4.3 and Theorem 4.4 (Section 4).
 The computations of Section 3 are not formalized. `FORMALIZATION_STATUS.md` maps each result to its declaration.
 Code and data of the article: [gradient-key-impl](https://github.com/leshikus/gradient-key-impl). MIT licence.
 

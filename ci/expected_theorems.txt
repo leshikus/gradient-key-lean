@@ -76,3 +76,13 @@ GradientKey.Concrete.Example34.example34_F432
 GradientKey.Concrete.Example34.example34_rhs
 GradientKey.Concrete.Example34.example34_tG
 prop_path_formula_sets
+pathD_eq_sum
+pathF_eq_pathD
+pathD_empty
+pathD_eq_zero_of_lt_card
+GradientKey.Concrete.Example34.example34_D
+GradientKey.Concrete.Example34.example34_F_eq_D
+sum_ldepth_eq
+factorial_dvd_card
+Bint_dvd
+Bk_integer

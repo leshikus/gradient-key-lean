@@ -23,6 +23,8 @@ import PathFixed
 import PathFormula
 import PathPrune
 import PathExample
+import PathRecurrence
+import BkInteger
 
 open GradientKey.Concrete
 
@@ -188,3 +190,23 @@ open GradientKey.Concrete
 #print axioms GradientKey.Concrete.Example34.example34_tG
 #check @prop_path_formula_sets
 #print axioms prop_path_formula_sets
+#check @pathD_eq_sum
+#print axioms pathD_eq_sum
+#check @pathF_eq_pathD
+#print axioms pathF_eq_pathD
+#check @pathD_empty
+#print axioms pathD_empty
+#check @pathD_eq_zero_of_lt_card
+#print axioms pathD_eq_zero_of_lt_card
+#check @GradientKey.Concrete.Example34.example34_D
+#print axioms GradientKey.Concrete.Example34.example34_D
+#check @GradientKey.Concrete.Example34.example34_F_eq_D
+#print axioms GradientKey.Concrete.Example34.example34_F_eq_D
+#check @sum_ldepth_eq
+#print axioms sum_ldepth_eq
+#check @factorial_dvd_card
+#print axioms factorial_dvd_card
+#check @Bint_dvd
+#print axioms Bint_dvd
+#check @Bk_integer
+#print axioms Bk_integer

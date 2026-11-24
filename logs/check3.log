@@ -340,3 +340,40 @@ Example34.example34_tG : tG 3 4 ⋯ = 3408 / 1680
               ∑ rho, ∑ c, mu c * ∏ i, ↑{row | fixedPathRowAdmissible (S s) ⟨0, ⋯⟩ rho i row ∧ ConstOn c row}.card)) /
         ↑((2 ^ n).descFactorial m)
 'GradientKey.Concrete.prop_path_formula_sets' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathD_eq_sum : ∀ {n m : ℕ} (s : PathChain n m) (parts : PathPartitionTypes s) (i : ℕ)
+  (M : Finset (Fin (pathChainDepth s))),
+  pathD s parts i M =
+    ∑ ρ,
+      (∏ r with ∀ (j : ↥M), ρ j ≠ r,
+          pathW s parts (Finset.map (Function.Embedding.subtype fun x => x ∈ M) {j | ρ j < r})) *
+        ∏ j, pathV s parts (↑j) (Finset.map (Function.Embedding.subtype fun x => x ∈ M) {j' | ρ j' < ρ j})
+'GradientKey.Concrete.pathD_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathF_eq_pathD : ∀ {n m : ℕ} (s : PathChain n m) (parts : PathPartitionTypes s),
+  pathF s parts = pathD s parts n Finset.univ
+'GradientKey.Concrete.pathF_eq_pathD' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathD_empty : ∀ {n m : ℕ} (s : PathChain n m) (parts : PathPartitionTypes s) (i : ℕ),
+  pathD s parts i ∅ = pathW s parts ∅ ^ i
+'GradientKey.Concrete.pathD_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+@pathD_eq_zero_of_lt_card : ∀ {n m : ℕ} (s : PathChain n m) (parts : PathPartitionTypes s) (i : ℕ)
+  (M : Finset (Fin (pathChainDepth s))), i < M.card → pathD s parts i M = 0
+'GradientKey.Concrete.pathD_eq_zero_of_lt_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_D : pathD Example34.chain42 Example34.P11_11 3 Finset.univ = 1032 ∧
+  pathD Example34.chain42 Example34.P2_11 3 Finset.univ = 296 ∧
+    pathD Example34.chain42 Example34.P11_2 3 Finset.univ = 296 ∧
+      pathD Example34.chain42 Example34.P2_2 3 Finset.univ = 56
+'GradientKey.Concrete.Example34.example34_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+Example34.example34_F_eq_D : pathF Example34.chain42 Example34.P11_11 =
+    pathD Example34.chain42 Example34.P11_11 3 Finset.univ ∧
+  pathF Example34.chain42 Example34.P2_11 = pathD Example34.chain42 Example34.P2_11 3 Finset.univ ∧
+    pathF Example34.chain42 Example34.P11_2 = pathD Example34.chain42 Example34.P11_2 3 Finset.univ ∧
+      pathF Example34.chain42 Example34.P2_2 = pathD Example34.chain42 Example34.P2_2 3 Finset.univ
+'GradientKey.Concrete.Example34.example34_F_eq_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sum_ldepth_eq : ∀ {m : ℕ} (hm : 0 < m) (k : ℕ),
+  (∑ e, if GradientKey.Concrete.Sep (tyRows hm e) then ldepth (tyRows hm e) else 0) = m * colSum hm k ⟨0, hm⟩
+'GradientKey.Concrete.sum_ldepth_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+@factorial_dvd_card : ∀ {m : ℕ} (hm : 0 < m) (k : ℕ), m.factorial ∣ 2 ^ k * sepCount hm k
+'GradientKey.Concrete.factorial_dvd_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Bint_dvd : ∀ {m : ℕ} (hm : 0 < m) (k : ℕ), ↑m ∣ Bint hm k
+'GradientKey.Concrete.Bint_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+@Bk_integer : ∀ {m : ℕ} (hm : 0 < m) (k : ℕ), ∃ z, Bk hm k = ↑z
+'GradientKey.Concrete.Bk_integer' depends on axioms: [propext, Classical.choice, Quot.sound]
