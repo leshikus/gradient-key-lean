@@ -30,6 +30,7 @@ import ExactAnalytic
 import Table2Small
 import Interpolation
 import Translation
+import MaxLength
 
 open GradientKey.Concrete
 
@@ -343,3 +344,13 @@ open GradientKey.Concrete
 #print axioms GradientKey.Concrete.sum_totalDepth_eq_missing
 #check @GradientKey.Concrete.missing_mean_eq
 #print axioms GradientKey.Concrete.missing_mean_eq
+#check @GradientKey.Concrete.sum_stat_eq
+#print axioms GradientKey.Concrete.sum_stat_eq
+#check @GradientKey.Concrete.statB_excess
+#print axioms GradientKey.Concrete.statB_excess
+#check @GradientKey.Concrete.sum_stat_numer
+#print axioms GradientKey.Concrete.sum_stat_numer
+#check @GradientKey.Concrete.prop_max_length
+#print axioms GradientKey.Concrete.prop_max_length
+#check @GradientKey.Concrete.prop_max_length_stirling
+#print axioms GradientKey.Concrete.prop_max_length_stirling

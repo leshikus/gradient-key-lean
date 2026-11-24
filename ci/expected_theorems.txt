@@ -150,3 +150,8 @@ GradientKey.Concrete.totalDepth_eq_of_missing_eq
 GradientKey.Concrete.missingDepth_eq_table
 GradientKey.Concrete.sum_totalDepth_eq_missing
 GradientKey.Concrete.missing_mean_eq
+GradientKey.Concrete.sum_stat_eq
+GradientKey.Concrete.statB_excess
+GradientKey.Concrete.sum_stat_numer
+GradientKey.Concrete.prop_max_length
+GradientKey.Concrete.prop_max_length_stirling

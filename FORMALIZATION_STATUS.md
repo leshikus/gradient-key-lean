@@ -33,6 +33,7 @@ largest quality `min(k, s-k)`, `leafDepth` = number of forks on the path of a co
 | Table 2, rows `n = 1, 2, 3`: maxima `0, 0, 1/35`, attained at `m = 2`, `m = 2`, `m = 4`; for `n = 3`, `m = 4` is the only maximizer | `table2_n1_bound`, `table2_n1_attained`, `table2_n2_bound`, `table2_n2_attained`, `table2_n3_bound`, `table2_n3_attained`, `table2_n3_unique` (`Section3/Table2Small.lean`) | verified |
 | Computation paragraph: `(2^n)_m t_{n,m}(G) = ∑_{A∈𝒜_{n,m}} L_j(A)` for every column `j`, an integer; `N_m(n) = (2^n)_m t_{n,m}(G) - (2^n)_m C(m)` for `2 ≤ m ≤ 2^n`; the `M` values `N_m(0),…,N_m(M-1)` determine `a_1,…,a_M` (Vandermonde system on the nodes `2,4,…,2M`) | `sum_table_leafDepth_eq`, `scaled_tG_eq_column_sum`, `tG_scaled_natural`, `numer_eq_scaled_sub`, `coeffA_determined`, `sampleNumer_eq`, `coeffA_determined_samples` (`Section3/Interpolation.lean`) | verified |
 | Section 3.3, enumeration of the missing words: translation by `v` keeps the total depth and maps the missing set `R` to `R ⊕ v`; `(R,w) ↦ (R⊕w,w)` gives `r ∑_{|R|=r} f(R) = 2^n ∑_{|R|=r, 0∈R} f(R)`; the mean total depth over the sets of `r ≥ 1` missing words equals the mean over those containing `0`; `D(R)` is the total depth of every table with missing set `R`, and `∑_A D(A) = m! ∑_R D(R)` | `translate_totalDepth`, `translate_missing`, `missing_weighted_count`, `missing_mean_eq_of_invariant`, `totalDepth_eq_of_missing_eq`, `missingDepth_eq_table`, `sum_totalDepth_eq_missing`, `missing_mean_eq` (`Section3/Translation.lean`) | verified |
+| Remark on the maximum length: for an integer statistic `Φ` of row lists invariant under complementing rows and under keeping first appearances, and `0` when the rows do not separate the columns, `∑_A Φ(A) = 2^n ∑_k S(n,k) B_k(Φ)`, and `= ∑_j a_j(Φ)(2j)^n` for `n ≥ 1` (`B_k(D - cdepth m) = m B_k`); for `L_max = max_j L_j`: `t^max_{n,m}(G) - ⌈log m⌉ = N^max_m(n)/(2^n)_m`, `N^max_m(n) = 2^n ∑_k B^max_k S(n,k)`, `2 ≤ m ≤ 2^n` | `sum_stat_eq`, `statB_excess`, `sum_stat_numer`, `prop_max_length`, `prop_max_length_stirling` (`Section3/MaxLength.lean`; `tGmax`, `BmaxInt`, `coeffAmax`, `numerMax`) | verified |
 | Corollary 3.4 (`cor:exp`), with explicit `C`, `N₀` | `cor_exp` (`Section3/Asymptotic.lean`) | verified |
 | Result 3, `m ≤ 3`: excess `0` | `excess_small` | verified |
 | Proposition 3.5 (`prop:dense`), pointwise and average | `prop_dense_cost`, `prop_dense` (`Section3/Dense.lean`) | verified |
@@ -41,8 +42,7 @@ largest quality `min(k, s-k)`, `leafDepth` = number of forks on the path of a co
 | Lemmas 4.1–4.3, Theorem 4.4 and (a)–(c) | `theorem_4_4` (`Section4/Theorem44.lean`); see `Section4/STATUS.md` | verified |
 
 Not formalized: the computations of Section 3 (the engines, the solution of the Vandermonde system for
-the `a_j`, Table 1, the exact values for `n ≤ 6` other than the 41 analytic pairs, Table 2 rows `n ≥ 4`, the enumeration program for the missing words); the remark on the maximum
-length.
+the `a_j`, Table 1, the exact values for `n ≤ 6` other than the 41 analytic pairs, Table 2 rows `n ≥ 4`, the enumeration program for the missing words).
 
 ## Section 3 modules (dependency order)
 
@@ -93,3 +93,4 @@ length.
 | `Table2Small` | Table 2, rows `n ≤ 3` (generated) |
 | `Interpolation` | `(2^n)_m t_{n,m}(G)` is a column sum; uniqueness of the `a_j` from `N_m(0..M-1)` |
 | `Translation` | translation `w ↦ w ⊕ v`; the double count of `(R,w)`; mean over missing sets containing `0` |
+| `MaxLength` | the counting argument for any statistic of first appearances; the maximum length |
