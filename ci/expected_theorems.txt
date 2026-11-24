@@ -142,3 +142,11 @@ GradientKey.Concrete.numer_eq_scaled_sub
 GradientKey.Concrete.coeffA_determined
 GradientKey.Concrete.sampleNumer_eq
 GradientKey.Concrete.coeffA_determined_samples
+GradientKey.Concrete.translate_totalDepth
+GradientKey.Concrete.translate_missing
+GradientKey.Concrete.missing_weighted_count
+GradientKey.Concrete.missing_mean_eq_of_invariant
+GradientKey.Concrete.totalDepth_eq_of_missing_eq
+GradientKey.Concrete.missingDepth_eq_table
+GradientKey.Concrete.sum_totalDepth_eq_missing
+GradientKey.Concrete.missing_mean_eq

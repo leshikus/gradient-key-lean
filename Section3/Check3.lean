@@ -29,6 +29,7 @@ import StrictFive
 import ExactAnalytic
 import Table2Small
 import Interpolation
+import Translation
 
 open GradientKey.Concrete
 
@@ -326,3 +327,19 @@ open GradientKey.Concrete
 #print axioms GradientKey.Concrete.sampleNumer_eq
 #check @GradientKey.Concrete.coeffA_determined_samples
 #print axioms GradientKey.Concrete.coeffA_determined_samples
+#check @GradientKey.Concrete.translate_totalDepth
+#print axioms GradientKey.Concrete.translate_totalDepth
+#check @GradientKey.Concrete.translate_missing
+#print axioms GradientKey.Concrete.translate_missing
+#check @GradientKey.Concrete.missing_weighted_count
+#print axioms GradientKey.Concrete.missing_weighted_count
+#check @GradientKey.Concrete.missing_mean_eq_of_invariant
+#print axioms GradientKey.Concrete.missing_mean_eq_of_invariant
+#check @GradientKey.Concrete.totalDepth_eq_of_missing_eq
+#print axioms GradientKey.Concrete.totalDepth_eq_of_missing_eq
+#check @GradientKey.Concrete.missingDepth_eq_table
+#print axioms GradientKey.Concrete.missingDepth_eq_table
+#check @GradientKey.Concrete.sum_totalDepth_eq_missing
+#print axioms GradientKey.Concrete.sum_totalDepth_eq_missing
+#check @GradientKey.Concrete.missing_mean_eq
+#print axioms GradientKey.Concrete.missing_mean_eq
