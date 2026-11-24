@@ -25,6 +25,7 @@ largest quality `min(k, s-k)`, `leafDepth` = number of forks on the path of a co
 | — `N_m(n) = 2^n ∑_k B_k S(n,k)`; `k! S(n,k) = ∑_j (-1)^{k-j} C(k,j) j^n` | `prop32_stirling_form`, `prop32_stirling_identity` (`Section3/SmallItems.lean`) | verified |
 | — `B_k = ∑_{T ∈ 𝒯_k} (L̄(G(T)) - C(m))` (`T : Fin k ↪ Ty`, `G(T)` on `tblOf T`), `k ≥ 1` | `Bk_eq_tuple_sum` | verified |
 | — the `B_k` are integers: column symmetry `∑_{T∈𝒯_k} ∑_j L_j = m ∑_{T∈𝒯_k} L_1`; `m! ∣ 2^k |𝒯_k|` (free action of column permutations on the representative tables); `m ∣ m B_k` for every `k` | `sum_ldepth_eq`, `factorial_dvd_card`, `Bint_dvd`, `Bk_integer` (`Section3/BkInteger.lean`; hypothesis `0 < m` only) | verified |
+| — the `a_j` are rational | `coeffA_rational` (`Section3/BkInteger.lean`) | verified |
 | Computation paragraph: `N_m(n) = 0` for `n ≥ 1`, `2^n < m` | `numer_eq_zero_of_two_pow_lt` | verified |
 | Computation paragraph: `N_m(0) = 0`, via `∑_k (-1)^k B_k/k! = 0` (constant row type inserted) | `numer_zero`, `alt_sum_Bint` (`Section3/NumerZero.lean`) | verified |
 | Examples: `t_{n,2^n} = n`, `t_{1,2} = 1`, `t_{n,2} = 1`, `t_{3,4} = 3408/1680`, `t_{4,11} - C(11) = 1/3003`, `t_{4,10} - C(10) = 18/5005` | `example_full`, `example_n1_m2`, `example_m2`, `example_n3_m4`, `example_n4_m11`, `example_n4_m10` (`Section3/Examples.lean`) | verified |
@@ -87,7 +88,7 @@ the `a_j`, Table 1, the exact values for `n ≤ 6` other than the 41 analytic pa
 | `PathPrune` | pruning: `prop_path_prune`, `path_shape_bounds` |
 | `PathExample` | the example `(3,4)`: `example34_chains`, `example34_chain4/42/43/432`, `example34_rhs`, `example34_tG` |
 | `PathRecurrence` | the row-by-row recurrence for `F_n`: `pathD`, `pathD_eq_sum`, `pathF_eq_pathD`, `example34_D` |
-| `BkInteger` | the `B_k` are integers: `sum_ldepth_eq`, `factorial_dvd_card`, `Bint_dvd`, `Bk_integer` |
+| `BkInteger` | the `B_k` are integers: `sum_ldepth_eq`, `factorial_dvd_card`, `Bint_dvd`, `Bk_integer`; the `a_j` are rational: `coeffA_rational` |
 | `StrictFive` | `t_{3,5}(G) = C(5) < t_{4,5}(G)` |
 | `ExactAnalytic` | `C(m)` for `m ≤ 64`; 41 exact values from Propositions 3.3, 3.5, 3.6 (generated) |
 | `Table2Small` | Table 2, rows `n ≤ 3` (generated) |

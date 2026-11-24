@@ -13,6 +13,7 @@ Here `Bint hm k = m B_k` (`SmallM`).
 * `sum_ldepth_eq`: column symmetry, `∑_{T ∈ 𝒯_k} ∑_j L_j = m ∑_{T ∈ 𝒯_k} L_0`.
 * `factorial_dvd_card`: `m! ∣ 2^k |𝒯_k|` (free action of the column permutations on the representative tables).
 * `Bint_dvd`: `m ∣ m B_k`; `Bk_integer`: `B_k` is an integer. No condition on `k`.
+* `coeffA_rational`: the `a_j` are rational.
 -/
 
 noncomputable section
@@ -371,5 +372,13 @@ theorem Bk_integer (hm : 0 < m) (k : ℕ) : ∃ z : ℤ, Bk hm k = z := by
   have : (m : ℝ) ≠ 0 := by exact_mod_cast hm.ne'
   push_cast
   field_simp
+
+/-- The coefficients `a_j` of Proposition 3.3 are rational: `B_k = (m B_k) / m` with `m B_k` an integer. -/
+theorem coeffA_rational (hm : 0 < m) (j : ℕ) : ∃ q : ℚ, (q : ℝ) = coeffA hm j := by
+  refine ⟨∑ k ∈ range (numTypes hm + 1),
+    (-1 : ℚ) ^ (k - j) * (k.choose j : ℚ) * ((Bint hm k : ℚ) / m) / k.factorial, ?_⟩
+  unfold coeffA Bk
+  push_cast
+  try rfl
 
 end GradientKey.Concrete

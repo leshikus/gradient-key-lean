@@ -91,6 +91,13 @@ theorem expectedDepth_eq_tG (hn : 0 < n) [Nonempty (Sample n m)] :
   rw [Fintype.card_prod, Fintype.card_fin, Nat.cast_mul, ← Finset.sum_div]
   field_simp
 
+/-- **Lemma 4.1, tail bound**, on the concrete sample space: `t_{n,m}(G) ≤ ∑_{i<h} p_i + E(s_h - 1)`. -/
+theorem concrete_expectedTail (hn : 0 < n) [Nonempty (Sample n m)] (h : ℕ) :
+    tG n m hn ≤ (∑ i ∈ Finset.range h, (p1_finitePathData (m := m) hn).forkProb i) +
+      (p1_finitePathData (m := m) hn).expectedExcess h := by
+  rw [← expectedDepth_eq_tG hn]
+  exact (p1_finitePathData (m := m) hn).expectedTail h
+
 /-- The bound displayed in Theorem 4.4, with `2^{i-ℓ}` written as `2^i/2^ℓ`. -/
 def displayedBound (n m : ℕ) : ℝ :=
   (Nat.log 2 m : ℝ) - 1 + (m : ℝ) / (2 : ℝ) ^ (Nat.log 2 m) +

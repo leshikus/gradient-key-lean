@@ -354,3 +354,12 @@ open GradientKey.Concrete
 #print axioms GradientKey.Concrete.prop_max_length
 #check @GradientKey.Concrete.prop_max_length_stirling
 #print axioms GradientKey.Concrete.prop_max_length_stirling
+#print axioms Bint_nonneg
+#print axioms Bint_numTypes
+#print axioms Bint_small
+#print axioms Bint_comb
+#print axioms J_bounds
+#print axioms coeffA_J
+#print axioms numTypes_eq
+#check @GradientKey.Concrete.coeffA_rational
+#print axioms GradientKey.Concrete.coeffA_rational

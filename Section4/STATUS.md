@@ -11,7 +11,7 @@ No `sorry`, `admit`, `axiom`, `unsafe` or `native_decide` in `Section4/*.lean`.
 |---|---|---|---|
 | Greedy invariants (nesting, split, no reuse, end by depth `n`, path tail) | `P1_GreedyPath`: `p1_no_row_reuse`, `p1_terminates_by_n`, `p1_sample_hTail`, `p1_finitePathData` | yes | none |
 | Lemma 4.1 (recurrence) | `Lemma41.concrete_expectedExcess_succ` | yes | none |
-| Lemma 4.1 (tail `t ≤ ∑ p_i + E(s_h-1)`) | `FinitePathData.expectedTail` with `p1_finitePathData` | yes | none |
+| Lemma 4.1 (tail `t ≤ ∑ p_i + E(s_h-1)`) | `Theorem44.concrete_expectedTail` (from `FinitePathData.expectedTail` with `p1_finitePathData`) | yes | none |
 | Lemma 4.2, mean | `RowDeletion.conditional_inserted_imbalance_exact`, `_le_one` | yes | none |
 | Lemma 4.2, tail | `Hoeffding.conditional_inserted_imbalance_tail` | yes | none |
 | Conditioning on `∂_r A = B`, `j = j₀` | `P3_ConditionalFibre.sampleFibreEquiv`, `unconditional_row_mean_le_one`, `unconditional_row_tail_of_extension_tails` | yes | none |
