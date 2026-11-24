@@ -130,7 +130,7 @@ theorem numer_eq_fin (hm : 0 < m) (n : ℕ) :
 theorem coeffA_determined (hm : 0 < m) (a : Fin (numTypes hm) → ℝ)
     (h : ∀ i : Fin (numTypes hm),
       (∑ j : Fin (numTypes hm), a j * (2 * ((j : ℕ) + 1) : ℝ) ^ (i : ℕ)) = numer hm i) :
-    a = fun j => coeffA hm ((j : ℕ) + 1) := by
+    a = fun j : Fin (numTypes hm) => coeffA hm ((j : ℕ) + 1) := by
   apply exponential_coeff_unique
   intro i
   rw [h i, numer_eq_fin]
@@ -159,7 +159,7 @@ theorem coeffA_determined_samples (hm : 2 ≤ m) (a : Fin (numTypes (by omega : 
     (h : ∀ i : Fin (numTypes (by omega : 0 < m)),
       (∑ j : Fin (numTypes (by omega : 0 < m)), a j * (2 * ((j : ℕ) + 1) : ℝ) ^ (i : ℕ)) =
         sampleNumer m i) :
-    a = fun j => coeffA (by omega : 0 < m) ((j : ℕ) + 1) := by
+    a = fun j : Fin (numTypes (by omega : 0 < m)) => coeffA (by omega : 0 < m) ((j : ℕ) + 1) := by
   apply coeffA_determined
   intro i
   rw [h i, sampleNumer_eq hm]
