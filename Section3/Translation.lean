@@ -152,7 +152,7 @@ theorem missing_weighted_count (r : ℕ) (f : Finset (Word n) → ℝ)
     (hf : ∀ v R, f (translateSet v R) = f R) :
     (r : ℝ) * ∑ R ∈ missingSets n r, f R = (2 : ℝ) ^ n * ∑ R ∈ zeroSets n r, f R := by
   have hl : (r : ℝ) * ∑ R ∈ missingSets n r, f R =
-      ∑ p ∈ (missingSets n r).sigma (σ := fun _ => Word n) (fun R => R), f p.1 := by
+      ∑ p ∈ Finset.sigma (α := fun _ => Word n) (missingSets n r) (fun R => R), f p.1 := by
     rw [sum_sigma, mul_sum]
     refine sum_congr rfl fun R hR => ?_
     rw [sum_const, (mem_filter.mp hR).2, nsmul_eq_mul]
@@ -231,7 +231,7 @@ theorem ldepth_map_prow (π : Equiv.Perm (Fin m)) (L : List (Row m)) :
     ldepth (L.map (prow π)) = ldepth L := by
   rw [ldepth_eq_sum_cdep, ldepth_eq_sum_cdep]
   simp only [cdep_prow]
-  exact π.sum_comp (cdep L)
+  exact Equiv.sum_comp π (cdep L)
 
 open Classical in
 /-- Two tables with the same missing set differ by a column permutation, so they have the same
@@ -244,8 +244,9 @@ theorem totalDepth_eq_of_missing_eq (hn : 0 < n) (A B : ValidTable n m)
     rw [← hTA, card_image_of_injective _ (pat_univ_injective A.1 A.2), card_univ, Fintype.card_fin]
   have hTB : univ.image (pat B.1 univ) = T := by
     have h' := congrArg (fun S : Finset (Word n) => (univ : Finset (Word n)) \ S) h
-    simp only [missing, sdiff_sdiff_eq_self (subset_univ _)] at h'
-    rw [← hTA, h']
+    simp only [missing, Finset.sdiff_sdiff_eq_self (subset_univ _)] at h'
+    rw [← hTA]
+    exact h'.symm
   let eA := imageEquiv T hT ⟨A, hTA⟩
   let eB := imageEquiv T hT ⟨B, hTB⟩
   let π : Equiv.Perm (Fin m) := eB.trans eA.symm
